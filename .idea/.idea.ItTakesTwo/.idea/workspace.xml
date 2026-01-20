@@ -14,8 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/CG/TDQZEAGIC8ZP1G309E5LI3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/QH/Y6RYMXMGBFCQJTXXXCOEHG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/QH/Y6RYMXMGBFCQJTXXXCOEHG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BP_CodyAnimBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BP_CodyAnimBlueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/QH/Y6RYMXMGBFCQJTXXXCOEHG.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +36,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -163,6 +167,7 @@
       <workItem from="1768787212342" duration="5000" />
       <workItem from="1768810484405" duration="900000" />
       <workItem from="1768811893721" duration="1000" />
+      <workItem from="1768868394130" duration="3042000" />
     </task>
     <servers />
   </component>
