@@ -5,6 +5,7 @@
     <projectFile profileName="EpicGames.AspNet">../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Programs/Shared/EpicGames.AspNet/EpicGames.AspNet.csproj</projectFile>
     <projectFile kind="Docker">../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Programs/UnrealBuildTool/UnrealBuildTool.csproj</projectFile>
+    <projectFile kind="Docker">../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/EpicGames.Perforce.Fixture.csproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/ItTakesTwo.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
@@ -14,28 +15,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/NewBlendSpace.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_PhysicsAsset.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Cody_PhysicsAsset.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh_to_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh_to_Idle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/NewBlendSpace.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_PhysicsAsset.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/May_PhysicsAsset.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/May_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Jump.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Look.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Move.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/BP_PlayerCharacter.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GF_ItTakesTwoGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GF_ItTakesTwoGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItTakesTwo.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +31,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/Experimental/ConcurrentLinearAllocator.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/CustomGameFramework/GFPlayerState.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -62,21 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -171,6 +160,17 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="EpicGames.Perforce.Fixture/Dockerfile (1)" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="containerName" value="epicgames.perforce.fixture" />
+          <option name="contextFolderPath" value="E:\UnrealProject\ItTakesTwo" />
+          <option name="sourceFilePath" value="../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Perforce.Fixture/Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="EpicGames.Perforce.Fixture/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -197,6 +197,8 @@
       <workItem from="1768962195287" duration="3022000" />
       <workItem from="1768979593220" duration="1266000" />
       <workItem from="1768980948362" duration="5001000" />
+      <workItem from="1768996635287" duration="2884000" />
+      <workItem from="1769004533496" duration="5909000" />
     </task>
     <servers />
   </component>

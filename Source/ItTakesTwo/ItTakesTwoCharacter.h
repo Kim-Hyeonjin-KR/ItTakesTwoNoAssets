@@ -15,11 +15,17 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-enum class ECharacterActionType : uint8
+
+enum class ECharacterState : uint32
 {
-	Idle,
-	Dash
+	None		= 0,
+	Idle		= 1 << 0,
+	Walk		= 1 << 1,
+	Dash	    = 1 << 2,
+	Sprint		= 1 << 3,
+	Jump		= 1 << 4,
 };
+ENUM_CLASS_FLAGS(ECharacterState)
 
 /*
 UENUM()
@@ -29,6 +35,7 @@ enum ECharacterActionType : uint8
 	Dash UMETA(DisplayName = "Dash")
 };
 */
+
 
 UCLASS(config=Game)
 class AItTakesTwoCharacter : public ACharacter
@@ -65,8 +72,8 @@ class AItTakesTwoCharacter : public ACharacter
 	
 public:
 	AItTakesTwoCharacter();
-	
-	ECharacterActionType ECharacterAction;
+	ECharacterState CharacterState;
+	bool bCanDash = true;
 
 protected:
 

@@ -9,7 +9,15 @@ void UANSInvincibility::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSeque
 	Super::NotifyBegin(MeshComp, Animation, TotalDuration, EventReference);
 	
 	AItTakesTwoCharacter* Player = Cast<AItTakesTwoCharacter>(MeshComp->GetOwner());
-	Player->ECharacterAction = ECharacterActionType::Dash;
+	if (Player != nullptr)
+	{
+		Player->CharacterState |= ECharacterState::Dash;
+		Player->bCanDash = false;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ANS Invincibility Begin에서 Player 찾을 수 없음."));
+	}
 }
 
 void UANSInvincibility::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation,
@@ -18,5 +26,14 @@ void UANSInvincibility::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenc
 	Super::NotifyEnd(MeshComp, Animation, EventReference);
 	
 	AItTakesTwoCharacter* Player = Cast<AItTakesTwoCharacter>(MeshComp->GetOwner());
-	Player->ECharacterAction = ECharacterActionType::Idle;
+	
+	if (Player != nullptr)
+	{
+		Player->CharacterState &= ~ECharacterState::Dash;
+		Player->bCanDash = true;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ANS Invincibility End에서 Player 찾을 수 없음."));
+	}
 }

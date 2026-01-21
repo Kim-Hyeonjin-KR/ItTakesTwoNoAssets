@@ -134,12 +134,16 @@ void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 {
+	if (bCanDash)
+	{
+		LaunchCharacter(GetActorForwardVector() * 1000, true, true);
+	}
+	//CharacterState |= ECharacterState::Dash;
 	
-	LaunchCharacter(GetActorForwardVector() * 1000, true, true);
-	ECharacterAction = ECharacterActionType::Dash;
+	else
+	{
+		UE_LOG(LogTemp,Warning, TEXT("Can't Dash"));
+	}
 	
 	UE_LOG(LogTemp,Warning, TEXT("Dash value is now %f"), (GetActorForwardVector() * 1000).Length());
-	
-	
-	
 }
