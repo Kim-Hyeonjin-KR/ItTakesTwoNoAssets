@@ -86,6 +86,9 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Look);
+		
+		// Dash
+		EnhancedInputComponent->BindAction(DashAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Dash);
 	}
 	else
 	{
@@ -127,4 +130,16 @@ void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
+{
+	
+	LaunchCharacter(GetActorForwardVector() * 1000, true, true);
+	ECharacterAction = ECharacterActionType::Dash;
+	
+	UE_LOG(LogTemp,Warning, TEXT("Dash value is now %f"), (GetActorForwardVector() * 1000).Length());
+	
+	
+	
 }

@@ -14,11 +14,28 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BP_CodyAnimBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BP_CodyAnimBlueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/NewBlendSpace.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_PhysicsAsset.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Cody_PhysicsAsset.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh_to_Idle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh_to_Idle.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/NewBlendSpace.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_PhysicsAsset.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/May_PhysicsAsset.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/May_Skeleton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Jump.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Look.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Move.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/QH/Y6RYMXMGBFCQJTXXXCOEHG.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/BP_PlayerCharacter.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/GF_ItTakesTwoGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GF_ItTakesTwoGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItTakesTwo.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +45,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/CustomGameFramework/GFPlayerState.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -36,21 +62,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -168,6 +194,9 @@
       <workItem from="1768810484405" duration="900000" />
       <workItem from="1768811893721" duration="1000" />
       <workItem from="1768868394130" duration="3042000" />
+      <workItem from="1768962195287" duration="3022000" />
+      <workItem from="1768979593220" duration="1266000" />
+      <workItem from="1768980948362" duration="5001000" />
     </task>
     <servers />
   </component>

@@ -15,6 +15,21 @@ struct FInputActionValue;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
+enum class ECharacterActionType : uint8
+{
+	Idle,
+	Dash
+};
+
+/*
+UENUM()
+enum ECharacterActionType : uint8
+{
+	Idle UMETA(DisplayName = "Idle"),
+	Dash UMETA(DisplayName = "Dash")
+};
+*/
+
 UCLASS(config=Game)
 class AItTakesTwoCharacter : public ACharacter
 {
@@ -44,9 +59,14 @@ class AItTakesTwoCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	/** Dash Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* DashAction;
+	
 public:
 	AItTakesTwoCharacter();
 	
+	ECharacterActionType ECharacterAction;
 
 protected:
 
@@ -55,6 +75,9 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+	
+	/** Called for Dash input */
+	void Dash(const FInputActionValue& Value);
 			
 
 protected:
