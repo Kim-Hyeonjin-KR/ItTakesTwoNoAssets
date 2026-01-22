@@ -10,6 +10,8 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Animation/AnimMontage.h"
+#include "Animation/AnimInstance.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -78,9 +80,9 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		
 		// Jumping
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AItTakesTwoCharacter::CustomJump);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AItTakesTwoCharacter::CustomStopJumping);
+		
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Move);
 
@@ -134,11 +136,27 @@ void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 {
-	if (bCanDash)
+	if (bCanDash && DashMontage)
 	{
-		LaunchCharacter(GetActorForwardVector() * 1000, true, true);
+		PlayAnimMontage(DashMontage);
+		
+		FVector CurrentLocation = GetActorLocation();
+		FRotator CurrentRotation = Controller->GetControlRotation();
+		CurrentRotation.Roll = 0;
+		CurrentRotation.Pitch = 0;
+		FVector HorizontalForwardVector = FRotationMatrix(CurrentRotation).GetUnitAxis(EAxis::X);
+		
+		FVector TargetLocation = CurrentLocation + HorizontalForwardVector * DashLength;
+		
+		
+		/*
+		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+		if (AnimInstance != nullptr)
+		{
+			AnimInstance->Montage_Play(DashMontage);
+		}
+		*/
 	}
-	//CharacterState |= ECharacterState::Dash;
 	
 	else
 	{
@@ -146,4 +164,17 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 	}
 	
 	UE_LOG(LogTemp,Warning, TEXT("Dash value is now %f"), (GetActorForwardVector() * 1000).Length());
+}
+
+void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
+{
+	if (bCanJump)
+	{
+		ACharacter::Jump();
+	}
+}
+
+void AItTakesTwoCharacter::CustomStopJumping()
+{
+	Super::StopJumping();
 }

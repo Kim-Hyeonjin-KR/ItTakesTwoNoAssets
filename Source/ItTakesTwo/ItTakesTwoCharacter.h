@@ -36,6 +36,7 @@ enum ECharacterActionType : uint8
 };
 */
 
+class UAnimMontage;
 
 UCLASS(config=Game)
 class AItTakesTwoCharacter : public ACharacter
@@ -71,9 +72,21 @@ class AItTakesTwoCharacter : public ACharacter
 	UInputAction* DashAction;
 	
 public:
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* DashMontage;
+	
 	AItTakesTwoCharacter();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Dash)
+	float DashLength = 100;
+	
 	ECharacterState CharacterState;
 	bool bCanDash = true;
+	bool bCanJump = true;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = LockOn)
+	bool bIsLockOnMode = false;
 
 protected:
 
@@ -85,7 +98,9 @@ protected:
 	
 	/** Called for Dash input */
 	void Dash(const FInputActionValue& Value);
-			
+
+	void CustomJump(const FInputActionValue& Value);
+	void CustomStopJumping();
 
 protected:
 	// APawn interface

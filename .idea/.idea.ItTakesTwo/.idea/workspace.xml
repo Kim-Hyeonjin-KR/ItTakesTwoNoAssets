@@ -15,12 +15,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Redis/RedisSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/Experimental/ConcurrentLinearAllocator.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
@@ -41,6 +43,10 @@
     <commands />
     <urls />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -49,23 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -199,12 +206,18 @@
       <workItem from="1768980948362" duration="5001000" />
       <workItem from="1768996635287" duration="2884000" />
       <workItem from="1769004533496" duration="5909000" />
+      <workItem from="1769070440558" duration="2529000" />
+      <workItem from="1769073495312" duration="2520000" />
+      <workItem from="1769078042154" duration="793000" />
+      <workItem from="1769082392704" duration="6189000" />
+      <workItem from="1769090740651" duration="25000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
