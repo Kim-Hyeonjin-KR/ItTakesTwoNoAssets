@@ -12,13 +12,38 @@
 #include "InputActionValue.h"
 #include "Animation/AnimMontage.h"
 #include "Animation/AnimInstance.h"
+#include "ItTakesTwo/Public/Character/CustomCharacterMovementComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
 //////////////////////////////////////////////////////////////////////////
 // AItTakesTwoCharacter
 
-AItTakesTwoCharacter::AItTakesTwoCharacter()
+
+void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherActor != nullptr && OtherActor->ActorHasTag(TEXT("Climbable")))
+	{
+		UE_LOG(LogTemp,Warning,TEXT("벽에 붙음"));
+		
+		WallNormal = SweepResult.ImpactNormal;
+		CharacterState |= ECharacterState::Climbing;
+		SetMappingContext();
+	}
+	
+}
+
+void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	UE_LOG(LogTemp,Warning,TEXT("벽에서 떨어짐"));
+	CharacterState &= ~ECharacterState::Climbing;
+	SetMappingContext();
+}
+
+AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer)
+	:Super(ObjectInitializer.SetDefaultSubobjectClass<UCustomCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -58,8 +83,15 @@ AItTakesTwoCharacter::AItTakesTwoCharacter()
 
 void AItTakesTwoCharacter::BeginPlay()
 {
-	// Call the base class  
+	// Call the base class
 	Super::BeginPlay();
+	
+	if (GetCapsuleComponent() != nullptr)
+	{
+		GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AItTakesTwoCharacter::OnClimbableWallDetectionOverlap);
+		GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AItTakesTwoCharacter::OnClimbableWallDetectionEnd);
+	}
+	
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -70,9 +102,10 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	// Add Input Mapping Context
 	if (APlayerController* PlayerController = Cast<APlayerController>(GetController()))
 	{
-		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+		EnhancedInputSubsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer());
+		if (EnhancedInputSubsystem != nullptr)
 		{
-			Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			EnhancedInputSubsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
 	
@@ -91,10 +124,47 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		
 		// Dash
 		EnhancedInputComponent->BindAction(DashAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Dash);
+		
+		// Climbing
+		EnhancedInputComponent->BindAction(ClimbingAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Climb);
+		
+		// InterAction
+		EnhancedInputComponent->BindAction(InterAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::CustomInterAction);
+		
+		// Crouch
+		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::CustomCrouch);
 	}
 	else
 	{
 		UE_LOG(LogTemplateCharacter, Error, TEXT("'%s' Failed to find an Enhanced Input component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
+	}
+}
+
+void AItTakesTwoCharacter::SetMappingContext()
+{
+	EnhancedInputSubsystem->ClearAllMappings();
+	
+	if (EnumHasAnyFlags(CharacterState,ECharacterState::Climbing))
+	{
+		//벽타기 매핑 컨텍스트 추가
+		EnhancedInputSubsystem->AddMappingContext(ClimbingMappingContext, 0);
+		GetCharacterMovement()->SetMovementMode(MOVE_Custom);
+		GetCharacterMovement()->GravityScale = 0.0f;
+	}
+	else if (EnumHasAnyFlags(CharacterState,ECharacterState::Flying))
+	{
+		//비행 매핑 컨텍스트 추가
+	}
+	else if (EnumHasAnyFlags(CharacterState,ECharacterState::Swimming))
+	{
+		//수영 매핑 컨텍스트 추가
+	}
+	else
+	{
+		//기본 매핑 컨텍스트
+		EnhancedInputSubsystem->AddMappingContext(DefaultMappingContext, 0);
+		GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		GetCharacterMovement()->GravityScale = 1.0f;
 	}
 }
 
@@ -118,6 +188,8 @@ void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
+		
+		
 	}
 }
 
@@ -140,6 +212,7 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 	{
 		PlayAnimMontage(DashMontage);
 		
+		/*
 		FVector CurrentLocation = GetActorLocation();
 		FRotator CurrentRotation = Controller->GetControlRotation();
 		CurrentRotation.Roll = 0;
@@ -147,7 +220,7 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 		FVector HorizontalForwardVector = FRotationMatrix(CurrentRotation).GetUnitAxis(EAxis::X);
 		
 		FVector TargetLocation = CurrentLocation + HorizontalForwardVector * DashLength;
-		
+		*/
 		
 		/*
 		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
@@ -168,13 +241,80 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
 {
+	UE_LOG(LogTemp,Warning, TEXT("%s"),bCanJump ? TEXT("true") : TEXT("false"));
 	if (bCanJump)
 	{
-		ACharacter::Jump();
+		Super::Jump();
 	}
 }
 
 void AItTakesTwoCharacter::CustomStopJumping()
 {
+	
 	Super::StopJumping();
+}
+
+void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
+{
+	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
+	
+	//잡기
+	//누르기
+	//들기
+
+	//이벤트 보드로 캐스트해서 인터페이스 있는지 확인. 인터페이스는 3종
+	
+	
+	
+}
+
+void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
+{
+	UE_LOG(LogTemp,Warning,TEXT("CustomCrouch"));
+	
+}
+
+void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
+{
+	// input is a Vector2D
+	FVector2D MovementVector = Value.Get<FVector2D>();
+
+	if (Controller != nullptr)
+	{
+		FVector UpVector = GetActorUpVector();
+		
+		FVector WallRight = FVector::CrossProduct(WallNormal, UpVector).GetSafeNormal();
+		FVector WallUp = FVector::CrossProduct(WallRight, WallNormal).GetSafeNormal();
+		
+		// add movement 
+		AddMovementInput(WallUp, MovementVector.Y);
+		AddMovementInput(WallRight, MovementVector.X);
+		
+		float CharacterRadius, CharacterHalfHeight;
+		
+		GetCapsuleComponent()->GetScaledCapsuleSize(CharacterRadius, CharacterHalfHeight);
+		FVector ForwardCheckStart = GetActorLocation() + (UpVector * CharacterHalfHeight + 5);
+		FVector ForwardCheckEnd = ForwardCheckStart + (GetActorForwardVector() * CharacterRadius * 2);
+		FHitResult ForwardHit;
+		FCollisionQueryParams Params;
+		
+		if (false == GetWorld()->LineTraceSingleByChannel(ForwardHit, ForwardCheckStart, ForwardCheckEnd, ECC_Visibility, Params))
+		{
+			DrawDebugLine(GetWorld(), ForwardCheckStart, ForwardCheckEnd, FColor::Blue, false, 10.0f);
+			
+			FHitResult DownHit;
+			
+			FVector HeightCheckStart = ForwardCheckEnd - (GetActorUpVector() * 10);
+			FVector HeightCheckEnd = ForwardCheckEnd + (GetActorUpVector() * CharacterRadius * 2);
+			if (false == GetWorld()->LineTraceSingleByChannel(DownHit, HeightCheckStart, HeightCheckEnd, ECC_Visibility, Params))
+			{
+				DrawDebugLine(GetWorld(), HeightCheckStart, HeightCheckEnd, FColor::Green, false, 10.0f);
+				
+				UE_LOG(LogTemp,Warning, TEXT("올라가기 동작 실행 가능"));
+				//Play 올라가기 몽타
+				//SetActorLocation(ForwardCheckEnd);
+			}
+		}
+		
+	}
 }

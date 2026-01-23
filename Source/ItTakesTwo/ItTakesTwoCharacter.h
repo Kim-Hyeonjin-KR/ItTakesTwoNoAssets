@@ -12,6 +12,7 @@ class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class UEnhancedInputLocalPlayerSubsystem;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -24,6 +25,9 @@ enum class ECharacterState : uint32
 	Dash	    = 1 << 2,
 	Sprint		= 1 << 3,
 	Jump		= 1 << 4,
+	Climbing	= 1 << 5,
+	Flying		= 1 << 6,
+	Swimming	= 1 << 7,
 };
 ENUM_CLASS_FLAGS(ECharacterState)
 
@@ -55,6 +59,9 @@ class AItTakesTwoCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputMappingContext* DefaultMappingContext;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Climbing, meta = (AllowPrivateAccess = "true"))
+	UInputMappingContext* ClimbingMappingContext;
+	
 	/** Jump Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* JumpAction;
@@ -71,12 +78,35 @@ class AItTakesTwoCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* DashAction;
 	
+	/** InterAction Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* InterAction;
+	
+	/** Crouch Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* CrouchAction;
+	
+	/** Climbing Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ClimbingAction;
+	
+
+	
+	/** OnCapsuleHit Event */
+	UFUNCTION()
+	void OnClimbableWallDetectionOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
+								UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, 
+								bool bFromSweep, const FHitResult& SweepResult);
+	
+	UFUNCTION()
+	void OnClimbableWallDetectionEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+								UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* DashMontage;
 	
-	AItTakesTwoCharacter();
+	AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Dash)
 	float DashLength = 100;
@@ -88,6 +118,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = LockOn)
 	bool bIsLockOnMode = false;
 
+	//상태에 따른 매핑 컨텍스트 변경
+	void SetMappingContext();
+	
 protected:
 
 	/** Called for movement input */
@@ -101,6 +134,12 @@ protected:
 
 	void CustomJump(const FInputActionValue& Value);
 	void CustomStopJumping();
+	
+	void CustomInterAction(const FInputActionValue& Value);
+	
+	void CustomCrouch(const FInputActionValue& Value);
+	
+	void Climb(const FInputActionValue& Value);
 
 protected:
 	// APawn interface
@@ -114,5 +153,10 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+	
+private:
+	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
+	FVector WallNormal;
 };
+
 
