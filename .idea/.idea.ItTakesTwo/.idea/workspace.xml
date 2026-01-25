@@ -15,12 +15,197 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyTest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyTest.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyFaceAnim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_ActionMh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_ActionMh_to_Idle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_ExhaustedMh_to_Idle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Exhausted_Mh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Idle_to_Action.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Idle_to_Exhausted.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_ActionMh_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Bank_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Bank_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_ExhaustedMh_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_GoToStop.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_LookBackL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_LookBackR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Start_Fwd_Left_180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Start_Fwd_Right_180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Start_InMotion.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Start_InMotion_Var2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Stop_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Stop_Fwd_Action.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Stop_Fwd_Easy.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Stop_Fwd_Exhausted.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Bwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_Strafe_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Sprint.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_SprintTurnAround.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Sprint_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Sprint_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Sprint_Start_FromDash.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_Bwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_BwdL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_BwdR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_FwdL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_FwdR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_MH.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_TurnInPlace_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Strafe_TurnInPlace_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_ActionMh_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Bank_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Bank_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_ExhaustedMh_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Start_Fwd_Left_180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Start_Fwd_Right_180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Start_InMotion.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Walk_Start_InMotion_Var2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Locomotion_Walk.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Mh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/CodySprint.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/UntitledAnim_Anim_Cody_NailHolster_Cody_FacePoses.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/AnimSequence/UntitledAnim_Anim_Cody_NailHolster_Cody_FacePoses_001.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyMove.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/CodyLocoAnim2_fbx_Scene_Anim_Cody_NailHolster_Cody_Loco_Jog_ActionMh_Start_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montages/NewAnimMontage.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Bottom.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Detail.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Eye.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Head.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_HeadDetail.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Cody_Top.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/NailHolster.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Bottom_mat_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Bottom_mat_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Bottom_mat_C5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Bottom_mat_C6.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Cody_Eyes_BaseColor.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Detail_mat_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Detail_mat_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Detail_mat_C5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/HeadDetail_mat_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/HeadDetail_mat_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Head_mat_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Head_mat_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Head_mat_C5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/NailHolster/NailHolster_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/NailHolster/NailHolster_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Thread_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Thread_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Thread_C5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Top_mat_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Top_mat_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Textures/Top_mat_C6.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Thread.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ActionMh_to_Idle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh_to_Idle.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Action_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Bank_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Bank_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Exhausted_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_LookBackL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_LookBackR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Start_InMotion.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Start_InMotion_var2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Stop.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Stop_Action.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Stop_Easy.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Stop_Exhausted.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Turn_Left180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Jog_Turn_Right180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Sprint.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_SprintTurnAround.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Sprint_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Sprint_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Sprint_Start_FromDash.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_Bwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_BwdL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_BwdR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_FwdL.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_FwdR.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_L.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_MH.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_R.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_TurnInPlace_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Strafe_TurnInPlace_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Action_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Bank_Left.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Bank_Right.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Exhausted_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Fwd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Start.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Start_InMotion.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Start_InMotion_var2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Turn_Left180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_Loco_Walk_Turn_Right180.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_mh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_mh_to_Action.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/AnimSequence/Untitled_fbx_Scene_Anim_May_May_mh_to_Exhausted.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayMove.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_Dash.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Untitled_fbx_Scene_Anim_May_May_ExhaustedMh.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Eyes.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Hair.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Head.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Pants.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Parts.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Ropes.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Shirt.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Thread.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/May_Wood.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Eye.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Hair_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Hair_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Head_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Head_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Pants_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Pants_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Parts_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Parts_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Rope_Mask.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Ropes_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Ropes_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Shirt_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Shirt_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Thread_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Thread_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Thread_C5.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Wood_C1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Textures/May_Wood_C2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IA_Move.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IA_Move.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_ItTakesTwoPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_ItTakesTwoPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_GrabableWall.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/GF_ItTakesTwoGameMode.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/1S/0HDZWUFKRJYN7DLKG2EY1N.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/2U/OC8Y1CQL3ARDP6QA24DN3Q.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/6J/7WTC0WUUK1XTSAVMSVLXB7.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/H2/XAG7TDIM9E5X2DIYLNHX0K.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/AR/1U449WGBTJDJYHF5P4Q26C.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CustomCharacterMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CustomCharacterMovementComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,21 +216,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/AITestSuite/Classes/BehaviorTree/TestBTDecorator_CantExecute.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/BlueprintGraph/Private/K2Node_CallFunction.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/BlueprintGraph/Private/K2Node_Variable.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/SequencerCore/Public/MVVM/CastableTypeTable.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/AnimGraphRuntime/Private/BoneControllers/AnimNode_BoneDrivenController.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/AI/Navigation/NavigationTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/World.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/NavMovementComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/PrimitiveComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Public/CharacterMovementComponentAsync.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Horde/Accounts/AccountMessages.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Redis/RedisSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/Experimental/ConcurrentLinearAllocator.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
@@ -70,6 +244,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-OutOfSyncConnection&quot;: &quot;Unreal 에디터 연결이 동기화 해제됨&quot;,
+    &quot;Notification.DoNotAsk-OutOfSyncConnection&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -225,6 +401,10 @@
       <workItem from="1769090740651" duration="25000" />
       <workItem from="1769127820546" duration="14851000" />
       <workItem from="1769143956251" duration="14036000" />
+      <workItem from="1769249858743" duration="1245000" />
+      <workItem from="1769343792322" duration="773000" />
+      <workItem from="1769347876183" duration="89000" />
+      <workItem from="1769348013898" duration="1125000" />
     </task>
     <servers />
   </component>

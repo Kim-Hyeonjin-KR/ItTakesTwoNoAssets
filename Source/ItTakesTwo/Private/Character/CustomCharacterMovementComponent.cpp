@@ -14,6 +14,8 @@ void UCustomCharacterMovementComponent::PhysCustom(float deltaTime, int32 Iterat
 		
 		PhysFlying(deltaTime, Iterations);
 	}
+	
+	Super::PhysCustom(deltaTime, Iterations);
 }
 
 void UCustomCharacterMovementComponent::OnMovementModeChanged(EMovementMode PreviousMovementMode,
