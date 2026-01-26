@@ -28,7 +28,7 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 		UE_LOG(LogTemp,Warning,TEXT("벽에 붙음"));
 		
 		WallNormal = SweepResult.ImpactNormal;
-		CharacterState |= ECharacterState::Climbing;
+		CurrentMovementModeState |= EMovementState::Climbing;
 		SetMappingContext();
 	}
 	
@@ -38,7 +38,7 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* Over
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	UE_LOG(LogTemp,Warning,TEXT("벽에서 떨어짐"));
-	CharacterState &= ~ECharacterState::Climbing;
+	CurrentMovementModeState &= ~EMovementState::Climbing;
 	SetMappingContext();
 }
 
@@ -79,6 +79,11 @@ AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectIniti
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+}
+
+int32 AItTakesTwoCharacter::GetCurrentMovementStateFlag()
+{
+	return static_cast<int32>(CurrentMovementModeState);
 }
 
 void AItTakesTwoCharacter::BeginPlay()
@@ -144,18 +149,18 @@ void AItTakesTwoCharacter::SetMappingContext()
 {
 	EnhancedInputSubsystem->ClearAllMappings();
 	
-	if (EnumHasAnyFlags(CharacterState,ECharacterState::Climbing))
+	if (EnumHasAnyFlags(CurrentMovementModeState,EMovementState::Climbing))
 	{
 		//벽타기 매핑 컨텍스트 추가
 		EnhancedInputSubsystem->AddMappingContext(ClimbingMappingContext, 0);
 		GetCharacterMovement()->SetMovementMode(MOVE_Custom);
 		GetCharacterMovement()->GravityScale = 0.0f;
 	}
-	else if (EnumHasAnyFlags(CharacterState,ECharacterState::Flying))
+	else if (EnumHasAnyFlags(CurrentMovementModeState,EMovementState::Flying))
 	{
 		//비행 매핑 컨텍스트 추가
 	}
-	else if (EnumHasAnyFlags(CharacterState,ECharacterState::Swimming))
+	else if (EnumHasAnyFlags(CurrentMovementModeState,EMovementState::Swimming))
 	{
 		//수영 매핑 컨텍스트 추가
 	}
@@ -170,6 +175,7 @@ void AItTakesTwoCharacter::SetMappingContext()
 
 void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 {
+	
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 
@@ -185,10 +191,13 @@ void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 		// get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		// add movement 
-		AddMovementInput(ForwardDirection, MovementVector.Y);
-		AddMovementInput(RightDirection, MovementVector.X);
 		
+		if (!IsPlayingRootMotion())
+		{
+			// add movement 
+			AddMovementInput(ForwardDirection, MovementVector.Y);
+			AddMovementInput(RightDirection, MovementVector.X);
+		}
 		
 	}
 }
@@ -276,6 +285,8 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 {
+	
+	
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 

@@ -16,11 +16,11 @@ class UEnhancedInputLocalPlayerSubsystem;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
-
-enum class ECharacterState : uint32
+UENUM(BlueprintType, meta = (Bitflags, UseEnumValuesAsMaskValuesInEditor = "true"))
+enum class EMovementState : uint8
 {
 	None		= 0,
-	Idle		= 1 << 0,
+	Crouch		= 1 << 0,
 	Walk		= 1 << 1,
 	Dash	    = 1 << 2,
 	Sprint		= 1 << 3,
@@ -29,7 +29,7 @@ enum class ECharacterState : uint32
 	Flying		= 1 << 6,
 	Swimming	= 1 << 7,
 };
-ENUM_CLASS_FLAGS(ECharacterState)
+ENUM_CLASS_FLAGS(EMovementState)
 
 /*
 UENUM()
@@ -90,7 +90,6 @@ class AItTakesTwoCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ClimbingAction;
 	
-
 	
 	/** OnCapsuleHit Event */
 	UFUNCTION()
@@ -111,7 +110,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Dash)
 	float DashLength = 100;
 	
-	ECharacterState CharacterState;
+	UFUNCTION(BlueprintCallable, Category = "MovementState")
+	int32 GetCurrentMovementStateFlag();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = MovementState)
+	EMovementState CurrentMovementModeState;
+	
 	bool bCanDash = true;
 	bool bCanJump = true;
 	

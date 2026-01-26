@@ -11,7 +11,7 @@ void UANSInvincibility::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSeque
 	AItTakesTwoCharacter* Player = Cast<AItTakesTwoCharacter>(MeshComp->GetOwner());
 	if (Player != nullptr)
 	{
-		Player->CharacterState |= ECharacterState::Dash;
+		Player->CurrentMovementModeState |= EMovementState::Dash;
 		Player->bCanDash = false;
 		DashLength = Player->DashLength;
 		
@@ -53,7 +53,7 @@ void UANSInvincibility::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenc
 	
 	if (Player != nullptr)
 	{
-		Player->CharacterState &= ~ECharacterState::Dash;
+		Player->CurrentMovementModeState &= ~EMovementState::Dash;
 		Player->bCanDash = true;
 		
 		Player->GetController()->SetIgnoreMoveInput(false);
