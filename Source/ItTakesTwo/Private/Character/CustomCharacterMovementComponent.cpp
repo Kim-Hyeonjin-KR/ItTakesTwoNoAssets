@@ -44,9 +44,6 @@ void UCustomCharacterMovementComponent::OnMovementModeChanged(EMovementMode Prev
 		Acceleration = FVector::ZeroVector;
 		UpdateComponentVelocity();
 		StopMovementImmediately();
-		
-		
-		
 	}
 	else if (PreviousMovementMode == MOVE_Custom && PreviousCustomMode == CMOVE_Climbing)
 	{

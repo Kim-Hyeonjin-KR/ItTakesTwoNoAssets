@@ -42,6 +42,14 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* Over
 	SetMappingContext();
 }
 
+void AItTakesTwoCharacter::OnClimbUpMontaEnded(UAnimMontage* Montage, bool bInterrupted)
+{
+	bIgnoreInput = false;
+	
+	GetController()->SetIgnoreMoveInput(false);
+	UE_LOG(LogTemp,Warning,TEXT("몽타주 재생 취소됨!"));
+}
+
 AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer.SetDefaultSubobjectClass<UCustomCharacterMovementComponent>(ACharacter::CharacterMovementComponentName))
 {
@@ -91,10 +99,59 @@ void AItTakesTwoCharacter::BeginPlay()
 	// Call the base class
 	Super::BeginPlay();
 	
+	AnimInst = GetMesh()->GetAnimInstance();
+	
 	if (GetCapsuleComponent() != nullptr)
 	{
 		GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AItTakesTwoCharacter::OnClimbableWallDetectionOverlap);
 		GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AItTakesTwoCharacter::OnClimbableWallDetectionEnd);
+	}
+	
+	if (ClimbUpMonta != nullptr)
+	{
+		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnClimbUpMontaEnded);
+	}
+}
+
+void AItTakesTwoCharacter::TryClimbUp()
+{
+	float CharacterRadius, CharacterHalfHeight;
+	
+	GetCapsuleComponent()->GetScaledCapsuleSize(CharacterRadius, CharacterHalfHeight);
+	FVector ForwardCheckStart = GetActorLocation() + ( GetActorUpVector() * CharacterHalfHeight + 5);
+	FVector ForwardCheckEnd = ForwardCheckStart + (GetActorForwardVector() * CharacterRadius * 2);
+	FHitResult ForwardHit;
+	FCollisionQueryParams Params;
+		
+	if (false == GetWorld()->LineTraceSingleByChannel(ForwardHit, ForwardCheckStart, ForwardCheckEnd, ECC_Visibility, Params))
+	{
+		DrawDebugLine(GetWorld(), ForwardCheckStart, ForwardCheckEnd, FColor::Blue, false, 10.0f);
+			
+		FHitResult DownHit;
+			
+		FVector HeightCheckStart = ForwardCheckEnd - (GetActorUpVector() * 10);
+		FVector HeightCheckEnd = ForwardCheckEnd + (GetActorUpVector() * CharacterRadius * 2);
+		if (false == GetWorld()->LineTraceSingleByChannel(DownHit, HeightCheckStart, HeightCheckEnd, ECC_Visibility, Params))
+		{
+			DrawDebugLine(GetWorld(), HeightCheckStart, HeightCheckEnd, FColor::Green, false, 10.0f);
+				
+			UE_LOG(LogTemp,Warning, TEXT("올라가기 동작 실행 가능"));
+			if (ClimbUpMonta)
+			{
+				GetController()->SetIgnoreMoveInput(true);
+				bIgnoreInput = true;
+				
+				InputMovementVector = FVector2D::ZeroVector;
+				
+				AnimInst->Montage_Play(ClimbUpMonta);
+				AnimInst->Montage_SetEndDelegate(MontageEndedDelegate, ClimbUpMonta);
+				// MontageEndedDelegate->BindUFunction(); // 블루프린트에서 만든 함수를 쓸 때 사용. 문자열 기반으로 찾는거라 느림.
+			}
+			else
+			{
+				UE_LOG(LogTemp,Warning, TEXT("Can't Find ClimbUp Monta"));
+			}
+		}
 	}
 	
 }
@@ -123,7 +180,9 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Move);
-
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &AItTakesTwoCharacter::StopMove);
+		
+		
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Look);
 		
@@ -145,9 +204,25 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	}
 }
 
+void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
+{
+	bIsLockOnMode = bLockOn;
+	if (bIsLockOnMode)
+	{
+		GetCharacterMovement()->bOrientRotationToMovement = false;
+		AnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromEverything);
+	}
+	else
+	{
+		GetCharacterMovement()->bOrientRotationToMovement = true;
+		AnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromMontagesOnly);
+	}
+}
+
 void AItTakesTwoCharacter::SetMappingContext()
 {
 	EnhancedInputSubsystem->ClearAllMappings();
+	
 	
 	if (EnumHasAnyFlags(CurrentMovementModeState,EMovementState::Climbing))
 	{
@@ -175,9 +250,8 @@ void AItTakesTwoCharacter::SetMappingContext()
 
 void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 {
-	
 	// input is a Vector2D
-	FVector2D MovementVector = Value.Get<FVector2D>();
+	InputMovementVector = Value.Get<FVector2D>();
 
 	if (Controller != nullptr)
 	{
@@ -190,16 +264,21 @@ void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 	
 		// get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-
 		
-		if (!IsPlayingRootMotion())
+		
+		if (AnimInst->RootMotionMode != ERootMotionMode::Type::RootMotionFromEverything)
 		{
 			// add movement 
-			AddMovementInput(ForwardDirection, MovementVector.Y);
-			AddMovementInput(RightDirection, MovementVector.X);
+			AddMovementInput(ForwardDirection, InputMovementVector.Y);
+			AddMovementInput(RightDirection, InputMovementVector.X);
 		}
 		
 	}
+}
+
+void AItTakesTwoCharacter::StopMove()
+{
+	InputMovementVector = FVector2D::ZeroVector;
 }
 
 void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
@@ -217,8 +296,19 @@ void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 {
+	if (bIgnoreInput)
+	{
+		return;
+	}
+	
 	if (bCanDash && DashMontage)
 	{
+		FVector InputVector3d = FVector(InputMovementVector.Y, InputMovementVector.X, 0.0f);
+		//UE_LOG(LogTemp,Warning, TEXT("X %f Y %f Z %f"),InputVector3d.X, InputVector3d.Y, InputVector3d.Z);
+		FRotator InputDirection = InputVector3d.Rotation();
+		//UE_LOG(LogTemp,Warning, TEXT("Yaw %f Pitch %f Roll %f"),InputDirection.Yaw, InputDirection.Pitch, InputDirection.Roll);
+
+		AddActorLocalRotation(InputDirection);
 		PlayAnimMontage(DashMontage);
 		
 		/*
@@ -250,6 +340,11 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
 {
+	if (bIgnoreInput)
+	{
+		return;
+	}
+	
 	UE_LOG(LogTemp,Warning, TEXT("%s"),bCanJump ? TEXT("true") : TEXT("false"));
 	if (bCanJump)
 	{
@@ -265,6 +360,11 @@ void AItTakesTwoCharacter::CustomStopJumping()
 
 void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 {
+	if (bIgnoreInput)
+	{
+		return;
+	}
+	
 	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
 	
 	//잡기
@@ -279,13 +379,21 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 {
+	if (bIgnoreInput)
+	{
+		return;
+	}
+	
 	UE_LOG(LogTemp,Warning,TEXT("CustomCrouch"));
 	
 }
 
 void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 {
-	
+	if (bIgnoreInput)
+	{
+		return;
+	}
 	
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
@@ -301,31 +409,9 @@ void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 		AddMovementInput(WallUp, MovementVector.Y);
 		AddMovementInput(WallRight, MovementVector.X);
 		
-		float CharacterRadius, CharacterHalfHeight;
-		
-		GetCapsuleComponent()->GetScaledCapsuleSize(CharacterRadius, CharacterHalfHeight);
-		FVector ForwardCheckStart = GetActorLocation() + (UpVector * CharacterHalfHeight + 5);
-		FVector ForwardCheckEnd = ForwardCheckStart + (GetActorForwardVector() * CharacterRadius * 2);
-		FHitResult ForwardHit;
-		FCollisionQueryParams Params;
-		
-		if (false == GetWorld()->LineTraceSingleByChannel(ForwardHit, ForwardCheckStart, ForwardCheckEnd, ECC_Visibility, Params))
+		if (MovementVector.Y > 0)
 		{
-			DrawDebugLine(GetWorld(), ForwardCheckStart, ForwardCheckEnd, FColor::Blue, false, 10.0f);
-			
-			FHitResult DownHit;
-			
-			FVector HeightCheckStart = ForwardCheckEnd - (GetActorUpVector() * 10);
-			FVector HeightCheckEnd = ForwardCheckEnd + (GetActorUpVector() * CharacterRadius * 2);
-			if (false == GetWorld()->LineTraceSingleByChannel(DownHit, HeightCheckStart, HeightCheckEnd, ECC_Visibility, Params))
-			{
-				DrawDebugLine(GetWorld(), HeightCheckStart, HeightCheckEnd, FColor::Green, false, 10.0f);
-				
-				UE_LOG(LogTemp,Warning, TEXT("올라가기 동작 실행 가능"));
-				//Play 올라가기 몽타
-				//SetActorLocation(ForwardCheckEnd);
-			}
+			TryClimbUp();
 		}
-		
 	}
 }

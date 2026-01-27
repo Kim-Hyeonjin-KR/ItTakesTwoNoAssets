@@ -41,6 +41,7 @@ enum ECharacterActionType : uint8
 */
 
 class UAnimMontage;
+class UAnimInstance;
 
 UCLASS(config=Game)
 class AItTakesTwoCharacter : public ACharacter
@@ -89,6 +90,9 @@ class AItTakesTwoCharacter : public ACharacter
 	/** Climbing Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ClimbingAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
+	UAnimMontage* ClimbUpMonta;
 	
 	
 	/** OnCapsuleHit Event */
@@ -105,6 +109,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* DashMontage;
 	
+	UFUNCTION()
+	void OnClimbUpMontaEnded(UAnimMontage* Montage, bool bInterrupted);
+	
 	AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer);
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Dash)
@@ -119,16 +126,25 @@ public:
 	bool bCanDash = true;
 	bool bCanJump = true;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = LockOn)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = LockOn)
 	bool bIsLockOnMode = false;
 
+	UFUNCTION(BlueprintCallable, Category = LockOn)
+	void SetLockOnMode(bool bLockOn);
+	
 	//상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	FVector2D InputMovementVector;
+	
+	
 	
 protected:
 
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
+	void StopMove();
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
@@ -159,8 +175,12 @@ public:
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	
 private:
+	void TryClimbUp();
+	bool bIgnoreInput;
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
 	FVector WallNormal;
+	UAnimInstance* AnimInst;
+	FOnMontageEnded MontageEndedDelegate;
 };
 
 
