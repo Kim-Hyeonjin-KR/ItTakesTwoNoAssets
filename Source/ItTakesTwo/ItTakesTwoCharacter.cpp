@@ -27,6 +27,9 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 	{
 		UE_LOG(LogTemp,Warning,TEXT("벽에 붙음"));
 		
+		FVector OppositeVector = OtherActor->GetActorForwardVector() * -1;
+		SetActorRotation(OppositeVector.Rotation());
+		
 		WallNormal = SweepResult.ImpactNormal;
 		CurrentMovementModeState |= EMovementState::Climbing;
 		SetMappingContext();
@@ -383,9 +386,29 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 	{
 		return;
 	}
-	
 	UE_LOG(LogTemp,Warning,TEXT("CustomCrouch"));
 	
+	if (GetMovementComponent() != nullptr)
+	{
+		if (GetMovementComponent()->IsFalling())
+		{
+			//PlayAnimMontage(내려찍기 몽타);
+			//bIgnoreInput = true;
+			//내려찍기 끝나면 다시 풀어주기
+			UE_LOG(LogTemp,Warning,TEXT("내려찍기!"));
+			return;
+		}
+	}
+	
+	
+	if (EnumHasAnyFlags(CurrentMovementModeState, EMovementState::Crouch))
+	{
+		CurrentMovementModeState &= ~EMovementState::Crouch;
+	}
+	else
+	{
+		CurrentMovementModeState |= EMovementState::Crouch;
+	}
 }
 
 void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
