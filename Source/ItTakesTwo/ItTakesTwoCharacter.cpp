@@ -12,6 +12,9 @@
 #include "InputActionValue.h"
 #include "Animation/AnimMontage.h"
 #include "Animation/AnimInstance.h"
+#include "Component/GrabInterActionComponent.h"
+#include "Component/HammerWeaponComponent.h"
+#include "Component/NailWeaponComponent.h"
 #include "ItTakesTwo/Public/Character/CustomCharacterMovementComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
@@ -88,6 +91,12 @@ AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectIniti
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+	// 커스텀 컴포넌트 부착
+	GrabInterActionComponent = CreateDefaultSubobject<UGrabInterActionComponent>(TEXT("GrabInterAction"));
+	HammerWeaponComponent = CreateDefaultSubobject<UHammerWeaponComponent>(TEXT("HammerWeapon"));
+	NailWeaponComponent = CreateDefaultSubobject<UNailWeaponComponent>(TEXT("NailWeapon"));
+	
+	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -379,6 +388,7 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 	
 	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
 	
+	GrabInterActionComponent->TestFunction();
 	
 	//잡기
 	//누르기

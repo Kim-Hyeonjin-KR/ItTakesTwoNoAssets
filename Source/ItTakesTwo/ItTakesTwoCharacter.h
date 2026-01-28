@@ -14,6 +14,8 @@ class UInputAction;
 struct FInputActionValue;
 class UEnhancedInputLocalPlayerSubsystem;
 class UGrabInterActionComponent;
+class UHammerWeaponComponent;
+class UNailWeaponComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -139,6 +141,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	FVector2D InputMovementVector;
 	
+	//커스텀 컴포넌트
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
+	UGrabInterActionComponent* GrabInterActionComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
+	UHammerWeaponComponent* HammerWeaponComponent;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
+	UNailWeaponComponent* NailWeaponComponent;
 	
 	
 protected:
