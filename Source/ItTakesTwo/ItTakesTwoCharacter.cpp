@@ -50,7 +50,7 @@ void AItTakesTwoCharacter::OnClimbUpMontaEnded(UAnimMontage* Montage, bool bInte
 	bIgnoreInput = false;
 	
 	GetController()->SetIgnoreMoveInput(false);
-	UE_LOG(LogTemp,Warning,TEXT("몽타주 재생 취소됨!"));
+	UE_LOG(LogTemp,Warning,TEXT("몽타주 재생 종료됨!"));
 }
 
 AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer)
@@ -121,8 +121,13 @@ void AItTakesTwoCharacter::TryClimbUp()
 	float CharacterRadius, CharacterHalfHeight;
 	
 	GetCapsuleComponent()->GetScaledCapsuleSize(CharacterRadius, CharacterHalfHeight);
-	FVector ForwardCheckStart = GetActorLocation() + ( GetActorUpVector() * CharacterHalfHeight + 5);
+	FVector ForwardCheckStart = GetActorLocation() + ( GetActorUpVector() * CharacterHalfHeight - 10);
+	
 	FVector ForwardCheckEnd = ForwardCheckStart + (GetActorForwardVector() * CharacterRadius * 2);
+	
+	UE_LOG(LogTemp, Warning, TEXT("오르기 시작 거리 : %f"), ForwardCheckEnd.Y - ForwardCheckStart.Y);
+	
+	
 	FHitResult ForwardHit;
 	FCollisionQueryParams Params;
 		
@@ -134,6 +139,10 @@ void AItTakesTwoCharacter::TryClimbUp()
 			
 		FVector HeightCheckStart = ForwardCheckEnd - (GetActorUpVector() * 10);
 		FVector HeightCheckEnd = ForwardCheckEnd + (GetActorUpVector() * CharacterRadius * 2);
+		
+	UE_LOG(LogTemp, Warning, TEXT("오르기 여유 높이 : %f"), HeightCheckEnd.Y - HeightCheckStart.Y);
+		
+		
 		if (false == GetWorld()->LineTraceSingleByChannel(DownHit, HeightCheckStart, HeightCheckEnd, ECC_Visibility, Params))
 		{
 			DrawDebugLine(GetWorld(), HeightCheckStart, HeightCheckEnd, FColor::Green, false, 10.0f);
@@ -369,6 +378,7 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 	}
 	
 	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
+	
 	
 	//잡기
 	//누르기
