@@ -16,16 +16,8 @@
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyClimbMove.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyCrouch.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyJogMove.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyStrafeMove.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyClimbUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyDash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayClimbMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayClimbMove.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/Z2/DDSHX11NGHGZU398ERSJ5T.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/Z2/DDSHX11NGHGZU398ERSJ5T.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
     </list>
@@ -38,36 +30,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/ChaosClothAssetEditor/Source/ChaosClothAssetDataflowNodes/Private/ChaosClothAsset/AddWeightMapNode.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/Enterprise/DatasmithC4DImporter/Source/DatasmithC4DTranslator/Private/DatasmithC4DMelangeSDKOverload.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/ShaderCompilerCommon/Private/ISAParser/QuadModeDetect.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/ShaderCompilerCommon/Private/ISAParser/RDNA1_ISA.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/ShaderCompilerCommon/Private/ISAParser/RDNA2_ISA.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/WidgetRegistration/Private/ToolkitBuilder.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/AddContentDialog/AddContentDialog.Build.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/AddContentDialog/Private/AddContentDialogModule.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/AnimGraph/Private/AnimBlueprintExtension_LinkedAnimGraph.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/PropertyEditor/Public/NumericPropertyParams.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/UnrealEd/Private/Tools/EditorComponentSourceFactory.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/UnrealEd/Public/SCurveEditor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/HAL/AllowTCHAR.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/String/FormatStringSan.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Animation/AnimEnums.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/World.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/DefaultPawn.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Private/InstancedStaticMesh/ISMInstanceDataManager.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Public/EngineDefines.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Redis/RedisSerializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/Experimental/ConcurrentLinearAllocator.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/Developer/RiderLink/Source/RD/thirdparty/variant/include/mpark/lib.hpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ItTakesTwoPlayerAnimInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ItTakesTwoPlayerAnimInstance.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/CustomGameFramework/GFPlayerState.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -264,6 +236,7 @@
       <workItem from="1769588027059" duration="1224000" />
       <workItem from="1769647811511" duration="5683000" />
       <workItem from="1769665433734" duration="5352000" />
+      <workItem from="1769715141247" duration="6324000" />
     </task>
     <servers />
   </component>

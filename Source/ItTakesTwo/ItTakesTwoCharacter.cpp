@@ -10,6 +10,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Anim/ItTakesTwoPlayerAnimInstance.h"
 #include "Animation/AnimMontage.h"
 #include "Animation/AnimInstance.h"
 #include "Component/GrabInterActionComponent.h"
@@ -111,7 +112,11 @@ void AItTakesTwoCharacter::BeginPlay()
 	// Call the base class
 	Super::BeginPlay();
 	
-	AnimInst = GetMesh()->GetAnimInstance();
+	AnimInst = Cast<UItTakesTwoPlayerAnimInstance>(GetMesh()->GetAnimInstance());
+	if (AnimInst != nullptr)
+	{
+		AnimInst->OnLinkAnimClassLayers(EPickUpItemType::None);
+	}
 	
 	if (GetCapsuleComponent() != nullptr)
 	{
@@ -123,6 +128,7 @@ void AItTakesTwoCharacter::BeginPlay()
 	{
 		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnClimbUpMontaEnded);
 	}
+	
 }
 
 void AItTakesTwoCharacter::TryClimbUp()
@@ -336,11 +342,20 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 		
-		FVector DashDirection = ForwardDirection * InputMovementVector.Y + RightDirection * InputMovementVector.X;
+		FVector DashDirection;
+		
+		if (InputMovementVector.IsNearlyZero())
+		{
+			SetActorRotation(YawRotation);
+		}
+		else
+		{
+			DashDirection = ForwardDirection * InputMovementVector.Y + RightDirection * InputMovementVector.X;
+			SetActorRotation(DashDirection.Rotation());
+		}
 
 		UE_LOG(LogTemp,Warning, TEXT("%f %f"),DashDirection.X, DashDirection.Y);
 		
-		SetActorRotation(DashDirection.Rotation());
 		PlayAnimMontage(DashMontage);
 		
 		

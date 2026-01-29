@@ -53,6 +53,7 @@ enum ECharacterActionType : uint8
 
 class UAnimMontage;
 class UAnimInstance;
+class UItTakesTwoPlayerAnimInstance;
 
 UCLASS(config=Game)
 class AItTakesTwoCharacter : public ACharacter
@@ -153,6 +154,7 @@ public:
 	//상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();
 	
+	//플레이어 방향키 입력
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	FVector2D InputMovementVector;
 	
@@ -206,7 +208,7 @@ private:
 	bool bIgnoreInput;
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
 	FVector WallNormal;
-	UAnimInstance* AnimInst;
+	UItTakesTwoPlayerAnimInstance* AnimInst;
 	FOnMontageEnded MontageEndedDelegate;
 };
 
