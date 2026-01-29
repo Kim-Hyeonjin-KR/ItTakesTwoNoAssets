@@ -212,6 +212,7 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		
 		// Climbing
 		EnhancedInputComponent->BindAction(ClimbingAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Climb);
+		EnhancedInputComponent->BindAction(ClimbingAction, ETriggerEvent::Completed, this, &AItTakesTwoCharacter::StopMove);
 		
 		// InterAction
 		EnhancedInputComponent->BindAction(InterAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::CustomInterAction);
@@ -238,6 +239,11 @@ void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
 		GetCharacterMovement()->bOrientRotationToMovement = true;
 		AnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromMontagesOnly);
 	}
+}
+
+void AItTakesTwoCharacter::SetPickUpItemType(EPickUpItemType Type)
+{
+	PickUpItem = Type;
 }
 
 void AItTakesTwoCharacter::SetMappingContext()
@@ -273,7 +279,7 @@ void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	InputMovementVector = Value.Get<FVector2D>();
-
+	
 	if (Controller != nullptr)
 	{
 		// find out which way is forward
@@ -324,13 +330,19 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 	
 	if (bCanDash && DashMontage)
 	{
-		FVector InputVector3d = FVector(InputMovementVector.Y, InputMovementVector.X, 0.0f);
-		//UE_LOG(LogTemp,Warning, TEXT("X %f Y %f Z %f"),InputVector3d.X, InputVector3d.Y, InputVector3d.Z);
-		FRotator InputDirection = InputVector3d.Rotation();
-		//UE_LOG(LogTemp,Warning, TEXT("Yaw %f Pitch %f Roll %f"),InputDirection.Yaw, InputDirection.Pitch, InputDirection.Roll);
+		const FRotator ControlRotation = GetControlRotation();
+		const FRotator YawRotation(0, ControlRotation.Yaw, 0);
+		
+		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+		
+		FVector DashDirection = ForwardDirection * InputMovementVector.Y + RightDirection * InputMovementVector.X;
 
-		AddActorLocalRotation(InputDirection);
+		UE_LOG(LogTemp,Warning, TEXT("%f %f"),DashDirection.X, DashDirection.Y);
+		
+		SetActorRotation(DashDirection.Rotation());
 		PlayAnimMontage(DashMontage);
+		
 		
 		/*
 		FVector CurrentLocation = GetActorLocation();
@@ -356,7 +368,6 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 		UE_LOG(LogTemp,Warning, TEXT("Can't Dash"));
 	}
 	
-	UE_LOG(LogTemp,Warning, TEXT("Dash value is now %f"), (GetActorForwardVector() * 1000).Length());
 }
 
 void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
@@ -439,7 +450,7 @@ void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 	}
 	
 	// input is a Vector2D
-	FVector2D MovementVector = Value.Get<FVector2D>();
+	InputMovementVector = Value.Get<FVector2D>();
 
 	if (Controller != nullptr)
 	{
@@ -449,10 +460,10 @@ void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 		FVector WallUp = FVector::CrossProduct(WallRight, WallNormal).GetSafeNormal();
 		
 		// add movement 
-		AddMovementInput(WallUp, MovementVector.Y);
-		AddMovementInput(WallRight, MovementVector.X);
+		AddMovementInput(WallUp, InputMovementVector.Y);
+		AddMovementInput(WallRight, InputMovementVector.X);
 		
-		if (MovementVector.Y > 0)
+		if (InputMovementVector.Y > 0)
 		{
 			TryClimbUp();
 		}

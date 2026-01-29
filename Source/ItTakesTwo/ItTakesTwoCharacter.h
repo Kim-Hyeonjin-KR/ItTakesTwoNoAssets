@@ -34,6 +34,14 @@ enum class EMovementState : uint8
 };
 ENUM_CLASS_FLAGS(EMovementState)
 
+UENUM(BlueprintType)
+enum class EPickUpItemType : uint8
+{
+	None UMETA(DisplayName = "None"),
+	Small UMETA(DisplayName = "Small"),
+	Heavy UMETA(DisplayName = "Heavy")
+};
+
 /*
 UENUM()
 enum ECharacterActionType : uint8
@@ -96,7 +104,7 @@ class AItTakesTwoCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* ClimbUpMonta;
-	
+
 	
 	/** OnCapsuleHit Event */
 	UFUNCTION()
@@ -134,6 +142,13 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = LockOn)
 	void SetLockOnMode(bool bLockOn);
+	
+	//들고 있는 아이템 종류
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = PickUpItem)
+	EPickUpItemType PickUpItem = EPickUpItemType::Small;
+	
+	UFUNCTION(BlueprintCallable, Category = PickUpItem)
+	void SetPickUpItemType(EPickUpItemType Type);
 	
 	//상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();

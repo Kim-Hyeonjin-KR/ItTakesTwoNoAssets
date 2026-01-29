@@ -15,17 +15,19 @@
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Architecture/Floor_400x400.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyClimbMove.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyCrouch.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyJogMove.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BS_CodyStrafeMove.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyClimbUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyDash.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_May.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayClimbMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BS_MayClimbMove.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_GrabableActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_GrabableActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/Z2/DDSHX11NGHGZU398ERSJ5T.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/Z2/DDSHX11NGHGZU398ERSJ5T.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/HammerComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/HammerWeaponComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,6 +262,8 @@
       <workItem from="1769585838820" duration="1000" />
       <workItem from="1769586026935" duration="1942000" />
       <workItem from="1769588027059" duration="1224000" />
+      <workItem from="1769647811511" duration="5683000" />
+      <workItem from="1769665433734" duration="5352000" />
     </task>
     <servers />
   </component>
