@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "ItTakesTwo/ItTakesTwoTypes.h"
 #include "ItTakesTwoCharacter.generated.h"
 
 class USpringArmComponent;
@@ -33,14 +34,6 @@ enum class EMovementState : uint8
 	Swimming	= 1 << 7,
 };
 ENUM_CLASS_FLAGS(EMovementState)
-
-UENUM(BlueprintType)
-enum class EPickUpItemType : uint8
-{
-	None UMETA(DisplayName = "None"),
-	Small UMETA(DisplayName = "Small"),
-	Heavy UMETA(DisplayName = "Heavy")
-};
 
 /*
 UENUM()
@@ -146,10 +139,13 @@ public:
 	
 	//들고 있는 아이템 종류
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = PickUpItem)
-	EPickUpItemType PickUpItem = EPickUpItemType::Small;
+	EPickUpItemType PickUpItem;
 	
 	UFUNCTION(BlueprintCallable, Category = PickUpItem)
 	void SetPickUpItemType(EPickUpItemType Type);
+	
+	UFUNCTION(BlueprintCallable, Category = PickUpItem)
+	void SetPutDownItemType(EPickUpItemType Type);
 	
 	//상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();

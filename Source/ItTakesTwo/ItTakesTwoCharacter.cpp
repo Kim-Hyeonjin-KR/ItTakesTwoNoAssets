@@ -27,8 +27,15 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+
+	
 	if (OtherActor != nullptr && OtherActor->ActorHasTag(TEXT("Climbable")))
 	{
+		if (PickUpItem == EPickUpItemType::Heavy)
+		{
+			return;
+		}
+		
 		UE_LOG(LogTemp,Warning,TEXT("벽에 붙음"));
 		
 		FVector OppositeVector = OtherActor->GetActorForwardVector() * -1;
@@ -127,6 +134,13 @@ void AItTakesTwoCharacter::BeginPlay()
 	if (ClimbUpMonta != nullptr)
 	{
 		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnClimbUpMontaEnded);
+	}
+	
+	UGrabInterActionComponent* GrabComp = FindComponentByClass<UGrabInterActionComponent>();
+	if (GrabComp != nullptr)
+	{
+		GrabComp->OnItemPickUp.BindUObject(this, &AItTakesTwoCharacter::SetPickUpItemType);
+		GrabComp->OnItemPutDown.BindUObject(this, &AItTakesTwoCharacter::SetPutDownItemType);
 	}
 	
 }
@@ -249,8 +263,26 @@ void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
 
 void AItTakesTwoCharacter::SetPickUpItemType(EPickUpItemType Type)
 {
+	UE_LOG(LogTemp, Log, TEXT("SetPickUpItemType %s"), *UEnum::GetValueAsString(Type));
+	
 	PickUpItem = Type;
+	if (AnimInst != nullptr)
+	{
+		AnimInst->OnLinkAnimClassLayers(Type);
+	}
 }
+
+void AItTakesTwoCharacter::SetPutDownItemType(EPickUpItemType Type)
+{
+	UE_LOG(LogTemp, Log, TEXT("SetPutDownItemType %s"), *UEnum::GetValueAsString(Type));
+	
+	PickUpItem = EPickUpItemType::None;
+	if (AnimInst != nullptr)
+	{
+		AnimInst->OnLinkAnimClassLayers(EPickUpItemType::None);
+	}
+}
+
 
 void AItTakesTwoCharacter::SetMappingContext()
 {
@@ -414,7 +446,7 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 	
 	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
 	
-	GrabInterActionComponent->TestFunction();
+	GrabInterActionComponent->CustomInterAction(PickUpItem);
 	
 	//잡기
 	//누르기

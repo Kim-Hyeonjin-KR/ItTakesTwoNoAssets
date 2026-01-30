@@ -4,7 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "ItTakesTwo/ItTakesTwoTypes.h"
 #include "GrabInterActionComponent.generated.h"
+
+class UCapsuleComponent;
+
+DECLARE_DELEGATE_OneParam(FOnItemPickUpSuccess , EPickUpItemType)
+DECLARE_DELEGATE_OneParam(FOnItemPutDownSuccess , EPickUpItemType)
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -24,6 +30,24 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
-	void TestFunction();
+public:
+	void CustomInterAction(const EPickUpItemType CurrentPickUpItemType);
+	FOnItemPickUpSuccess OnItemPickUp;
+	FOnItemPutDownSuccess OnItemPutDown;
 	
+private:
+	void TryActivateInteractionItem();
+	
+	void PickUpItem(EPickUpItemType TargetType);
+	void PutDownItem(EPickUpItemType TargetType);
+	void PushHoldButton();
+	void ReleaseHoldButton();
+	void HitToggleButton();
+	void HoldLever();
+	void ReleaseLever();
+	
+private:
+	AActor* OwnerActor;
+	UCapsuleComponent * CapsuleComponent;
+	AActor* EquipedItem;
 };
