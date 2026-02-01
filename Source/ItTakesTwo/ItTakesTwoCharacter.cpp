@@ -31,7 +31,7 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 	
 	if (OtherActor != nullptr && OtherActor->ActorHasTag(TEXT("Climbable")))
 	{
-		if (PickUpItem == EPickUpItemType::Heavy)
+		if (PickUpItem != EPickUpItemType::None)
 		{
 			return;
 		}
@@ -249,15 +249,25 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
 {
 	bIsLockOnMode = bLockOn;
-	if (bIsLockOnMode)
+	
+	UAnimInstance* LinkedAnimInst = AnimInst->GetLinkedAnimGraphInstanceByTag(FName("ItTakesTwoPlayer"));
+	UE_LOG(LogTemp,Warning,TEXT("찾기"));
+	
+	
+	if (LinkedAnimInst != nullptr)
 	{
-		GetCharacterMovement()->bOrientRotationToMovement = false;
-		AnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromEverything);
-	}
-	else
-	{
-		GetCharacterMovement()->bOrientRotationToMovement = true;
-		AnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromMontagesOnly);
+		if (bIsLockOnMode)
+		{
+			UE_LOG(LogTemp,Warning,TEXT("록온 ㅇㅇ"));
+			
+			GetCharacterMovement()->bOrientRotationToMovement = false;
+			LinkedAnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromEverything);
+		}
+		else
+		{
+			GetCharacterMovement()->bOrientRotationToMovement = true;
+			LinkedAnimInst->SetRootMotionMode(ERootMotionMode::Type::RootMotionFromMontagesOnly);
+		}
 	}
 }
 
@@ -446,8 +456,10 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 	
 	UE_LOG(LogTemp,Warning,TEXT("CustomInteraction"));
 	
-	GrabInterActionComponent->CustomInterAction(PickUpItem);
-	
+	if (GrabInterActionComponent != nullptr)
+	{
+		GrabInterActionComponent->CustomInterAction(PickUpItem);
+	}
 	//잡기
 	//누르기
 	//들기

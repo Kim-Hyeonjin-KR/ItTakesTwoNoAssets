@@ -147,7 +147,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = PickUpItem)
 	void SetPutDownItemType(EPickUpItemType Type);
 	
-	//상태에 따른 매핑 컨텍스트 변경
+	//이동 상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();
 	
 	//플레이어 방향키 입력

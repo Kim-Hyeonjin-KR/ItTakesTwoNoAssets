@@ -55,9 +55,12 @@ void UANSInvincibility::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenc
 	{
 		Player->CurrentMovementModeState &= ~EMovementState::Dash;
 		Player->bCanDash = true;
-		
-		Player->GetController()->SetIgnoreMoveInput(false);
 		Player->bCanJump = true;
+		
+		if (Player->GetController() != nullptr)
+		{
+			Player->GetController()->SetIgnoreMoveInput(false);
+		}
 	}
 	else
 	{
