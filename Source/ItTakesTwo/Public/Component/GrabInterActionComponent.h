@@ -9,8 +9,19 @@
 
 class UCapsuleComponent;
 
-DECLARE_DELEGATE_OneParam(FOnItemPickUpSuccess , EPickUpItemType)
-DECLARE_DELEGATE_OneParam(FOnItemPutDownSuccess , EPickUpItemType)
+DECLARE_DELEGATE_OneParam(FOnGrabbed, EPickUpItemType)
+DECLARE_DELEGATE_OneParam(FOnDropped, EPickUpItemType)
+
+DECLARE_DELEGATE_OneParam(FOnToggleSwitched, UAnimMontage*)
+
+DECLARE_DELEGATE(FOnButtonHold)
+DECLARE_DELEGATE(FOnButtonRelease)
+
+DECLARE_DELEGATE(FOnLeverPulled)
+DECLARE_DELEGATE(FOnLeverReleased)
+
+DECLARE_DELEGATE(FOnObjectPull)
+DECLARE_DELEGATE(FOnPullReleased)
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -32,11 +43,30 @@ public:
 	
 public:
 	void CustomInterAction(const EPickUpItemType CurrentPickUpItemType);
-	FOnItemPickUpSuccess OnItemPickUp;
-	FOnItemPutDownSuccess OnItemPutDown;
+	void CustomInterActionCancle();
+	
+	//델리게이트
+	FOnGrabbed OnItemPickUp;
+	FOnDropped OnItemPutDown;
+	
+	FOnToggleSwitched OnToggleSwitched;
+	FOnButtonHold OnButtonHold;
+	FOnButtonRelease OnButtonRelease;
+	
+	FOnLeverPulled OnLeverPulled;
+	FOnLeverReleased OnLeverReleased;
+	
+	FOnObjectPull OnObjectPull;
+	FOnPullReleased OnPullReleased;
+	
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* HitButtonMontage;
+	
 	
 private:
 	void TryActivateInteractionItem();
+	void HandleInteraction(EPickUpItemType TargetType, AActor* HitActor);
 	
 	void PickUpItem(EPickUpItemType TargetType);
 	void PutDownItem(EPickUpItemType TargetType);
@@ -45,6 +75,8 @@ private:
 	void HitToggleButton();
 	void HoldLever();
 	void ReleaseLever();
+	void PullObject();
+	void ReleasePullObject();
 	
 private:
 	AActor* OwnerActor;

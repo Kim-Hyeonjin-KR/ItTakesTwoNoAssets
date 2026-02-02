@@ -27,13 +27,13 @@ class ITTAKESTWO_API IGrabInterableInterface
 	
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	//UFUNCTION(BlueprintCallable)	// 블루프린트에서 호출만 수 있는 함수임을 선언. 구현부가 반드시 c++에 있어야 한다.
+	//UFUNCTION(BlueprintCallable)	// 블루프린트에서 호출만 수 있는 함수임을 선언. 이것만 사용하려면 구현부가 반드시 c++에 있어야 한다.
 									// 그래서 함수도 c++ 형식으로 사용됨.
 	//virtual EPickUpItemType GrabInteract(AActor* Interactor) {return EPickUpItemType::None;};
 	
-	UFUNCTION(BlueprintNativeEvent)	// 블루프린트와 c++ 모두 수정이 가능한 함수임을 선언. 반대로 말하면 이미 virtual이기 때문에 virtual을 또 붙이면 에러!
-	EPickUpItemType PickUpItemInteract(AActor* Interactor);
+	UFUNCTION(BlueprintNativeEvent)	// 블루프린트와 c++ 모두 수정이 가능한 함수임을 선언. 반대로 말하면 이미 virtual이기 때문에 virtual을 또 붙이면 에러! 구현부가 c++에 없어도 된다
+	EPickUpItemType ActiveItemInteract(AActor* Interactor);
 	
 	UFUNCTION(BlueprintNativeEvent)
-	void PutDownItemInteract(AActor* Interactor);
+	void DeactiveItemInteract(AActor* Interactor);
 };

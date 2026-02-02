@@ -111,11 +111,13 @@ class AItTakesTwoCharacter : public ACharacter
 								UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 public:
 	
+	//몽타주
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* DashMontage;
 	
+	
 	UFUNCTION()
-	void OnClimbUpMontaEnded(UAnimMontage* Montage, bool bInterrupted);
+	void OnIgnoreMoveInputMontaEnded(UAnimMontage* Montage, bool bInterrupted);
 	
 	AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer);
 	
@@ -137,15 +139,38 @@ public:
 	UFUNCTION(BlueprintCallable, Category = LockOn)
 	void SetLockOnMode(bool bLockOn);
 	
-	//들고 있는 아이템 종류
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = PickUpItem)
+	//GrabInterAction 컴포넌트에 연동할 함수들
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = GrabInterAction)
 	EPickUpItemType PickUpItem;
 	
-	UFUNCTION(BlueprintCallable, Category = PickUpItem)
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
 	void SetPickUpItemType(EPickUpItemType Type);
 	
-	UFUNCTION(BlueprintCallable, Category = PickUpItem)
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
 	void SetPutDownItemType(EPickUpItemType Type);
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void ToggleSwitched(UAnimMontage* HitButtonMontage);
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void ButtonHold();
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void ButtonRelease();
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void LeverPulled();
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void LeverReleased();
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void ObjectPull();
+	
+	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
+	void PullReleased();
+	
+	
 	
 	//이동 상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();

@@ -4,6 +4,7 @@
 #include "Component/GrabInterActionComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Interface/GrabInterableInterface.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values for this component's properties
 UGrabInterActionComponent::UGrabInterActionComponent()
@@ -50,6 +51,7 @@ void UGrabInterActionComponent::CustomInterAction(const EPickUpItemType CurrentP
 {
 	UE_LOG(LogTemp, Log, TEXT("CustomInterAction"));
 	
+	//손에 든 아이템이 없다면, 대상에 따라 상호작용 가능한 상태
 	if (CurrentPickUpItemType == EPickUpItemType::None)
 	{
 		//레이 캐스트를 쏴서 있으면 상호작용 요청
@@ -57,128 +59,226 @@ void UGrabInterActionComponent::CustomInterAction(const EPickUpItemType CurrentP
 		return;
 	}
 	
+	//손에 든 아이템이 있다면, 내려 놓기만 가능
 	if (EquipedItem)
 	{
-		if (EquipedItem->Implements<UGrabInterableInterface>())
-		{
-			IGrabInterableInterface::Execute_PutDownItemInteract(EquipedItem, OwnerActor);
-		}
 		if (CurrentPickUpItemType == EPickUpItemType::Small)
 		{
-			if (OnItemPutDown.IsBound())
-			{
-				OnItemPutDown.Execute(EPickUpItemType::Small);
-				return;
-			}
+			PutDownItem(EPickUpItemType::Small);
+
 		}
 		else if (CurrentPickUpItemType == EPickUpItemType::Heavy)
 		{
-			if (OnItemPutDown.IsBound())
-			{
-				OnItemPutDown.Execute(EPickUpItemType::Heavy);
-				return;
-			}
+			PutDownItem(EPickUpItemType::Heavy);
 		}
 	}
+}
+
+void UGrabInterActionComponent::CustomInterActionCancle()
+{
+	
 }
 
 void UGrabInterActionComponent::TryActivateInteractionItem()
 {
 	UE_LOG(LogTemp, Log, TEXT("TryActivateInteractionItem"));
 	
-	float RaycastLength = CapsuleComponent->GetScaledCapsuleRadius() * 5;
+	//박스로 레이를 쏴서 검사하기
+	float RaycastLength = CapsuleComponent->GetScaledCapsuleRadius() * 2;
 	
 	FVector StartForwardLocation = OwnerActor->GetActorLocation();
 	FVector EndForwardLocation = StartForwardLocation + (CapsuleComponent->GetForwardVector() * RaycastLength);
+	
+	FVector BoxHalfSize = FVector(5.0f, CapsuleComponent->GetScaledCapsuleRadius() , CapsuleComponent->GetScaledCapsuleHalfHeight());
+	FCollisionShape MyBox = FCollisionShape::MakeBox(BoxHalfSize);
+	
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(OwnerActor);
-	GetWorld()->LineTraceSingleByChannel(HitResult, StartForwardLocation, EndForwardLocation, ECC_Visibility, Params);
 	
-	DrawDebugLine(GetWorld(), StartForwardLocation, EndForwardLocation, FColor::Blue, false, 10.0f);
+	bool bHit = GetWorld()->SweepSingleByChannel(
+		HitResult,
+		StartForwardLocation,
+		EndForwardLocation,
+		OwnerActor->GetActorRotation().Quaternion(),
+		ECC_Visibility,
+		MyBox,
+		Params
+	);
+	
+	FVector BoxExtent = FVector(5.0f, CapsuleComponent->GetScaledCapsuleRadius(), CapsuleComponent->GetScaledCapsuleHalfHeight());
+	FQuat Rotation = OwnerActor->GetActorRotation().Quaternion();
+	
+	FColor DebugColor = bHit ? FColor::Green : FColor::Red;
+
+	DrawDebugBox(GetWorld(), StartForwardLocation, BoxExtent, Rotation, DebugColor, false, 2.0f);
+	DrawDebugBox(GetWorld(), EndForwardLocation, BoxExtent, Rotation, DebugColor, false, 2.0f);
+	DrawDebugLine(GetWorld(), StartForwardLocation, EndForwardLocation, DebugColor, false, 2.0f);
+
+	if (bHit)
+	{
+		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.f, 12, FColor::Yellow, false, 2.0f);
+	}
 	
 	if (HitResult.GetActor() != nullptr)
 	{
 		UE_LOG(LogTemp, Log, TEXT("HitResult %s"), *HitResult.GetActor()->GetName());
 	}
 	
-	
 	AActor* HitActor = HitResult.GetActor();
 	
 	if (HitActor)
 	{
-		
-		//잡을 수 있는 인터페이스라면 손에 들기. UGrabInterableInterface pickupable로 바꿔줄것.
-		//Implements는 c++ 코드를 기준으로 검사하기 때문에 에디터에서 넣었다면 모른다. 그래서 블루프린트에서 추가한 컴포넌트를 제거하고, 인터페이스를 상속받은 엑터를 부모 클래스로 설정해서 에디터에서 다시 만들어줬다.
+		// E키로 상호 작용 가능한 인터페이스가 있다면 실행하고, 객체의 종류를 받아옴.
 		if (HitActor->Implements<UGrabInterableInterface>())
 		{
-			EPickUpItemType ItemType = IGrabInterableInterface::Execute_PickUpItemInteract(HitActor, OwnerActor);
-				
-			if (OnItemPickUp.IsBound())
-			{
-				OnItemPickUp.Execute(ItemType);
-			}
-			EquipedItem = HitActor;
+			EPickUpItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor, OwnerActor);
+			HandleInteraction(ItemType, HitActor);
 		}
-		//버튼, 레버 추가해줄것
-		
-		//아래는 제대로 작동하지 않았던 코드. FindComponentByInterface는 블루프린트에서 나중에 넣은 것에 대해서는 잘 찾지 못한다. 계층 구조 차이 때문인데, c++를 먼저 뒤져보고 없어서 블프를 뒤져봤지만, 막상 거기서 찾아도 c++을 기준으로 판단해서 없다고 생각한다고 한다. 
-		/*
-		UActorComponent* InterfaceComponent = HitActor->FindComponentByInterface(UGrabInterableInterface::StaticClass());
-		if (InterfaceComponent != nullptr)
-		{
-			UE_LOG(LogTemp, Log, TEXT("그랩 인터페이스있음 %s"), *HitResult.GetActor()->GetName());
-			IGrabInterableInterface::Execute_GrabInteract(InterfaceComponent, OwnerActor);
-		}
-		else
-		{
-		UE_LOG(LogTemp, Log, TEXT("그랩 인터페이스 없음 %s"), *HitResult.GetActor()->GetName());
-		}
-		*/
-		
-		/*
-		//보유 컴포넌트 모두 찾는 방법
-		for (UActorComponent* Comp : HitActor->GetComponents())
-		{
-			UE_LOG(LogTemp, Log, TEXT("보유 컴포넌트: %s"), *Comp->GetName());
-		}
-		*/
 	}
+}
+
+void UGrabInterActionComponent::HandleInteraction(EPickUpItemType TargetType, AActor* HitActor)
+{
+	EquipedItem = HitActor;
 	
+	switch (TargetType)
+	{
+	case EPickUpItemType::Small:
+	case EPickUpItemType::Heavy:
+		PickUpItem(TargetType);
+		break;
+	case EPickUpItemType::HoldButton:
+		PushHoldButton();
+		break;
+	case EPickUpItemType::ToggleButton:
+		EquipedItem = nullptr;	//토글 버튼은 일회성 상호작용
+		HitToggleButton();
+		break;
+	case EPickUpItemType::HoldLever:
+		HoldLever();
+		break;
+	case EPickUpItemType::PullableObject:
+		PullObject();
+		break;
+	default:
+		break;
+	}
 }
 
 void UGrabInterActionComponent::PickUpItem(EPickUpItemType TargetType)
 {
-	
+	if (OnItemPickUp.IsBound())
+	{
+		OnItemPickUp.Execute(TargetType);
+	}
 }
 
 void UGrabInterActionComponent::PutDownItem(EPickUpItemType TargetType)
 {
+	if (EquipedItem->Implements<UGrabInterableInterface>())
+	{
+		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PutDownItem 함수. EquipedItem에 UGrabInterableInterface 없음."));
+	}
 	
+	if (OnItemPutDown.IsBound())
+	{
+		OnItemPutDown.Execute(TargetType);
+		return;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PutDownItem 함수. OnItemPutDown에 IsBound가 없음."));
+	}
 }
 
 void UGrabInterActionComponent::PushHoldButton()
 {
-	
+	if (OnButtonHold.IsBound())
+	{
+		OnButtonHold.Execute();
+		return;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PushHoldButton 함수. OnButtonHold IsBound가 없음."));
+	}
 }
 
 void UGrabInterActionComponent::ReleaseHoldButton()
 {
-	
+	if (OnButtonRelease.IsBound())
+	{
+		OnButtonRelease.Execute();
+		return;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ReleaseHoldButton 함수. OnButtonRelease에 IsBound가 없음."));
+	}
 }
 
 void UGrabInterActionComponent::HitToggleButton()
 {
-	
+	if (OnToggleSwitched.IsBound())
+	{
+		OnToggleSwitched.Execute(HitButtonMontage);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HitToggleButton 함수. OnToggleSwitched에 IsBound가 없음."));
+	}
 }
 
 void UGrabInterActionComponent::HoldLever()
 {
-	
+	if (OnLeverPulled.IsBound())
+	{
+		OnLeverPulled.Execute();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HoldLever 함수. OnLeverPulled 에 IsBound가 없음."));
+	}
 }
 
 void UGrabInterActionComponent::ReleaseLever()
 {
-	
+	if (OnLeverReleased.IsBound())
+	{
+		OnLeverReleased.Execute();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ReleaseLever 함수. OnLeverReleased 에 IsBound가 없음."));
+	}
+}
+
+void UGrabInterActionComponent::PullObject()
+{
+	if (OnObjectPull.IsBound())
+	{
+		OnObjectPull.Execute();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PullObject 함수. OnPushStarted 에 IsBound가 없음."));
+	}
+}
+
+void UGrabInterActionComponent::ReleasePullObject()
+{
+	if (OnPullReleased.IsBound())
+	{
+		OnPullReleased.Execute();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ReleasePullObject 함수. OnPullReleased 에 IsBound가 없음."));
+	}
 }
 

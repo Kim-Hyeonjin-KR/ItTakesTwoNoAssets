@@ -10,7 +10,22 @@ AGrabableActor::AGrabableActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	// 피직스 계산 하게 켜두자.
 	PrimaryActorTick.bCanEverTick = true;
+}
 
+void AGrabableActor::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+	
+	if (ItemType == EPickUpItemType::Heavy || ItemType == EPickUpItemType::Small)
+	{
+		return;
+	}
+	else
+	{
+		FMessageLog("EditorErrors").Warning(FText::FromString("들 수 있는 아이템은 Heavy나 Small만 선택해주세요"));
+		ItemType = EPickUpItemType::Small;
+	}
+	
 }
 
 // Called when the game starts or when spawned
@@ -27,14 +42,14 @@ void AGrabableActor::Tick(float DeltaTime)
 
 }
 
-EPickUpItemType AGrabableActor::PickUpItemInteract_Implementation(AActor* Interactor)
+EPickUpItemType AGrabableActor::ActiveItemInteract_Implementation(AActor* Interactor)
 {
 	AttachItem(Interactor);
 	
-	return PickUpItemType;
+	return ItemType;
 }
 
-void AGrabableActor::PutDownItemInteract_Implementation(AActor* Interactor)
+void AGrabableActor::DeactiveItemInteract_Implementation(AActor* Interactor)
 {
 	DetachItem(Interactor);
 }
@@ -85,6 +100,7 @@ void AGrabableActor::DetachItem(AActor* Target)
 	UPrimitiveComponent* PrimitiveRoot = Cast<UPrimitiveComponent>(GetRootComponent());
 	if (PrimitiveRoot != nullptr)
 	{
+		PrimitiveRoot->SetWorldRotation(FRotator(0.0f, 0.0f, 0.0f));
 		PrimitiveRoot->SetSimulatePhysics(true);
 		PrimitiveRoot->SetCollisionEnabled(ECollisionEnabled::Type::QueryAndPhysics);
 	}

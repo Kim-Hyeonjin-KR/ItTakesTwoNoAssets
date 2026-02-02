@@ -13,7 +13,11 @@ enum class EPickUpItemType : uint8
 {
 	None UMETA(DisplayName = "None"),
 	Small UMETA(DisplayName = "Small"),
-	Heavy UMETA(DisplayName = "Heavy")
+	Heavy UMETA(DisplayName = "Heavy"),
+	ToggleButton UMETA(DisplayName = "ToggleButton"),
+	HoldButton UMETA(DisplayName = "HoldButton"),
+	HoldLever UMETA(DisplayName = "HoldLever"),
+	PullableObject UMETA(DisplayName = "PullableObject")
 };
 
 UENUM(BlueprintType)

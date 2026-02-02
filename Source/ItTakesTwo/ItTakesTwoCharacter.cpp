@@ -56,7 +56,7 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* Over
 	SetMappingContext();
 }
 
-void AItTakesTwoCharacter::OnClimbUpMontaEnded(UAnimMontage* Montage, bool bInterrupted)
+void AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded(UAnimMontage* Montage, bool bInterrupted)
 {
 	bIgnoreInput = false;
 	
@@ -133,14 +133,28 @@ void AItTakesTwoCharacter::BeginPlay()
 	
 	if (ClimbUpMonta != nullptr)
 	{
-		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnClimbUpMontaEnded);
+		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded);
 	}
 	
 	UGrabInterActionComponent* GrabComp = FindComponentByClass<UGrabInterActionComponent>();
 	if (GrabComp != nullptr)
 	{
+		//아이템 들기
 		GrabComp->OnItemPickUp.BindUObject(this, &AItTakesTwoCharacter::SetPickUpItemType);
 		GrabComp->OnItemPutDown.BindUObject(this, &AItTakesTwoCharacter::SetPutDownItemType);
+		
+		//버튼
+		GrabComp->OnToggleSwitched.BindUObject(this, &AItTakesTwoCharacter::ToggleSwitched);
+		GrabComp->OnButtonHold.BindUObject(this, &AItTakesTwoCharacter::ButtonHold);
+		GrabComp->OnButtonRelease.BindUObject(this, &AItTakesTwoCharacter::ButtonRelease);
+		
+		//레버
+		GrabComp->OnLeverPulled.BindUObject(this, &AItTakesTwoCharacter::LeverPulled);
+		GrabComp->OnLeverReleased.BindUObject(this, &AItTakesTwoCharacter::LeverReleased);
+		
+		//밀고 당기기
+		GrabComp->OnObjectPull.BindUObject(this, &AItTakesTwoCharacter::ObjectPull);
+		GrabComp->OnPullReleased.BindUObject(this, &AItTakesTwoCharacter::PullReleased);
 	}
 	
 }
@@ -223,7 +237,6 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Move);
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Completed, this, &AItTakesTwoCharacter::StopMove);
 		
-		
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AItTakesTwoCharacter::Look);
 		
@@ -252,7 +265,6 @@ void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
 	
 	UAnimInstance* LinkedAnimInst = AnimInst->GetLinkedAnimGraphInstanceByTag(FName("ItTakesTwoPlayer"));
 	UE_LOG(LogTemp,Warning,TEXT("찾기"));
-	
 	
 	if (LinkedAnimInst != nullptr)
 	{
@@ -291,6 +303,57 @@ void AItTakesTwoCharacter::SetPutDownItemType(EPickUpItemType Type)
 	{
 		AnimInst->OnLinkAnimClassLayers(EPickUpItemType::None);
 	}
+}
+
+void AItTakesTwoCharacter::ToggleSwitched(UAnimMontage* HitButtonMontage)
+{
+	if (bIgnoreInput)
+	{
+		return;
+	}
+	
+	if (HitButtonMontage == nullptr)
+	{
+		UE_LOG(LogTemp, Log, TEXT("매개변수로 온 HitButtonMontage가 없음"));
+		return;
+	}
+	
+	bIgnoreInput = true;
+	GetController()->SetIgnoreMoveInput(true);
+	
+	PlayAnimMontage(HitButtonMontage);
+	
+	FOnMontageEnded EndDelegate;
+	EndDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded);
+	AnimInst->Montage_SetEndDelegate(EndDelegate);
+	
+	
+	
+	
+}
+
+void AItTakesTwoCharacter::ButtonHold()
+{
+}
+
+void AItTakesTwoCharacter::ButtonRelease()
+{
+}
+
+void AItTakesTwoCharacter::LeverPulled()
+{
+}
+
+void AItTakesTwoCharacter::LeverReleased()
+{
+}
+
+void AItTakesTwoCharacter::ObjectPull()
+{
+}
+
+void AItTakesTwoCharacter::PullReleased()
+{
 }
 
 
