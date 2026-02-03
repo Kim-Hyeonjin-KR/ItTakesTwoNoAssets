@@ -117,7 +117,7 @@ public:
 	
 	
 	UFUNCTION()
-	void OnIgnoreMoveInputMontaEnded(UAnimMontage* Montage, bool bInterrupted);
+	void OnIgnoreInputMontaEnded(UAnimMontage* Montage, bool bInterrupted);
 	
 	AItTakesTwoCharacter(const FObjectInitializer& ObjectInitializer);
 	
@@ -141,36 +141,31 @@ public:
 	
 	//GrabInterAction 컴포넌트에 연동할 함수들
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = GrabInterAction)
-	EPickUpItemType PickUpItem;
+	EHandItemType PickUpItem;
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void SetPickUpItemType(EPickUpItemType Type);
+	void SetPickUpItemType(EHandItemType Type);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void SetPutDownItemType(EPickUpItemType Type);
+	void SetPutDownItemType(EHandItemType Type);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
 	void ToggleSwitched(UAnimMontage* HitButtonMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void ButtonHold();
+	void ButtonHold(UAnimMontage* HoldButtonMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void ButtonRelease();
+	void ButtonRelease(UAnimMontage* HoldButtonMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void LeverPulled();
+	void LeverActive(UAnimMontage* HitLeverMontage, bool bIsLeft = false);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void LeverReleased();
+	void ObjectPull(UAnimMontage* PullPushMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void ObjectPull();
-	
-	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void PullReleased();
-	
-	
+	void PullReleased(UAnimMontage* PullPushMontage);
 	
 	//이동 상태에 따른 매핑 컨텍스트 변경
 	void SetMappingContext();
@@ -189,6 +184,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
 	UNailWeaponComponent* NailWeaponComponent;
 	
+	UFUNCTION(BlueprintCallable)
+	void SetInteractionInputLock(bool bInputLock);
 	
 protected:
 
@@ -226,7 +223,13 @@ public:
 	
 private:
 	void TryClimbUp();
-	bool bIgnoreInput;
+	void SetIgnoreInputPlayingMontage(UAnimMontage* TargetMontage);
+	bool CheckLineTrace(FVector StartVec, FVector EndVec);
+	
+	bool bIgnoreMoveInput;
+	bool bIgnoreInteractionInput;
+	
+	float DefaultCapsuleHalfHeight;
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
 	FVector WallNormal;
 	UItTakesTwoPlayerAnimInstance* AnimInst;

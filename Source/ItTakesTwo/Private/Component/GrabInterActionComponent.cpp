@@ -5,6 +5,8 @@
 #include "Components/CapsuleComponent.h"
 #include "Interface/GrabInterableInterface.h"
 #include "DrawDebugHelpers.h"
+#include "InteractionActor/LeverActor.h"
+
 
 // Sets default values for this component's properties
 UGrabInterActionComponent::UGrabInterActionComponent()
@@ -34,6 +36,23 @@ void UGrabInterActionComponent::BeginPlay()
 		UE_LOG(LogTemp, Error, TEXT("그랩 컴포넌트의 OwnerActor에 캡슐 컴포넌트 is nullptr"))
 	}
 	
+	// 몽타주 제대로 넣었는지 확인
+	if (ensureAlways(HitButtonMontage))
+	{
+		UE_LOG(LogTemp,Error, TEXT("HitButtonMontage 비었음"));
+	}
+	if (ensureAlways(HoldButtonMontage))
+	{
+		UE_LOG(LogTemp,Error, TEXT("HoldButtonMontage 비었음"));
+	}
+	if (ensureAlways(HoldLeverMontage))
+	{
+		UE_LOG(LogTemp,Error, TEXT("HoldLeverMontage 비었음"));
+	}
+	if (ensureAlways(PullPushMontage))
+	{
+		UE_LOG(LogTemp,Error, TEXT("PullObjectMontage 비었음"));
+	}
 	// ...
 	
 }
@@ -47,36 +66,46 @@ void UGrabInterActionComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 	// ...
 }
 
-void UGrabInterActionComponent::CustomInterAction(const EPickUpItemType CurrentPickUpItemType)
+void UGrabInterActionComponent::CustomInterAction(const EHandItemType CurrentPickUpItemType)
 {
 	UE_LOG(LogTemp, Log, TEXT("CustomInterAction"));
 	
-	//손에 든 아이템이 없다면, 대상에 따라 상호작용 가능한 상태
-	if (CurrentPickUpItemType == EPickUpItemType::None)
+	//손에 잡힌 아이템이 없다면, 대상에 따라 상호작용 가능한 상태
+	if (CurrentPickUpItemType == EHandItemType::None)
 	{
 		//레이 캐스트를 쏴서 있으면 상호작용 요청
 		TryActivateInteractionItem();
 		return;
 	}
-	
-	//손에 든 아이템이 있다면, 내려 놓기만 가능
-	if (EquipedItem)
+	//손에 무언가 있을 때.
+	else
 	{
-		if (CurrentPickUpItemType == EPickUpItemType::Small)
-		{
-			PutDownItem(EPickUpItemType::Small);
-
-		}
-		else if (CurrentPickUpItemType == EPickUpItemType::Heavy)
-		{
-			PutDownItem(EPickUpItemType::Heavy);
-		}
+		CustomCancleInterAction(CurrentPickUpItemType);
 	}
 }
 
-void UGrabInterActionComponent::CustomInterActionCancle()
+void UGrabInterActionComponent::CustomCancleInterAction(const EHandItemType CurrentPickUpItemType)
 {
-	
+	//손에 잡힌 아이템이 있는 경우
+	if (EquipedItem)
+	{
+		if (CurrentPickUpItemType == EHandItemType::Small)
+		{
+			PutDownItem(EHandItemType::Small);
+		}
+		else if (CurrentPickUpItemType == EHandItemType::Heavy)
+		{
+			PutDownItem(EHandItemType::Heavy);
+		}
+		else if (CurrentPickUpItemType == EHandItemType::HoldButton)
+		{
+			ReleaseHoldButton();
+		}
+		else if (CurrentPickUpItemType == EHandItemType::PullableObject)
+		{
+			ReleasePullObject();
+		}
+	}
 }
 
 void UGrabInterActionComponent::TryActivateInteractionItem()
@@ -132,33 +161,32 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 		// E키로 상호 작용 가능한 인터페이스가 있다면 실행하고, 객체의 종류를 받아옴.
 		if (HitActor->Implements<UGrabInterableInterface>())
 		{
-			EPickUpItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor, OwnerActor);
+			EHandItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor, OwnerActor);
 			HandleInteraction(ItemType, HitActor);
 		}
 	}
 }
 
-void UGrabInterActionComponent::HandleInteraction(EPickUpItemType TargetType, AActor* HitActor)
+void UGrabInterActionComponent::HandleInteraction(EHandItemType TargetType, AActor* HitActor)
 {
 	EquipedItem = HitActor;
 	
 	switch (TargetType)
 	{
-	case EPickUpItemType::Small:
-	case EPickUpItemType::Heavy:
+	case EHandItemType::Small:
+	case EHandItemType::Heavy:
 		PickUpItem(TargetType);
 		break;
-	case EPickUpItemType::HoldButton:
+	case EHandItemType::HoldButton:
 		PushHoldButton();
 		break;
-	case EPickUpItemType::ToggleButton:
-		EquipedItem = nullptr;	//토글 버튼은 일회성 상호작용
+	case EHandItemType::ToggleButton:
 		HitToggleButton();
 		break;
-	case EPickUpItemType::HoldLever:
-		HoldLever();
+	case EHandItemType::ToggleLever:
+		HitLever();
 		break;
-	case EPickUpItemType::PullableObject:
+	case EHandItemType::PullableObject:
 		PullObject();
 		break;
 	default:
@@ -166,7 +194,7 @@ void UGrabInterActionComponent::HandleInteraction(EPickUpItemType TargetType, AA
 	}
 }
 
-void UGrabInterActionComponent::PickUpItem(EPickUpItemType TargetType)
+void UGrabInterActionComponent::PickUpItem(EHandItemType TargetType)
 {
 	if (OnItemPickUp.IsBound())
 	{
@@ -174,7 +202,7 @@ void UGrabInterActionComponent::PickUpItem(EPickUpItemType TargetType)
 	}
 }
 
-void UGrabInterActionComponent::PutDownItem(EPickUpItemType TargetType)
+void UGrabInterActionComponent::PutDownItem(EHandItemType TargetType)
 {
 	if (EquipedItem->Implements<UGrabInterableInterface>())
 	{
@@ -188,7 +216,6 @@ void UGrabInterActionComponent::PutDownItem(EPickUpItemType TargetType)
 	if (OnItemPutDown.IsBound())
 	{
 		OnItemPutDown.Execute(TargetType);
-		return;
 	}
 	else
 	{
@@ -200,8 +227,10 @@ void UGrabInterActionComponent::PushHoldButton()
 {
 	if (OnButtonHold.IsBound())
 	{
-		OnButtonHold.Execute();
-		return;
+		if (HoldButtonMontage != nullptr)
+		{
+			OnButtonHold.Execute(HoldButtonMontage);
+		}
 	}
 	else
 	{
@@ -211,10 +240,17 @@ void UGrabInterActionComponent::PushHoldButton()
 
 void UGrabInterActionComponent::ReleaseHoldButton()
 {
+	if (EquipedItem->Implements<UGrabInterableInterface>())
+	{
+		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
+	}
+	
 	if (OnButtonRelease.IsBound())
 	{
-		OnButtonRelease.Execute();
-		return;
+		if (HoldButtonMontage != nullptr)
+		{
+			OnButtonRelease.Execute(HoldButtonMontage);
+		}
 	}
 	else
 	{
@@ -224,9 +260,14 @@ void UGrabInterActionComponent::ReleaseHoldButton()
 
 void UGrabInterActionComponent::HitToggleButton()
 {
+	EquipedItem = nullptr;	//토글 버튼은 일회성 상호작용
+	
 	if (OnToggleSwitched.IsBound())
 	{
-		OnToggleSwitched.Execute(HitButtonMontage);
+		if (HitButtonMontage != nullptr)
+		{
+			OnToggleSwitched.Execute(HitButtonMontage);
+		}
 	}
 	else
 	{
@@ -234,27 +275,49 @@ void UGrabInterActionComponent::HitToggleButton()
 	}
 }
 
-void UGrabInterActionComponent::HoldLever()
+void UGrabInterActionComponent::HitLever()
 {
-	if (OnLeverPulled.IsBound())
+	if (EquipedItem == nullptr)
 	{
-		OnLeverPulled.Execute();
+		return;
+	}
+	
+	bool bIsLeftToCharacter;
+	ALeverActor* LeverActor = Cast<ALeverActor>(EquipedItem);
+	if (LeverActor && GetOwner())
+	{
+		bool bLeverIsLeft = LeverActor->IsHandleTilteLeft();
+		FVector DirectToLeverVec = GetOwner()->GetActorLocation() - LeverActor->GetActorLocation();
+		
+		float DotResult = FVector::DotProduct(GetOwner()->GetActorRightVector(), DirectToLeverVec);
+		
+		UE_LOG(LogTemp, Warning, TEXT("내적 값 : %f"), DotResult);
+		
+		if (DotResult < 0)
+		{
+			bIsLeftToCharacter = !bLeverIsLeft;
+		}
+		else
+		{
+			bIsLeftToCharacter = bLeverIsLeft;
+		}
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("HoldLever 함수. OnLeverPulled 에 IsBound가 없음."));
+		UE_LOG(LogTemp,Warning, TEXT("HitLever 함수.LeverActor 혹은 GetOwner가 없습니다."));
+		return;
 	}
-}
-
-void UGrabInterActionComponent::ReleaseLever()
-{
-	if (OnLeverReleased.IsBound())
+	
+	if (OnLeverSwitched.IsBound())
 	{
-		OnLeverReleased.Execute();
+		if (HoldLeverMontage != nullptr)
+		{
+			OnLeverSwitched.Execute(HoldLeverMontage, bIsLeftToCharacter);
+		}
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("ReleaseLever 함수. OnLeverReleased 에 IsBound가 없음."));
+		UE_LOG(LogTemp, Warning, TEXT("HitLever 함수. OnLeverSwitched 에 IsBound가 없음."));
 	}
 }
 
@@ -262,7 +325,10 @@ void UGrabInterActionComponent::PullObject()
 {
 	if (OnObjectPull.IsBound())
 	{
-		OnObjectPull.Execute();
+		if (PullPushMontage != nullptr)
+		{
+			OnObjectPull.Execute(PullPushMontage);
+		}
 	}
 	else
 	{
@@ -274,7 +340,10 @@ void UGrabInterActionComponent::ReleasePullObject()
 {
 	if (OnPullReleased.IsBound())
 	{
-		OnPullReleased.Execute();
+		if (PullPushMontage != nullptr)
+		{
+			OnPullReleased.Execute(PullPushMontage);
+		}
 	}
 	else
 	{

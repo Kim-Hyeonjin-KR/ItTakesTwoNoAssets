@@ -14,23 +14,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_GrabableActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_GrabableActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyToggleButtonHit.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyToggleButtonHit.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HoldButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_TabButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_TabButton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_Lever.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_Lever.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_PullableActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_PullableActor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_TestDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_TestDoor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/YE/V6R2FH3FPA6ZMSMIEE2Y6F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/YE/V6R2FH3FPA6ZMSMIEE2Y6F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/HE/U35NZS5A9W1UXP1E3FF2GW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/HE/U35NZS5A9W1UXP1E3FF2GW.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/44/A5UUL4OUHTQRKPBPUXVFI3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/44/A5UUL4OUHTQRKPBPUXVFI3.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ButtonActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ButtonActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ElectronicActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ElectronicActor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/GrabableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/GrabableActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/LeverActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/LeverActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/PullableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/PullableActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ItTakesTwoPlayerAnimInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ItTakesTwoPlayerAnimInstance.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/GrabInterActionComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/GrabInterActionComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/ButtonActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/ButtonActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/ElectronicActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/ElectronicActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/GrabableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/GrabableActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/LeverActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/LeverActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/PullableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/PullableActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Interface/GrabInterableInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Interface/GrabInterableInterface.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -280,6 +288,8 @@
       <workItem from="1769948754383" duration="6740000" />
       <workItem from="1769991787348" duration="36873000" />
       <workItem from="1770034151448" duration="74000" />
+      <workItem from="1770034953866" duration="421000" />
+      <workItem from="1770078403953" duration="38285000" />
     </task>
     <servers />
   </component>

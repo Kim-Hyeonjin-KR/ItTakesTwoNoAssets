@@ -14,6 +14,8 @@ AElectronicActor::AElectronicActor()
 void AElectronicActor::BeginPlay()
 {
 	Super::BeginPlay();
+	
+	InitialRotation = GetActorRotation();
 }
 
 // Called every frame
@@ -26,6 +28,7 @@ void AElectronicActor::OnSignal_Implementation(AActor* Interactor, bool bSignal)
 {
 	IElectronicInterface::OnSignal_Implementation(Interactor, bSignal);
 	
+	//버튼 상태 재정의
 	LinkedSwitchs.Add(Interactor, bSignal);
 	
 	for (auto& Switchs : LinkedSwitchs)
@@ -43,6 +46,7 @@ void AElectronicActor::OnSignal_Implementation(AActor* Interactor, bool bSignal)
 			return;
 		}
 	}
+	
 	bAllSwitchsActive = true;
 	OnActivate(this);
 }

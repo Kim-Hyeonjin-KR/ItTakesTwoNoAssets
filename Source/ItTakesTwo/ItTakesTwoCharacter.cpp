@@ -31,7 +31,7 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 	
 	if (OtherActor != nullptr && OtherActor->ActorHasTag(TEXT("Climbable")))
 	{
-		if (PickUpItem != EPickUpItemType::None)
+		if (PickUpItem != EHandItemType::None)
 		{
 			return;
 		}
@@ -56,9 +56,10 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* Over
 	SetMappingContext();
 }
 
-void AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded(UAnimMontage* Montage, bool bInterrupted)
+void AItTakesTwoCharacter::OnIgnoreInputMontaEnded(UAnimMontage* Montage, bool bInterrupted)
 {
-	bIgnoreInput = false;
+	bIgnoreMoveInput = false;
+	bIgnoreInteractionInput = false;
 	
 	GetController()->SetIgnoreMoveInput(false);
 	UE_LOG(LogTemp,Warning,TEXT("몽타주 재생 종료됨!"));
@@ -122,7 +123,7 @@ void AItTakesTwoCharacter::BeginPlay()
 	AnimInst = Cast<UItTakesTwoPlayerAnimInstance>(GetMesh()->GetAnimInstance());
 	if (AnimInst != nullptr)
 	{
-		AnimInst->OnLinkAnimClassLayers(EPickUpItemType::None);
+		AnimInst->OnLinkAnimClassLayers(EHandItemType::None);
 	}
 	
 	if (GetCapsuleComponent() != nullptr)
@@ -133,7 +134,8 @@ void AItTakesTwoCharacter::BeginPlay()
 	
 	if (ClimbUpMonta != nullptr)
 	{
-		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded);
+		//이거 뭐임?
+		MontageEndedDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreInputMontaEnded);
 	}
 	
 	UGrabInterActionComponent* GrabComp = FindComponentByClass<UGrabInterActionComponent>();
@@ -149,8 +151,7 @@ void AItTakesTwoCharacter::BeginPlay()
 		GrabComp->OnButtonRelease.BindUObject(this, &AItTakesTwoCharacter::ButtonRelease);
 		
 		//레버
-		GrabComp->OnLeverPulled.BindUObject(this, &AItTakesTwoCharacter::LeverPulled);
-		GrabComp->OnLeverReleased.BindUObject(this, &AItTakesTwoCharacter::LeverReleased);
+		GrabComp->OnLeverSwitched.BindUObject(this, &AItTakesTwoCharacter::LeverActive);
 		
 		//밀고 당기기
 		GrabComp->OnObjectPull.BindUObject(this, &AItTakesTwoCharacter::ObjectPull);
@@ -194,7 +195,7 @@ void AItTakesTwoCharacter::TryClimbUp()
 			if (ClimbUpMonta)
 			{
 				GetController()->SetIgnoreMoveInput(true);
-				bIgnoreInput = true;
+				bIgnoreMoveInput = true;
 				
 				InputMovementVector = FVector2D::ZeroVector;
 				
@@ -209,6 +210,52 @@ void AItTakesTwoCharacter::TryClimbUp()
 		}
 	}
 	
+}
+
+void AItTakesTwoCharacter::SetIgnoreInputPlayingMontage(UAnimMontage* TargetMontage)
+{
+	FOnMontageEnded EndDelegate;
+	EndDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreInputMontaEnded);
+	AnimInst->Montage_SetEndDelegate(EndDelegate);
+	
+	bIgnoreMoveInput = true;
+	bIgnoreInteractionInput = true;
+	GetController()->SetIgnoreMoveInput(true);
+}
+
+bool AItTakesTwoCharacter::CheckLineTrace(FVector StartVec, FVector EndVec)
+{
+	FHitResult HitResult;
+
+	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this); // 자신은 충돌에서 제외
+
+	// 라인 트레이스 수행 (ECC_Visibility 채널 사용)
+	bool bHit = GetWorld()->LineTraceSingleByChannel(
+		HitResult,
+		StartVec,
+		EndVec,
+		ECC_Visibility,
+		TraceParams
+	);
+	
+	// 디버그용: 부딪힌 대상의 이름을 출력
+	if (bHit && HitResult.GetActor())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Hit Actor: %s"), *HitResult.GetActor()->GetName());
+		UE_LOG(LogTemp, Warning, TEXT("Hit Component: %s"), *HitResult.GetComponent()->GetName());
+	}
+    
+	// 시각적 확인 (5초 동안 빨간 선 표시, 충돌 지점은 점으로 표시)
+	DrawDebugLine(GetWorld(), StartVec, EndVec, FColor::Green, false, 5.f, 0, 1.f);
+	if (bHit)
+	{
+		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.f, 12, FColor::Red, false, 5.f);
+	}
+	
+	
+	
+	return HitResult.bBlockingHit;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -283,7 +330,7 @@ void AItTakesTwoCharacter::SetLockOnMode(bool bLockOn)
 	}
 }
 
-void AItTakesTwoCharacter::SetPickUpItemType(EPickUpItemType Type)
+void AItTakesTwoCharacter::SetPickUpItemType(EHandItemType Type)
 {
 	UE_LOG(LogTemp, Log, TEXT("SetPickUpItemType %s"), *UEnum::GetValueAsString(Type));
 	
@@ -294,20 +341,20 @@ void AItTakesTwoCharacter::SetPickUpItemType(EPickUpItemType Type)
 	}
 }
 
-void AItTakesTwoCharacter::SetPutDownItemType(EPickUpItemType Type)
+void AItTakesTwoCharacter::SetPutDownItemType(EHandItemType Type)
 {
 	UE_LOG(LogTemp, Log, TEXT("SetPutDownItemType %s"), *UEnum::GetValueAsString(Type));
 	
-	PickUpItem = EPickUpItemType::None;
+	PickUpItem = EHandItemType::None;
 	if (AnimInst != nullptr)
 	{
-		AnimInst->OnLinkAnimClassLayers(EPickUpItemType::None);
+		AnimInst->OnLinkAnimClassLayers(EHandItemType::None);
 	}
 }
 
 void AItTakesTwoCharacter::ToggleSwitched(UAnimMontage* HitButtonMontage)
 {
-	if (bIgnoreInput)
+	if (bIgnoreMoveInput)
 	{
 		return;
 	}
@@ -318,42 +365,87 @@ void AItTakesTwoCharacter::ToggleSwitched(UAnimMontage* HitButtonMontage)
 		return;
 	}
 	
-	bIgnoreInput = true;
-	GetController()->SetIgnoreMoveInput(true);
+	// 랜덤하게 버튼 누르는 애니메이션 재생
+	TArray<FName> SectionNames = {TEXT("Default"), TEXT("var2")};
+	int32 RandomIndex = FMath::RandRange(0, SectionNames.Num() - 1);
 	
-	PlayAnimMontage(HitButtonMontage);
+	AnimInst->Montage_Play(HitButtonMontage);
+	AnimInst->Montage_JumpToSection(SectionNames[RandomIndex], HitButtonMontage);
 	
-	FOnMontageEnded EndDelegate;
-	EndDelegate.BindUObject(this, &AItTakesTwoCharacter::OnIgnoreMoveInputMontaEnded);
-	AnimInst->Montage_SetEndDelegate(EndDelegate);
-	
-	
-	
-	
+	SetIgnoreInputPlayingMontage(HitButtonMontage);
 }
 
-void AItTakesTwoCharacter::ButtonHold()
+void AItTakesTwoCharacter::ButtonHold(UAnimMontage* HoldButtonMontage)
 {
+	UE_LOG(LogTemp, Log, TEXT("버튼 홀드 가즈아"));
+	
+	PickUpItem = EHandItemType::HoldButton;
+	
+	AnimInst->Montage_Play(HoldButtonMontage);
+	SetIgnoreInputPlayingMontage(HoldButtonMontage);
 }
 
-void AItTakesTwoCharacter::ButtonRelease()
+void AItTakesTwoCharacter::ButtonRelease(UAnimMontage* HoldButtonMontage)
 {
+	UE_LOG(LogTemp, Log, TEXT("버튼 홀드 끛!"));
+	
+	PickUpItem = EHandItemType::None;
+	
+	if (AnimInst->Montage_IsPlaying(HoldButtonMontage))
+	{
+		AnimInst->Montage_JumpToSection(TEXT("HoldButton_Exit"), HoldButtonMontage);
+	}
+	else
+	{
+		AnimInst->Montage_Play(HoldButtonMontage);
+		AnimInst->Montage_JumpToSection(TEXT("HoldButton_Exit"), HoldButtonMontage);
+	}
 }
 
-void AItTakesTwoCharacter::LeverPulled()
+void AItTakesTwoCharacter::LeverActive(UAnimMontage* HitLeverMontage, bool bIsLeft)
 {
+	UE_LOG(LogTemp, Log, TEXT("레버 활성화 가즈아"));
+	
+	PickUpItem = EHandItemType::ToggleLever;
+	
+	AnimInst->Montage_Play(HitLeverMontage);
+	
+	if (bIgnoreMoveInput)
+	{
+		return;
+	}
+	
+	if (HitLeverMontage == nullptr)
+	{
+		UE_LOG(LogTemp, Log, TEXT("매개변수로 온 HitLeverMontage가 없음"));
+		return;
+	}
+	
+	AnimInst->Montage_Play(HitLeverMontage);
+	if (bIsLeft)
+	{
+		AnimInst->Montage_JumpToSection(TEXT("ToggleLeverLeft"), HitLeverMontage);
+	}
+	SetIgnoreInputPlayingMontage(HitLeverMontage);
 }
 
-void AItTakesTwoCharacter::LeverReleased()
+void AItTakesTwoCharacter::ObjectPull(UAnimMontage* PullPushMontage)
 {
+	UE_LOG(LogTemp, Log, TEXT("풀 푸쉬 가즈아!"));
+	
+	PickUpItem = EHandItemType::PullableObject;
+	
+	AnimInst->Montage_Play(PullPushMontage);
 }
 
-void AItTakesTwoCharacter::ObjectPull()
+void AItTakesTwoCharacter::PullReleased(UAnimMontage* PullPushMontage)
 {
-}
-
-void AItTakesTwoCharacter::PullReleased()
-{
+	UE_LOG(LogTemp, Log, TEXT("풀 푸쉬 끛!"));
+	
+	PickUpItem = EHandItemType::None;
+	
+	AnimInst->Montage_Play(PullPushMontage);
+	AnimInst->Montage_JumpToSection(TEXT("Push_Exit"), PullPushMontage);
 }
 
 
@@ -383,6 +475,18 @@ void AItTakesTwoCharacter::SetMappingContext()
 		EnhancedInputSubsystem->AddMappingContext(DefaultMappingContext, 0);
 		GetCharacterMovement()->SetMovementMode(MOVE_Walking);
 		GetCharacterMovement()->GravityScale = 1.0f;
+	}
+}
+
+void AItTakesTwoCharacter::SetInteractionInputLock(bool bInputLock)
+{
+	if (bInputLock)
+	{
+		bIgnoreInteractionInput = true;
+	}
+	else
+	{
+		bIgnoreInteractionInput = false;
 	}
 }
 
@@ -434,7 +538,7 @@ void AItTakesTwoCharacter::Look(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 {
-	if (bIgnoreInput)
+	if (bIgnoreMoveInput)
 	{
 		return;
 	}
@@ -492,7 +596,7 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
 {
-	if (bIgnoreInput)
+	if (bIgnoreMoveInput)
 	{
 		return;
 	}
@@ -512,7 +616,7 @@ void AItTakesTwoCharacter::CustomStopJumping()
 
 void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 {
-	if (bIgnoreInput)
+	if (bIgnoreInteractionInput)
 	{
 		return;
 	}
@@ -535,12 +639,13 @@ void AItTakesTwoCharacter::CustomInterAction(const FInputActionValue& Value)
 
 void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 {
-	if (bIgnoreInput)
+	if (bIgnoreMoveInput)
 	{
 		return;
 	}
 	UE_LOG(LogTemp,Warning,TEXT("CustomCrouch"));
 	
+	//공중에 떠있는 상태라면 내려찍기 하고 return
 	if (GetMovementComponent() != nullptr)
 	{
 		if (GetMovementComponent()->IsFalling())
@@ -553,20 +658,70 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 		}
 	}
 	
-	
+	//내려찍기를 하지 않았다면 웅크리기
 	if (EnumHasAnyFlags(CurrentMovementModeState, EMovementState::Crouch))
 	{
+		//웅크리기 해제
+		
+		//머리 위에 공간이 있는지 확인
+		float PreCapsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+		float RayLenght = DefaultCapsuleHalfHeight - PreCapsuleHalfHeight;
+		
+		FVector StartVec = GetCapsuleComponent()->GetComponentLocation() + (GetActorUpVector() * GetCapsuleComponent()->GetScaledCapsuleHalfHeight());
+		FVector EndVec = StartVec + GetActorUpVector() * RayLenght;
+
+		if (CheckLineTrace(StartVec, EndVec))
+		{
+			//뭔가 가로막고 있으므로 일어나지 않음.
+			UE_LOG(LogTemp,Warning,TEXT("뭔가 가로 막고 있어서 일어나지 않음"));
+			return;
+		}
+		
 		CurrentMovementModeState &= ~EMovementState::Crouch;
+		
+		GetCapsuleComponent()->SetCapsuleHalfHeight(DefaultCapsuleHalfHeight);
+		
+		FVector NewLocation = GetMesh()->GetRelativeLocation();
+		float NewMeshocation = PreCapsuleHalfHeight - GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+		NewLocation.Z += NewMeshocation;
+		
+		GetMesh()->SetRelativeLocation(NewLocation);
 	}
 	else
 	{
+		//웅크리기
 		CurrentMovementModeState |= EMovementState::Crouch;
+		
+		DefaultCapsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+		GetCapsuleComponent()->SetCapsuleHalfHeight(DefaultCapsuleHalfHeight * 0.75f);
+		
+		FVector NewLocation = GetMesh()->GetRelativeLocation();
+		float NewMeshocation = DefaultCapsuleHalfHeight - GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+		NewLocation.Z += NewMeshocation;
+		
+		GetMesh()->SetRelativeLocation(NewLocation);
 	}
+	
+	// //캐릭터 콜리전 크기를 피직스 에셋을 기준으로 변경. 애니메이션이 다 나오기 전에 계산을 해버려서 사용하지 않기로 결정.
+	// FBox HeadBounds = GetMesh()->GetBodyInstance(TEXT("Head"))->GetBodyBounds();
+	// float HighestPoint = HeadBounds.Max.Z; // 피직스 바디의 가장 윗면 Z값
+	// 	
+	// //발과 머리를 기준으로 계산. 각자 장단점이 있어서 그냥 기록용으로 남겨둠.
+	// //FBox FootBounds = GetMesh()->GetBodyInstance(TEXT("RightFoot"))->GetBodyBounds();
+	// //float LowestPoint = FootBounds.Min.Z;
+	// 	
+	// float GroundZ = GetActorLocation().Z - GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+	// 	
+	// float NewHight = HighestPoint - GroundZ;
+	// //float NewHight = HighestPoint - LowestPoint;
+	//
+	// GetCapsuleComponent()->SetCapsuleHalfHeight(NewHight * 0.5f);
+	
 }
 
 void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
 {
-	if (bIgnoreInput)
+	if (bIgnoreMoveInput)
 	{
 		return;
 	}

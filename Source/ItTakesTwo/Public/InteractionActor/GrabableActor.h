@@ -30,9 +30,9 @@ public:
 
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(ItemType))
-	EPickUpItemType ItemType;	
+	EHandItemType ItemType;	
 	
-	virtual EPickUpItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
+	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
 	virtual void DeactiveItemInteract_Implementation(AActor* Interactor) override;
 	
 private:

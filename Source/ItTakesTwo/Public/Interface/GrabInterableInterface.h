@@ -32,7 +32,7 @@ public:
 	//virtual EPickUpItemType GrabInteract(AActor* Interactor) {return EPickUpItemType::None;};
 	
 	UFUNCTION(BlueprintNativeEvent)	// 블루프린트와 c++ 모두 수정이 가능한 함수임을 선언. 반대로 말하면 이미 virtual이기 때문에 virtual을 또 붙이면 에러! 구현부가 c++에 없어도 된다
-	EPickUpItemType ActiveItemInteract(AActor* Interactor);
+	EHandItemType ActiveItemInteract(AActor* Interactor);
 	
 	UFUNCTION(BlueprintNativeEvent)
 	void DeactiveItemInteract(AActor* Interactor);

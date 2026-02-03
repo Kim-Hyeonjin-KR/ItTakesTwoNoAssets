@@ -2,6 +2,7 @@
 
 
 #include "InteractionActor/LeverActor.h"
+#include "Interface/ElectronicInterface.h"
 
 // Sets default values
 ALeverActor::ALeverActor()
@@ -15,14 +16,14 @@ void ALeverActor::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyC
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 	
-	if (ItemType == EPickUpItemType::HoldLever)
+	if (ItemType == EHandItemType::ToggleLever)
 	{
 		return;
 	}
 	else
 	{
-		FMessageLog("EditorErrors").Warning(FText::FromString("레버는 HoldLever만 선택해주세요"));
-		ItemType = EPickUpItemType::HoldLever;
+		FMessageLog("EditorErrors").Warning(FText::FromString("레버는 ToggleLever만 선택해주세요"));
+		ItemType = EHandItemType::ToggleLever;
 	}
 }
 
@@ -41,26 +42,46 @@ void ALeverActor::Tick(float DeltaTime)
 
 }
 
-EPickUpItemType ALeverActor::ActiveItemInteract_Implementation(AActor* Interactor)
+EHandItemType ALeverActor::ActiveItemInteract_Implementation(AActor* Interactor)
 {
-	GrabLever();
+	ActiveLever();
 	
 	return ItemType;
 }
 
-void ALeverActor::DeactiveItemInteract_Implementation(AActor* Interactor)
+bool ALeverActor::IsHandleTilteLeft()
 {
-	ReleaseLever();
+	return bHandleTiltLeft;
 }
 
-void ALeverActor::GrabLever()
+void ALeverActor::ActiveLever()
 {
 	UE_LOG(LogTemp, Log, TEXT("GrabLever"));
+	
+	if (bActive)
+	{
+		bActive = false;
+		UE_LOG(LogTemp, Log, TEXT("레버 비활성화"));
+	}
+	else
+	{
+		bActive = true;
+		UE_LOG(LogTemp, Log, TEXT("레버 활성화"));
+	}
+	
+	SendSignal();
+	
 }
 
-void ALeverActor::ReleaseLever()
+void ALeverActor::SendSignal()
 {
-	UE_LOG(LogTemp, Log, TEXT("ReleaseLever"));
+	//연결된 전자기기에 신호 전달
+	for (const auto& ElectronicActor : LinkedElectronics)
+	{
+		if (ElectronicActor->Implements<UElectronicInterface>())
+		{
+			IElectronicInterface::Execute_OnSignal(ElectronicActor, this, bActive);
+		}
+	}
 }
-
 

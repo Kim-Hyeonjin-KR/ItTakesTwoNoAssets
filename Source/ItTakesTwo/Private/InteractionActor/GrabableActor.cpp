@@ -16,14 +16,14 @@ void AGrabableActor::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
 	
-	if (ItemType == EPickUpItemType::Heavy || ItemType == EPickUpItemType::Small)
+	if (ItemType == EHandItemType::Heavy || ItemType == EHandItemType::Small)
 	{
 		return;
 	}
 	else
 	{
 		FMessageLog("EditorErrors").Warning(FText::FromString("들 수 있는 아이템은 Heavy나 Small만 선택해주세요"));
-		ItemType = EPickUpItemType::Small;
+		ItemType = EHandItemType::Small;
 	}
 	
 }
@@ -42,7 +42,7 @@ void AGrabableActor::Tick(float DeltaTime)
 
 }
 
-EPickUpItemType AGrabableActor::ActiveItemInteract_Implementation(AActor* Interactor)
+EHandItemType AGrabableActor::ActiveItemInteract_Implementation(AActor* Interactor)
 {
 	AttachItem(Interactor);
 	

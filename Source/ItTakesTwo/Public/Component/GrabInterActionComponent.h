@@ -9,20 +9,18 @@
 
 class UCapsuleComponent;
 
-DECLARE_DELEGATE_OneParam(FOnGrabbed, EPickUpItemType)
-DECLARE_DELEGATE_OneParam(FOnDropped, EPickUpItemType)
+DECLARE_DELEGATE_OneParam(FOnGrabbed, EHandItemType)
+DECLARE_DELEGATE_OneParam(FOnDropped, EHandItemType)
 
 DECLARE_DELEGATE_OneParam(FOnToggleSwitched, UAnimMontage*)
 
-DECLARE_DELEGATE(FOnButtonHold)
-DECLARE_DELEGATE(FOnButtonRelease)
+DECLARE_DELEGATE_OneParam(FOnButtonHold, UAnimMontage*)
+DECLARE_DELEGATE_OneParam(FOnButtonRelease, UAnimMontage*)
 
-DECLARE_DELEGATE(FOnLeverPulled)
-DECLARE_DELEGATE(FOnLeverReleased)
+DECLARE_DELEGATE_TwoParams(FOnLeverSwitched, UAnimMontage*, bool)
 
-DECLARE_DELEGATE(FOnObjectPull)
-DECLARE_DELEGATE(FOnPullReleased)
-
+DECLARE_DELEGATE_OneParam(FOnObjectPull, UAnimMontage*)
+DECLARE_DELEGATE_OneParam(FOnPullReleased, UAnimMontage*)
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ITTAKESTWO_API UGrabInterActionComponent : public UActorComponent
@@ -42,8 +40,8 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	
 public:
-	void CustomInterAction(const EPickUpItemType CurrentPickUpItemType);
-	void CustomInterActionCancle();
+	void CustomInterAction(const EHandItemType CurrentPickUpItemType);
+	void CustomCancleInterAction(const EHandItemType CurrentPickUpItemType);
 	
 	//델리게이트
 	FOnGrabbed OnItemPickUp;
@@ -53,8 +51,7 @@ public:
 	FOnButtonHold OnButtonHold;
 	FOnButtonRelease OnButtonRelease;
 	
-	FOnLeverPulled OnLeverPulled;
-	FOnLeverReleased OnLeverReleased;
+	FOnLeverSwitched OnLeverSwitched;
 	
 	FOnObjectPull OnObjectPull;
 	FOnPullReleased OnPullReleased;
@@ -63,18 +60,25 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* HitButtonMontage;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* HoldButtonMontage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* HoldLeverMontage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* PullPushMontage;
 	
 private:
 	void TryActivateInteractionItem();
-	void HandleInteraction(EPickUpItemType TargetType, AActor* HitActor);
+	void HandleInteraction(EHandItemType TargetType, AActor* HitActor);
 	
-	void PickUpItem(EPickUpItemType TargetType);
-	void PutDownItem(EPickUpItemType TargetType);
+	void PickUpItem(EHandItemType TargetType);
+	void PutDownItem(EHandItemType TargetType);
 	void PushHoldButton();
 	void ReleaseHoldButton();
 	void HitToggleButton();
-	void HoldLever();
-	void ReleaseLever();
+	void HitLever();
 	void PullObject();
 	void ReleasePullObject();
 	

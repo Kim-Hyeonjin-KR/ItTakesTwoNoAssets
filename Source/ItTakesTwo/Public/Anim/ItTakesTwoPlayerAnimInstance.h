@@ -17,6 +17,6 @@ class ITTAKESTWO_API UItTakesTwoPlayerAnimInstance : public UAnimInstance
 	
 public:
 	UFUNCTION(BlueprintImplementableEvent)
-	void OnLinkAnimClassLayers(const EPickUpItemType& PickUpItemType);
+	void OnLinkAnimClassLayers(const EHandItemType& PickUpItemType);
 	
 };

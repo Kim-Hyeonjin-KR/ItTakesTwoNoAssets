@@ -30,9 +30,9 @@ public:
 	
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	EPickUpItemType ItemType = 	EPickUpItemType::HoldButton;
+	EHandItemType ItemType = 	EHandItemType::HoldButton;
 	
-	virtual EPickUpItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
+	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
 	virtual void DeactiveItemInteract_Implementation(AActor* Interactor) override;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
@@ -42,6 +42,8 @@ private:
 	void ToggleButtonActive();
 	void HoldButtonActive();
 	void ReleaseHoldButton();
+	
+	void SendSignal();
 	
 	//버튼 엑터에 연결된 전기 오브젝트들 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (AllowPrivateAccess = true))

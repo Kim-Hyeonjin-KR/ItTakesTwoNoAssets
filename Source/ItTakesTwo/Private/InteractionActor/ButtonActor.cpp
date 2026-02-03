@@ -17,7 +17,7 @@ void AButtonActor::PostEditChangeProperty(struct FPropertyChangedEvent& Property
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 	
-	if (ItemType == EPickUpItemType::HoldButton || ItemType == EPickUpItemType::ToggleButton)
+	if (ItemType == EHandItemType::HoldButton || ItemType == EHandItemType::ToggleButton)
 	{
 		return;
 	}
@@ -25,7 +25,7 @@ void AButtonActor::PostEditChangeProperty(struct FPropertyChangedEvent& Property
 	{
 		//한글은 인코딩 형식 변경 필요.
 		FMessageLog("EditorErrors").Warning(FText::FromString("버튼은 HoldButton이나 ToggleButton만 선택해주세요"));
-		ItemType = EPickUpItemType::ToggleButton;
+		ItemType = EHandItemType::ToggleButton;
 	}
 }
 
@@ -34,20 +34,6 @@ void AButtonActor::PostEditChangeProperty(struct FPropertyChangedEvent& Property
 void AButtonActor::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	//시작시, 연결된 전자기기에 신호 전달하여 Map에 등록.
-	for (const auto& ElectronicActor : LinkedElectronics)
-	{
-		if (ElectronicActor == nullptr)
-		{
-			UE_LOG(LogTemp, Error, TEXT("ButtonActor에 ElectronicActor이 null 입니다."));
-			return;
-		}
-		if (ElectronicActor->Implements<UElectronicInterface>())
-		{
-			IElectronicInterface::Execute_OnSignal(ElectronicActor, this, bActive);
-		}
-	}
 }
 
 // Called every frame
@@ -57,13 +43,13 @@ void AButtonActor::Tick(float DeltaTime)
 
 }
 
-EPickUpItemType AButtonActor::ActiveItemInteract_Implementation(AActor* Interactor)
+EHandItemType AButtonActor::ActiveItemInteract_Implementation(AActor* Interactor)
 {
-	if (ItemType == EPickUpItemType::ToggleButton)
+	if (ItemType == EHandItemType::ToggleButton)
 	{
 		ToggleButtonActive();
 	}
-	else if (ItemType == EPickUpItemType::HoldButton)
+	else if (ItemType == EHandItemType::HoldButton)
 	{
 		HoldButtonActive();
 	}
@@ -74,7 +60,7 @@ void AButtonActor::DeactiveItemInteract_Implementation(AActor* Interactor)
 {
 	IGrabInterableInterface::DeactiveItemInteract_Implementation(Interactor);
 	
-	if (ItemType == EPickUpItemType::HoldButton)
+	if (ItemType == EHandItemType::HoldButton)
 	{
 		ReleaseHoldButton();
 	}
@@ -95,6 +81,25 @@ void AButtonActor::ToggleButtonActive()
 		UE_LOG(LogTemp, Log, TEXT("버튼 활성화"));
 	}
 	
+	SendSignal();
+}
+
+void AButtonActor::HoldButtonActive()
+{
+	bActive = true;
+	UE_LOG(LogTemp, Log, TEXT("홀드 버튼 활성화"));
+	SendSignal();
+}
+
+void AButtonActor::ReleaseHoldButton()
+{
+	bActive = false;
+	UE_LOG(LogTemp, Log, TEXT("홀드 버튼 비활성화"));
+	SendSignal();
+}
+
+void AButtonActor::SendSignal()
+{
 	//연결된 전자기기에 신호 전달
 	for (const auto& ElectronicActor : LinkedElectronics)
 	{
@@ -104,14 +109,3 @@ void AButtonActor::ToggleButtonActive()
 		}
 	}
 }
-
-void AButtonActor::HoldButtonActive()
-{
-	UE_LOG(LogTemp, Log, TEXT("HoldButtonActive"));
-}
-
-void AButtonActor::ReleaseHoldButton()
-{
-	UE_LOG(LogTemp, Log, TEXT("ReleaseHoldButton"));
-}
-

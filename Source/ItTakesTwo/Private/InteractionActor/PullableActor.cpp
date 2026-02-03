@@ -15,14 +15,14 @@ void APullableActor::PostEditChangeProperty(struct FPropertyChangedEvent& Proper
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
 	
-	if (ItemType == EPickUpItemType::PullableObject)
+	if (ItemType == EHandItemType::PullableObject)
 	{
 		return;
 	}
 	else
 	{
 		FMessageLog("EditorErrors").Warning(FText::FromString("끌 수 있는 물체는 PullableObject만 선택해주세요"));
-		ItemType = EPickUpItemType::PullableObject;
+		ItemType = EHandItemType::PullableObject;
 	}
 }
 
@@ -40,7 +40,7 @@ void APullableActor::Tick(float DeltaTime)
 
 }
 
-EPickUpItemType APullableActor::ActiveItemInteract_Implementation(AActor* Interactor)
+EHandItemType APullableActor::ActiveItemInteract_Implementation(AActor* Interactor)
 {
 	GrabPullableActor();
 	

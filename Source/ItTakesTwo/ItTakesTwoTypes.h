@@ -9,14 +9,14 @@
 
 
 UENUM(BlueprintType)
-enum class EPickUpItemType : uint8
+enum class EHandItemType : uint8
 {
 	None UMETA(DisplayName = "None"),
 	Small UMETA(DisplayName = "Small"),
 	Heavy UMETA(DisplayName = "Heavy"),
 	ToggleButton UMETA(DisplayName = "ToggleButton"),
 	HoldButton UMETA(DisplayName = "HoldButton"),
-	HoldLever UMETA(DisplayName = "HoldLever"),
+	ToggleLever UMETA(DisplayName = "ToggleLever"),
 	PullableObject UMETA(DisplayName = "PullableObject")
 };
 

@@ -27,13 +27,22 @@ public:
 	
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(ItemType))
-	EPickUpItemType ItemType = EPickUpItemType::HoldLever;	
+	EHandItemType ItemType = EHandItemType::ToggleLever;	
 	
-	virtual EPickUpItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
-	virtual void DeactiveItemInteract_Implementation(AActor* Interactor) override;
+	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
 
-private:
-	void GrabLever();
-	void ReleaseLever();
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool bActive;
 	
+	bool IsHandleTilteLeft();
+	
+private:
+	void ActiveLever();
+	void SendSignal();
+	
+	bool bHandleTiltLeft;
+	
+	//레버 엑터에 연결된 전기 오브젝트들 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (AllowPrivateAccess = true))
+	TArray<AActor*> LinkedElectronics;
 };
