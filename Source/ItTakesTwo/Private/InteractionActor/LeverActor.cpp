@@ -69,6 +69,8 @@ void ALeverActor::ActiveLever()
 		UE_LOG(LogTemp, Log, TEXT("레버 활성화"));
 	}
 	
+	bHandleTiltLeft = !bHandleTiltLeft;
+	
 	SendSignal();
 	
 }

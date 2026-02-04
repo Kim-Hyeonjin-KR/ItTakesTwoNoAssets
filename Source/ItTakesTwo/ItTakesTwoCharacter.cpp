@@ -404,7 +404,7 @@ void AItTakesTwoCharacter::ButtonRelease(UAnimMontage* HoldButtonMontage)
 
 void AItTakesTwoCharacter::LeverActive(UAnimMontage* HitLeverMontage, bool bIsLeft)
 {
-	UE_LOG(LogTemp, Log, TEXT("레버 활성화 가즈아"));
+	UE_LOG(LogTemp, Log, TEXT("레버 상호작용 성공. 몽타주 재생"));
 	
 	AnimInst->Montage_Play(HitLeverMontage);
 	
@@ -422,7 +422,7 @@ void AItTakesTwoCharacter::LeverActive(UAnimMontage* HitLeverMontage, bool bIsLe
 	AnimInst->Montage_Play(HitLeverMontage);
 	if (bIsLeft)
 	{
-		AnimInst->Montage_JumpToSection(TEXT("ToggleLeverLeft"), HitLeverMontage);
+		AnimInst->Montage_JumpToSection(TEXT("ToggleLever_Left"), HitLeverMontage);
 	}
 	SetIgnoreInputPlayingMontage(HitLeverMontage);
 }
