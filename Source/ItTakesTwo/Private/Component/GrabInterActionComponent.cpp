@@ -37,19 +37,19 @@ void UGrabInterActionComponent::BeginPlay()
 	}
 	
 	// 몽타주 제대로 넣었는지 확인
-	if (ensureAlways(HitButtonMontage))
+	if (ensureAlways(HitButtonMontage) == false)
 	{
 		UE_LOG(LogTemp,Error, TEXT("HitButtonMontage 비었음"));
 	}
-	if (ensureAlways(HoldButtonMontage))
+	if (ensureAlways(HoldButtonMontage) == false)
 	{
 		UE_LOG(LogTemp,Error, TEXT("HoldButtonMontage 비었음"));
 	}
-	if (ensureAlways(HoldLeverMontage))
+	if (ensureAlways(HoldLeverMontage) == false)
 	{
 		UE_LOG(LogTemp,Error, TEXT("HoldLeverMontage 비었음"));
 	}
-	if (ensureAlways(PullPushMontage))
+	if (ensureAlways(PullPushMontage) == false)
 	{
 		UE_LOG(LogTemp,Error, TEXT("PullObjectMontage 비었음"));
 	}
@@ -182,9 +182,11 @@ void UGrabInterActionComponent::HandleInteraction(EHandItemType TargetType, AAct
 		break;
 	case EHandItemType::ToggleButton:
 		HitToggleButton();
+		EquipedItem = nullptr;	//토글 버튼은 일회성 상호작용
 		break;
 	case EHandItemType::ToggleLever:
 		HitLever();
+		EquipedItem = nullptr;	//토글 레버도 일회성 상호작용
 		break;
 	case EHandItemType::PullableObject:
 		PullObject();
@@ -260,8 +262,6 @@ void UGrabInterActionComponent::ReleaseHoldButton()
 
 void UGrabInterActionComponent::HitToggleButton()
 {
-	EquipedItem = nullptr;	//토글 버튼은 일회성 상호작용
-	
 	if (OnToggleSwitched.IsBound())
 	{
 		if (HitButtonMontage != nullptr)
@@ -277,43 +277,41 @@ void UGrabInterActionComponent::HitToggleButton()
 
 void UGrabInterActionComponent::HitLever()
 {
+	//두번하는데 그냥 냅둠
 	if (EquipedItem == nullptr)
 	{
 		return;
 	}
 	
-	bool bIsLeftToCharacter;
 	ALeverActor* LeverActor = Cast<ALeverActor>(EquipedItem);
-	if (LeverActor && GetOwner())
-	{
-		bool bLeverIsLeft = LeverActor->IsHandleTilteLeft();
-		FVector DirectToLeverVec = GetOwner()->GetActorLocation() - LeverActor->GetActorLocation();
-		
-		float DotResult = FVector::DotProduct(GetOwner()->GetActorRightVector(), DirectToLeverVec);
-		
-		UE_LOG(LogTemp, Warning, TEXT("내적 값 : %f"), DotResult);
-		
-		if (DotResult < 0)
-		{
-			bIsLeftToCharacter = !bLeverIsLeft;
-		}
-		else
-		{
-			bIsLeftToCharacter = bLeverIsLeft;
-		}
-	}
-	else
+	if (LeverActor == nullptr || GetOwner() == nullptr)
 	{
 		UE_LOG(LogTemp,Warning, TEXT("HitLever 함수.LeverActor 혹은 GetOwner가 없습니다."));
 		return;
 	}
 	
+	bool bLeverIsLeft = LeverActor->IsHandleTilteLeft();
+	FVector CharToLever = LeverActor->GetActorLocation() - GetOwner()->GetActorLocation();
+	
+	//float DotResult = FVector::DotProduct(LeverActor->GetActorForwardVector(), CharToLever);
+	bool bIsBehing = FVector::DotProduct(LeverActor->GetActorForwardVector(), CharToLever) < 0.0f;
+	
+	if (bIsBehing)
+	{
+		//레버의 정면이 아닌, 뒤에 있는 상황이면 방향 반전
+		bLeverIsLeft = !bLeverIsLeft;
+	}
+	
+	if (HoldLeverMontage == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("HitLever 함수. HoldLeverMontage가 없음."));
+		return;
+	}
+	
+	// IsBound하고 Execute하는게 디버깅에 용이
 	if (OnLeverSwitched.IsBound())
 	{
-		if (HoldLeverMontage != nullptr)
-		{
-			OnLeverSwitched.Execute(HoldLeverMontage, bIsLeftToCharacter);
-		}
+		OnLeverSwitched.Execute(HoldLeverMontage, bLeverIsLeft);
 	}
 	else
 	{

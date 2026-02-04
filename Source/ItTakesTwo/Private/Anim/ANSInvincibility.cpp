@@ -35,7 +35,6 @@ void UANSInvincibility::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSeque
 			DashSpeed = DashLength / TotalDuration;
 		}
 		
-		Player->GetController()->SetIgnoreMoveInput(true);
 		Player->bCanJump = false;
 	}
 	else
@@ -56,11 +55,6 @@ void UANSInvincibility::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenc
 		Player->CurrentMovementModeState &= ~EMovementState::Dash;
 		Player->bCanDash = true;
 		Player->bCanJump = true;
-		
-		if (Player->GetController() != nullptr)
-		{
-			Player->GetController()->SetIgnoreMoveInput(false);
-		}
 	}
 	else
 	{

@@ -406,8 +406,6 @@ void AItTakesTwoCharacter::LeverActive(UAnimMontage* HitLeverMontage, bool bIsLe
 {
 	UE_LOG(LogTemp, Log, TEXT("레버 활성화 가즈아"));
 	
-	PickUpItem = EHandItemType::ToggleLever;
-	
 	AnimInst->Montage_Play(HitLeverMontage);
 	
 	if (bIgnoreMoveInput)
@@ -566,25 +564,7 @@ void AItTakesTwoCharacter::Dash(const FInputActionValue& Value)
 		UE_LOG(LogTemp,Warning, TEXT("%f %f"),DashDirection.X, DashDirection.Y);
 		
 		PlayAnimMontage(DashMontage);
-		
-		
-		/*
-		FVector CurrentLocation = GetActorLocation();
-		FRotator CurrentRotation = Controller->GetControlRotation();
-		CurrentRotation.Roll = 0;
-		CurrentRotation.Pitch = 0;
-		FVector HorizontalForwardVector = FRotationMatrix(CurrentRotation).GetUnitAxis(EAxis::X);
-		
-		FVector TargetLocation = CurrentLocation + HorizontalForwardVector * DashLength;
-		*/
-		
-		/*
-		UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
-		if (AnimInstance != nullptr)
-		{
-			AnimInstance->Montage_Play(DashMontage);
-		}
-		*/
+		SetIgnoreInputPlayingMontage(DashMontage);
 	}
 	
 	else
@@ -646,14 +626,13 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 	UE_LOG(LogTemp,Warning,TEXT("CustomCrouch"));
 	
 	//공중에 떠있는 상태라면 내려찍기 하고 return
-	if (GetMovementComponent() != nullptr)
+	if (GetMovementComponent() || GroundPoundMontage)
 	{
 		if (GetMovementComponent()->IsFalling())
 		{
-			//PlayAnimMontage(내려찍기 몽타);
-			//bIgnoreInput = true;
-			//내려찍기 끝나면 다시 풀어주기
-			UE_LOG(LogTemp,Warning,TEXT("내려찍기!"));
+			PlayAnimMontage(GroundPoundMontage);
+			SetIgnoreInputPlayingMontage(GroundPoundMontage);
+			UE_LOG(LogTemp, Warning, TEXT("내려찍기!"));
 			return;
 		}
 	}

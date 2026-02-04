@@ -34,7 +34,7 @@ public:
 	
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
 	virtual void DeactiveItemInteract_Implementation(AActor* Interactor) override;
-
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool bActive;
 	

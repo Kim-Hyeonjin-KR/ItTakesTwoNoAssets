@@ -66,6 +66,7 @@ void AButtonActor::DeactiveItemInteract_Implementation(AActor* Interactor)
 	}
 }
 
+
 void AButtonActor::ToggleButtonActive()
 {
 	UE_LOG(LogTemp, Log, TEXT("ToggleButtonActive"));

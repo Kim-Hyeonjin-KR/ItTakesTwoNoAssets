@@ -115,6 +115,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* DashMontage;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* GroundPoundMontage;
+	
 	
 	UFUNCTION()
 	void OnIgnoreInputMontaEnded(UAnimMontage* Montage, bool bInterrupted);
@@ -213,7 +216,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 	// To add mapping context
-	virtual void BeginPlay();
+	virtual void BeginPlay() override;
 
 public:
 	/** Returns CameraBoom subobject **/
@@ -230,8 +233,12 @@ private:
 	bool bIgnoreInteractionInput;
 	
 	float DefaultCapsuleHalfHeight;
+	
+	UPROPERTY()
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
 	FVector WallNormal;
+	
+	UPROPERTY()
 	UItTakesTwoPlayerAnimInstance* AnimInst;
 	FOnMontageEnded MontageEndedDelegate;
 };
