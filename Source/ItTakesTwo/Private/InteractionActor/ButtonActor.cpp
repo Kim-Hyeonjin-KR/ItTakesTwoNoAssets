@@ -13,22 +13,6 @@ AButtonActor::AButtonActor()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-void AButtonActor::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
-{
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-	
-	if (ItemType == EHandItemType::HoldButton || ItemType == EHandItemType::ToggleButton)
-	{
-		return;
-	}
-	else
-	{
-		//한글은 인코딩 형식 변경 필요.
-		FMessageLog("EditorErrors").Warning(FText::FromString("버튼은 HoldButton이나 ToggleButton만 선택해주세요"));
-		ItemType = EHandItemType::ToggleButton;
-	}
-}
-
 
 // Called when the game starts or when spawned
 void AButtonActor::BeginPlay()

@@ -53,6 +53,18 @@ void UGrabInterActionComponent::BeginPlay()
 	{
 		UE_LOG(LogTemp,Error, TEXT("PullObjectMontage 비었음"));
 	}
+	if (ensureAlways(PickUpMontage) == false)
+	{
+		UE_LOG(LogTemp,Error, TEXT("PickUpMontage 비었음"));
+	}
+	
+	if (ensureAlways(PutDownMontage) == false)
+	{
+		UE_LOG(LogTemp,Error, TEXT("PutDownMontage 비었음"));
+	}
+	
+	
+	
 	// ...
 	
 }
@@ -200,30 +212,75 @@ void UGrabInterActionComponent::PickUpItem(EHandItemType TargetType)
 {
 	if (OnItemPickUp.IsBound())
 	{
-		OnItemPickUp.Execute(TargetType);
+		OnItemPickUp.Execute(TargetType, PickUpMontage);
 	}
 }
 
 void UGrabInterActionComponent::PutDownItem(EHandItemType TargetType)
 {
-	if (EquipedItem->Implements<UGrabInterableInterface>())
-	{
-		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("PutDownItem 함수. EquipedItem에 UGrabInterableInterface 없음."));
-	}
-	
+	//내려 놓는 애니메이션에 물체의 위치가 정해져 있어서 캐릭터에서 애니메이션 먼저 출력하고 때어내야 함.
 	if (OnItemPutDown.IsBound())
 	{
-		OnItemPutDown.Execute(TargetType);
+		OnItemPutDown.Execute(TargetType, PutDownMontage);
 	}
 	else
 	{
 		UE_LOG(LogTemp, Warning, TEXT("PutDownItem 함수. OnItemPutDown에 IsBound가 없음."));
 	}
 }
+
+// AN_DetachItem 노티파이로 호출됨.
+void UGrabInterActionComponent::DetachItem()
+{
+	if (EquipedItem == nullptr)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("DetachItem 함수. EquipedItem에 EquipedItem 없음."));
+		return;
+	}
+	if (EquipedItem->Implements<UGrabInterableInterface>())
+	{
+		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PutDownMantageEnd 함수. EquipedItem에 UGrabInterableInterface 없음."));
+	}
+	
+	EquipedItem = nullptr;
+}
+
+AActor* UGrabInterActionComponent::GetEquipedItem() const
+{
+	if (EquipedItem != nullptr)
+	{
+		return EquipedItem;
+	}
+	
+	return nullptr;
+}
+
+/*
+void UGrabInterActionComponent::PutDownMantageEnd(UAnimMontage* Montage, bool bInterrupted)
+{
+	DrawDebugSphere(GetWorld(), GetOwner()->GetActorLocation(), 20.f, 12, FColor::Blue, false, 5.f);
+	
+	
+	//정상종료했으면 문제 없음.
+	if (bInterrupted == false)
+	{
+		return;
+	}
+	
+	//애니메이션 재생이 끝났는데 안떨어졌다면 강제로 때어냄
+	if (EquipedItem == nullptr)
+	{
+		return;
+	}
+	
+	UE_LOG(LogTemp,Warning,TEXT("내려놓기 몽타주가 종료되었지만, 손에서 떨어지지 않았음을 확인. 강제로 떼어냄."));
+	DetachItem();
+}
+*/
 
 void UGrabInterActionComponent::PushHoldButton()
 {
@@ -277,7 +334,6 @@ void UGrabInterActionComponent::HitToggleButton()
 
 void UGrabInterActionComponent::HitLever()
 {
-	//두번하는데 그냥 냅둠
 	if (EquipedItem == nullptr)
 	{
 		return;

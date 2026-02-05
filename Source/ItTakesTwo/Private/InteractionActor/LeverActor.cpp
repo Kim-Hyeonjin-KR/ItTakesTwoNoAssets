@@ -12,21 +12,6 @@ ALeverActor::ALeverActor()
 
 }
 
-void ALeverActor::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
-{
-	Super::PostEditChangeProperty(PropertyChangedEvent);
-	
-	if (ItemType == EHandItemType::ToggleLever)
-	{
-		return;
-	}
-	else
-	{
-		FMessageLog("EditorErrors").Warning(FText::FromString("레버는 ToggleLever만 선택해주세요"));
-		ItemType = EHandItemType::ToggleLever;
-	}
-}
-
 
 // Called when the game starts or when spawned
 void ALeverActor::BeginPlay()

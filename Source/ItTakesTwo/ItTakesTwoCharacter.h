@@ -8,6 +8,7 @@
 #include "ItTakesTwo/ItTakesTwoTypes.h"
 #include "ItTakesTwoCharacter.generated.h"
 
+class UCustomCharacterMovementComponent;
 class USpringArmComponent;
 class UCameraComponent;
 class UInputMappingContext;
@@ -109,6 +110,7 @@ class AItTakesTwoCharacter : public ACharacter
 	UFUNCTION()
 	void OnClimbableWallDetectionEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
 								UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	
 public:
 	
 	//몽타주
@@ -118,6 +120,8 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* GroundPoundMontage;
 	
+	UFUNCTION(BlueprintCallable)
+	void ClimbUpEnded();
 	
 	UFUNCTION()
 	void OnIgnoreInputMontaEnded(UAnimMontage* Montage, bool bInterrupted);
@@ -147,10 +151,10 @@ public:
 	EHandItemType PickUpItem;
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void SetPickUpItemType(EHandItemType Type);
+	void SetPickUpItemType(EHandItemType Type,  UAnimMontage* PickUpMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
-	void SetPutDownItemType(EHandItemType Type);
+	void SetPutDownItemType(EHandItemType Type,  UAnimMontage* PutDownMontage);
 	
 	UFUNCTION(BlueprintCallable, Category = GrabInterAction)
 	void ToggleSwitched(UAnimMontage* HitButtonMontage);
@@ -171,6 +175,7 @@ public:
 	void PullReleased(UAnimMontage* PullPushMontage);
 	
 	//이동 상태에 따른 매핑 컨텍스트 변경
+	UFUNCTION(BlueprintCallable)
 	void SetMappingContext();
 	
 	//플레이어 방향키 입력
@@ -208,9 +213,10 @@ protected:
 	void CustomInterAction(const FInputActionValue& Value);
 	
 	void CustomCrouch(const FInputActionValue& Value);
+	virtual void Landed(const FHitResult& Hit) override;
 	
 	void Climb(const FInputActionValue& Value);
-
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -225,8 +231,19 @@ public:
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	
 private:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+	UCustomCharacterMovementComponent* CustomCharacterMovementComp;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "GroundPounnd" , meta=(AllowPrivateAccess=true))
+	int MaxGroundPoundCount = 1;
+	int CurrentGroundPoundCount = 0;
+	
+	bool TryGroundPoundBreak(const FHitResult& Hit);
+	 
 	void TryClimbUp();
+	
 	void SetIgnoreInputPlayingMontage(UAnimMontage* TargetMontage);
+	
 	bool CheckLineTrace(FVector StartVec, FVector EndVec);
 	
 	bool bIgnoreMoveInput;
@@ -240,7 +257,7 @@ private:
 	
 	UPROPERTY()
 	UItTakesTwoPlayerAnimInstance* AnimInst;
-	FOnMontageEnded MontageEndedDelegate;
+	FOnMontageEnded ClimbUpMontageEndedDelegate;
 };
 
 

@@ -18,7 +18,6 @@ class ITTAKESTWO_API AGrabableActor : public AActor, public IGrabInterableInterf
 public:	
 	// Sets default values for this actor's properties
 	AGrabableActor();
-	virtual void OnConstruction(const FTransform& Transform) override;
 	
 protected:
 	// Called when the game starts or when spawned
@@ -29,7 +28,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(ItemType))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ValidEnumValues = "Small, Heavy"))
 	EHandItemType ItemType;	
 	
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;

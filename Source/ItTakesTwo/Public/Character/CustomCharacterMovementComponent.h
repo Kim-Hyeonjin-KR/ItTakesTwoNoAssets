@@ -25,8 +25,15 @@ class ITTAKESTWO_API UCustomCharacterMovementComponent : public UCharacterMoveme
 	virtual void OnMovementModeChanged(EMovementMode PreviousMovementMode, uint8 PreviousCustomMode);
 	
 	bool bHasDefaultFlySetting;
-	float DefaultBrakingDecelFlying;
-	float DefaultAirControl;
-	float DefaultGroundFriction;
-	float DefaultGravityScale;
+	float DefaultFlyingModeBrakingDecelFlying;
+	float DefaultFlyingModeAirControl;
+	float DefaultFlyingModeGroundFriction;
+	float DefaultFlyingModeGravityScale;
+	
+public:
+	UPROPERTY(BlueprintReadOnly)
+	float PrePoundGravityScale = 1.0f;
+
+	UPROPERTY(BlueprintReadOnly)
+	float GroundPoundSpeed = 2000.0f;
 };

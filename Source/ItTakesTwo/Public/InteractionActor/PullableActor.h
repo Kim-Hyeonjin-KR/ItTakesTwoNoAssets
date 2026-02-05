@@ -27,7 +27,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(ItemType))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ValidEnumValues = "PullableObject"))
 	EHandItemType ItemType = EHandItemType::PullableObject;	
 	
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;

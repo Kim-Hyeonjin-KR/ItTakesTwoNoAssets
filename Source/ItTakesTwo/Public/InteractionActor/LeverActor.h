@@ -15,7 +15,6 @@ class ITTAKESTWO_API ALeverActor : public AActor, public IGrabInterableInterface
 public:	
 	// Sets default values for this actor's properties
 	ALeverActor();
-	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -26,7 +25,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(ItemType))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ValidEnumValues = "ToggleLever"))
 	EHandItemType ItemType = EHandItemType::ToggleLever;	
 	
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
@@ -40,6 +39,7 @@ private:
 	void ActiveLever();
 	void SendSignal();
 	
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = true))
 	bool bHandleTiltLeft;
 	
 	//레버 엑터에 연결된 전기 오브젝트들 

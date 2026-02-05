@@ -27,10 +27,10 @@ void UCustomCharacterMovementComponent::OnMovementModeChanged(EMovementMode Prev
 	{
 		if (bHasDefaultFlySetting == false)
 		{
-			DefaultBrakingDecelFlying = BrakingDecelerationFlying;
-			DefaultAirControl = AirControl;
-			DefaultGroundFriction = GroundFriction;
-			DefaultGravityScale = GravityScale;
+			DefaultFlyingModeBrakingDecelFlying = BrakingDecelerationFlying;
+			DefaultFlyingModeAirControl = AirControl;
+			DefaultFlyingModeGroundFriction = GroundFriction;
+			DefaultFlyingModeGravityScale = GravityScale;
 			bHasDefaultFlySetting = true;
 		}
 		
@@ -48,10 +48,10 @@ void UCustomCharacterMovementComponent::OnMovementModeChanged(EMovementMode Prev
 	else if (PreviousMovementMode == MOVE_Custom && PreviousCustomMode == CMOVE_Climbing)
 	{
 		bOrientRotationToMovement = true;
-		BrakingDecelerationFlying = DefaultBrakingDecelFlying;
-		AirControl = DefaultAirControl;
-		GroundFriction = DefaultGroundFriction;
-		GravityScale = DefaultGravityScale;
+		BrakingDecelerationFlying = DefaultFlyingModeBrakingDecelFlying;
+		AirControl = DefaultFlyingModeAirControl;
+		GroundFriction = DefaultFlyingModeGroundFriction;
+		GravityScale = DefaultFlyingModeGravityScale;
 		bHasDefaultFlySetting = false;
 	}
 }

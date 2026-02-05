@@ -9,8 +9,8 @@
 
 class UCapsuleComponent;
 
-DECLARE_DELEGATE_OneParam(FOnGrabbed, EHandItemType)
-DECLARE_DELEGATE_OneParam(FOnDropped, EHandItemType)
+DECLARE_DELEGATE_TwoParams(FOnGrabbed, EHandItemType, UAnimMontage*)
+DECLARE_DELEGATE_TwoParams(FOnDropped, EHandItemType, UAnimMontage*)
 
 DECLARE_DELEGATE_OneParam(FOnToggleSwitched, UAnimMontage*)
 
@@ -58,6 +58,12 @@ public:
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* PickUpMontage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
+	UAnimMontage* PutDownMontage;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* HitButtonMontage;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
@@ -69,12 +75,21 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
 	UAnimMontage* PullPushMontage;
 	
+	//UFUNCTION()
+	//void PutDownMantageEnd(UAnimMontage* Montage, bool bInterrupted);
+	
+	UFUNCTION(BlueprintCallable)
+	void DetachItem();
+	
+	AActor* GetEquipedItem() const;
+	
 private:
 	void TryActivateInteractionItem();
 	void HandleInteraction(EHandItemType TargetType, AActor* HitActor);
 	
 	void PickUpItem(EHandItemType TargetType);
 	void PutDownItem(EHandItemType TargetType);
+	
 	void PushHoldButton();
 	void ReleaseHoldButton();
 	void HitToggleButton();
@@ -83,7 +98,12 @@ private:
 	void ReleasePullObject();
 	
 private:
+	UPROPERTY()
 	AActor* OwnerActor;
+	
+	UPROPERTY()
 	UCapsuleComponent * CapsuleComponent;
+	
+	UPROPERTY()
 	AActor* EquipedItem;
 };

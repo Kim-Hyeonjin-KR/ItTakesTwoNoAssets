@@ -12,22 +12,6 @@ AGrabableActor::AGrabableActor()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-void AGrabableActor::OnConstruction(const FTransform& Transform)
-{
-	Super::OnConstruction(Transform);
-	
-	if (ItemType == EHandItemType::Heavy || ItemType == EHandItemType::Small)
-	{
-		return;
-	}
-	else
-	{
-		FMessageLog("EditorErrors").Warning(FText::FromString("들 수 있는 아이템은 Heavy나 Small만 선택해주세요"));
-		ItemType = EHandItemType::Small;
-	}
-	
-}
-
 // Called when the game starts or when spawned
 void AGrabableActor::BeginPlay()
 {
@@ -58,6 +42,8 @@ void AGrabableActor::AttachItem(AActor* Target)
 {
 	USkeletalMeshComponent* Mesh = GetTargetMesh(Target);
 	
+	UE_LOG(LogTemp, Log, TEXT("아이템 타입 %s"), *UEnum::GetValueAsString(ItemType));
+	
 	if (Mesh == nullptr)
 	{
 		return;
@@ -81,9 +67,11 @@ void AGrabableActor::AttachItem(AActor* Target)
 		UE_LOG(LogTemp, Warning, TEXT("PrimitiveRoot를 찾지 못함"));
 		return;
 	}
-
+	
+	
 	this->AttachToComponent(Mesh, FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName("Align"));
 }
+
 
 void AGrabableActor::DetachItem(AActor* Target)
 {
@@ -96,6 +84,7 @@ void AGrabableActor::DetachItem(AActor* Target)
 	
 	FDetachmentTransformRules DetachRules(EDetachmentRule::KeepWorld, true);
 	DetachFromActor(DetachRules);
+	DrawDebugSphere(GetWorld(), GetActorLocation(), 20.f, 12, FColor::Red, false, 5.f);
 	
 	UPrimitiveComponent* PrimitiveRoot = Cast<UPrimitiveComponent>(GetRootComponent());
 	if (PrimitiveRoot != nullptr)

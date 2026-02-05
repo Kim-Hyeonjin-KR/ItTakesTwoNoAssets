@@ -17,7 +17,6 @@ class ITTAKESTWO_API AButtonActor : public AActor, public IGrabInterableInterfac
 public:	
 	// Sets default values for this actor's properties
 	AButtonActor();
-	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
 	
 protected:
 	// Called when the game starts or when spawned
@@ -29,7 +28,7 @@ public:
 
 	
 public:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ValidEnumValues = "ToggleButton, HoldButton"))
 	EHandItemType ItemType = 	EHandItemType::HoldButton;
 	
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
