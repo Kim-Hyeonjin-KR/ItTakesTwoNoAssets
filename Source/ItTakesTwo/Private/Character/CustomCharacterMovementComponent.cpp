@@ -11,7 +11,6 @@ void UCustomCharacterMovementComponent::PhysCustom(float deltaTime, int32 Iterat
 		{
 			Velocity = FVector::ZeroVector;
 		}
-		
 		PhysFlying(deltaTime, Iterations);
 	}
 	

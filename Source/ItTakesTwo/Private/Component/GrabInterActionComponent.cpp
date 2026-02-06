@@ -99,7 +99,7 @@ void UGrabInterActionComponent::CustomInterAction(const EHandItemType CurrentPic
 void UGrabInterActionComponent::CustomCancleInterAction(const EHandItemType CurrentPickUpItemType)
 {
 	//손에 잡힌 아이템이 있는 경우
-	if (EquipedItem)
+	if (EquipedItem.IsValid())
 	{
 		if (CurrentPickUpItemType == EHandItemType::Small)
 		{
@@ -124,6 +124,18 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 {
 	UE_LOG(LogTemp, Log, TEXT("TryActivateInteractionItem"));
 	
+	if (CapsuleComponent.IsValid() == false)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("TryActivateInteractionItem 함수 CapsuleComponent null "))
+		return;
+	}
+	
+	if (OwnerActor.IsValid() == false)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("TryActivateInteractionItem 함수 OwnerActor null "))
+		return;
+	}
+	
 	//박스로 레이를 쏴서 검사하기
 	float RaycastLength = CapsuleComponent->GetScaledCapsuleRadius() * 2;
 	
@@ -135,7 +147,7 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 	
 	FHitResult HitResult;
 	FCollisionQueryParams Params;
-	Params.AddIgnoredActor(OwnerActor);
+	Params.AddIgnoredActor(OwnerActor.Get());
 	
 	bool bHit = GetWorld()->SweepSingleByChannel(
 		HitResult,
@@ -173,7 +185,7 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 		// E키로 상호 작용 가능한 인터페이스가 있다면 실행하고, 객체의 종류를 받아옴.
 		if (HitActor->Implements<UGrabInterableInterface>())
 		{
-			EHandItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor, OwnerActor);
+			EHandItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor, OwnerActor.Get());
 			HandleInteraction(ItemType, HitActor);
 		}
 	}
@@ -232,14 +244,21 @@ void UGrabInterActionComponent::PutDownItem(EHandItemType TargetType)
 // AN_DetachItem 노티파이로 호출됨.
 void UGrabInterActionComponent::DetachItem()
 {
-	if (EquipedItem == nullptr)
+	if (EquipedItem.IsValid() == false)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("DetachItem 함수. EquipedItem에 EquipedItem 없음."));
 		return;
 	}
+	
+	if (OwnerActor.IsValid() == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("DetachItem 함수. OwnerActor 없음."));
+		return;
+	}
+		
 	if (EquipedItem->Implements<UGrabInterableInterface>())
 	{
-		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
+		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem.Get(), OwnerActor.Get());
 	}
 	else
 	{
@@ -253,7 +272,7 @@ AActor* UGrabInterActionComponent::GetEquipedItem() const
 {
 	if (EquipedItem != nullptr)
 	{
-		return EquipedItem;
+		return EquipedItem.Get();
 	}
 	
 	return nullptr;
@@ -299,9 +318,20 @@ void UGrabInterActionComponent::PushHoldButton()
 
 void UGrabInterActionComponent::ReleaseHoldButton()
 {
+	if (EquipedItem.IsValid() == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ReleaseHoldButton 함수. EquipedItem 없음.") );
+	}
+	
+	if (OwnerActor.IsValid() == false)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ReleaseHoldButton 함수. OwnerActor 없음."))
+	}
+	
+	
 	if (EquipedItem->Implements<UGrabInterableInterface>())
 	{
-		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem, OwnerActor);
+		IGrabInterableInterface::Execute_DeactiveItemInteract(EquipedItem.Get(), OwnerActor.Get());
 	}
 	
 	if (OnButtonRelease.IsBound())

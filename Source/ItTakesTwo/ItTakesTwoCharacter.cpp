@@ -400,10 +400,24 @@ void AItTakesTwoCharacter::SetPickUpItemType(EHandItemType Type, UAnimMontage* P
 {
 	UE_LOG(LogTemp, Log, TEXT("SetPickUpItemType %s"), *UEnum::GetValueAsString(Type));
 	
-	//
-	
-	
 	PickUpItem = Type;
+	
+	FName SectionName = TEXT("");
+	
+	switch (PickUpItem)
+	{
+	case EHandItemType::Heavy:
+		SectionName = TEXT("Heavy");
+		break;
+	case EHandItemType::Small:
+		SectionName = TEXT("Small");
+		break;
+	}
+	
+	AnimInst->Montage_Play(PickUpMontage);
+	AnimInst->Montage_JumpToSection(SectionName, PickUpMontage);
+	SetIgnoreInputPlayingMontage(PickUpMontage);
+	
 	if (AnimInst != nullptr)
 	{
 		AnimInst->OnLinkAnimClassLayers(Type);

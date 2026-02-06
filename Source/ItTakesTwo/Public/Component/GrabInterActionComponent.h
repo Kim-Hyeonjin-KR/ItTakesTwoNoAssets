@@ -98,12 +98,11 @@ private:
 	void ReleasePullObject();
 	
 private:
-	UPROPERTY()
-	AActor* OwnerActor;
+	//가비지 콜랙터를 이용한 강한 참조에서 약한 참조로 변경
+	// UPROPERTY()
+	// AActor* OwnerActor;
 	
-	UPROPERTY()
-	UCapsuleComponent * CapsuleComponent;
-	
-	UPROPERTY()
-	AActor* EquipedItem;
+	TWeakObjectPtr<AActor> OwnerActor;
+	TWeakObjectPtr<UCapsuleComponent> CapsuleComponent;
+	TWeakObjectPtr<AActor> EquipedItem;
 };

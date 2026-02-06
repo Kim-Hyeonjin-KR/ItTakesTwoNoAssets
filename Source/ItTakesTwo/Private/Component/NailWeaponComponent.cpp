@@ -14,7 +14,6 @@ UNailWeaponComponent::UNailWeaponComponent()
 	// ...
 }
 
-
 // Called when the game starts
 void UNailWeaponComponent::BeginPlay()
 {

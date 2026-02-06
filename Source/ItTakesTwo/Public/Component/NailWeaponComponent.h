@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "NailWeaponComponent.generated.h"
 
+class ANail;
+
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ITTAKESTWO_API UNailWeaponComponent : public UActorComponent
@@ -24,5 +26,8 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	UPROPERTY(EditAnywhere, Category = "Nail")
+	TArray<ANail*> Nails;
+	
+	
 };
