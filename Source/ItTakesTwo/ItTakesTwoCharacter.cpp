@@ -17,6 +17,7 @@
 #include "Component/HammerWeaponComponent.h"
 #include "Component/NailWeaponComponent.h"
 #include "ItTakesTwo/Public/Character/CustomCharacterMovementComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -168,8 +169,40 @@ void AItTakesTwoCharacter::BeginPlay()
 	Super::BeginPlay();
 	
 	AnimInst = Cast<UItTakesTwoPlayerAnimInstance>(GetMesh()->GetAnimInstance());
-	if (AnimInst != nullptr)
+	
+	if (AnimInst == nullptr)
 	{
+		// 1. 에디터 로그 창과 화면에 빨간색 경고 메시지 출력
+		UE_LOG(LogTemp, Error, TEXT("CRITICAL ERROR: AnimInst 할당 실패! 게임을 종료합니다."));
+        
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("AnimInst is NULL! Check Output Log."));
+		}
+
+		// 2. 현재 실행 중인 게임(PIE) 세션만 종료 (에디터는 유지)if (AnimInst == nullptr)
+		{
+			// 1. 에디터 로그 창과 화면에 빨간색 경고 메시지 출력
+			UE_LOG(LogTemp, Error, TEXT("CRITICAL ERROR: AnimInst 할당 실패! 게임을 종료합니다."));
+        
+			if (GEngine)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("AnimInst is NULL! Check Output Log."));
+			}
+
+			// 2. 현재 실행 중인 게임(PIE) 세션만 종료 (에디터는 유지)
+			UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
+
+			// 3. 이후 로직이 실행되지 않도록 즉시 리턴
+			return; 
+		}
+		UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
+
+		// 3. 이후 로직이 실행되지 않도록 즉시 리턴
+		return; 
+	}
+	if (AnimInst != nullptr)
+	{ 
 		AnimInst->OnLinkAnimClassLayers(EHandItemType::None);
 	}
 	
@@ -856,6 +889,9 @@ void AItTakesTwoCharacter::Landed(const FHitResult& Hit)
 {
 	Super::Landed(Hit);
 	
+	if (AnimInst == nullptr) { UE_LOG(LogTemp,Warning,TEXT("Landed의 AnimInst가 없습니다")); return;; }
+	
+	
 	if (GroundPoundMontage && AnimInst->Montage_IsPlaying(GroundPoundMontage))
 	{
 		
@@ -879,8 +915,6 @@ void AItTakesTwoCharacter::Landed(const FHitResult& Hit)
 			return;
 		}
 	}
-
-	
 }
 
 void AItTakesTwoCharacter::Climb(const FInputActionValue& Value)
