@@ -2,6 +2,7 @@
 
 
 #include "Component/NailWeaponComponent.h"
+#include "Weapon/Nail.h"
 
 // Sets default values for this component's properties
 UNailWeaponComponent::UNailWeaponComponent()
@@ -20,7 +21,6 @@ void UNailWeaponComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
 }
 
 
@@ -30,5 +30,36 @@ void UNailWeaponComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+}
+
+void UNailWeaponComponent::AddNail(ANail* NailActor)
+{
+	if (IsValid(NailActor) == false) { UE_LOG(LogTemp, Error, TEXT("Nail Actor is invalid")); return; }
+	
+	ANail* NewNail = Cast<ANail>(NailActor);
+	
+	if (NewNail != nullptr)
+	{
+			Nails.Add(NailActor);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Can't add Nail Actor"));
+	}
+}
+
+
+void UNailWeaponComponent::RecallNail()
+{
+	for (ANail* Nail : Nails)
+	{
+		if (IsValid(Nail))
+		{
+			if (Nail->GetState() == ENailState::Pinned)
+			{
+				Nail->Recalling();
+			}
+		}
+	}
 }
 

@@ -26,6 +26,12 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	UFUNCTION(BlueprintCallable, Category= "Nail")
+	void AddNail(ANail* NailActor);
+	
+	UFUNCTION(BlueprintCallable, Category = "Nail")
+	void RecallNail();
+	
 	UPROPERTY(EditAnywhere, Category = "Nail")
 	TArray<ANail*> Nails;
 	
