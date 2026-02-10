@@ -14,13 +14,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/7/LL/SRZGXM8MZG6UD8CQ55M0OD.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/GL/5YH9MHMNHVXO8DOGTXC67V.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerMay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerMay.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" afterDir="false" />
@@ -38,7 +37,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://4" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://35" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/Media/PixelStreaming/Source/PixelStreaming/Private/ToStringExtensions.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/ShaderCompilerCommon/Private/ISAParser/QuadModeDetect.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/TraceServices/Private/Analyzers/LoadTimeTraceAnalysis.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/WidgetRegistration/Private/ToolkitBuilder.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/AnimGraph/Private/AnimBlueprintExtension_LinkedAnimGraph.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/MovieSceneCaptureDialog/Private/MovieSceneCaptureDialogModule.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/PropertyEditor/Public/NumericPropertyParams.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Editor/UnrealEd/Private/Tools/EditorComponentSourceFactory.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/AIModule/Classes/EnvironmentQuery/Generators/EnvQueryGenerator_CurrentLocation.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/Logging/LogMacros.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
@@ -46,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ItTakesTwoPlayerAnimInstance.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/MayCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/CustomGameFramework/GFPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ButtonActor.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -62,6 +72,7 @@
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/WeaponBase.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ANSInvincibility.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Anim/ItTakesTwoPlayerAnimInstance.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Character/MayCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/CustomGameFramework/GFPlayerState.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/ButtonActor.h" root0="FORCE_HIGHLIGHTING" />
@@ -93,27 +104,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ 프로젝트.ItTakesTwo.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-OutOfSyncConnection&quot;: &quot;Unreal 에디터 연결이 동기화 해제됨&quot;,
-    &quot;Notification.DoNotAsk-OutOfSyncConnection&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ 프로젝트.ItTakesTwo.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-OutOfSyncConnection": "Unreal 에디터 연결이 동기화 해제됨",
+    "Notification.DoNotAsk-OutOfSyncConnection": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -293,6 +304,7 @@
       <workItem from="1770595340137" duration="27428000" />
       <workItem from="1770648344302" duration="2827000" />
       <workItem from="1770683444634" duration="7664000" />
+      <workItem from="1770691331267" duration="21984000" />
     </task>
     <servers />
   </component>

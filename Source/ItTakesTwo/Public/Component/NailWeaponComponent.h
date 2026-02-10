@@ -44,8 +44,12 @@ public:
 	UPROPERTY(EditAnywhere, Category= "Nail")
 	TSubclassOf<ANail> NailClass;
 	
-	UPROPERTY(EditAnywhere, Category = "Nail")
+	UPROPERTY()
 	TArray<ANail*> Nails;
 	
+	UFUNCTION(BlueprintCallable, Category= "Nail")
+	FVector GetAimLocation();
 	
+	UPROPERTY(EditAnywhere, Category= "Nail")
+	float MaxAimRange = 10000.0f;
 };

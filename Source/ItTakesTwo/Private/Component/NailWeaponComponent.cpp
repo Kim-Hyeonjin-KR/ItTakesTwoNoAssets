@@ -53,7 +53,20 @@ void UNailWeaponComponent::AddNail()
 
 bool UNailWeaponComponent::ShotingNail()
 {
-	return true;
+	FVector TargetLocation = GetAimLocation();
+	
+	for (ANail* Nail : Nails)
+	{
+		if (IsValid(Nail))
+		{
+			if (Nail->GetState() == ENailState::Stored)
+			{
+				Nail->Shoting(TargetLocation);
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 void UNailWeaponComponent::RecallNail(AActor* Target)
@@ -81,11 +94,59 @@ void UNailWeaponComponent::TryRecallAllNail()
 	{
 		if (IsValid(Nail))
 		{
-			if (Nail->GetState() == ENailState::Pinned)
+			if (Nail->GetState() != ENailState::Stored)
 			{
 				Nail->Recalling();
 			}
 		}
 	}
+}
+
+FVector UNailWeaponComponent::GetAimLocation()
+{
+	FVector CameraLocation;
+	FRotator CameraRotation;
+	
+	//컨트롤러 연동 단계에서 로직에 맞게 수정해줄것.
+	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+	PlayerController->GetPlayerViewPoint(CameraLocation, CameraRotation);
+	
+	FVector Direction = CameraRotation.Vector();
+	FVector EndLocation = CameraLocation + (Direction * MaxAimRange);
+	
+	FHitResult HitResult;
+	FCollisionQueryParams Params;
+	Params.AddIgnoredActor(GetOwner());
+
+	for (auto Nail : Nails)
+	{
+		if (IsValid(Nail))
+		{
+			Params.AddIgnoredActor(Nail);
+		}
+	}
+	
+	//FVector BoxHalfSize = FVector(5.0f, CapsuleComponent->GetScaledCapsuleRadius() , CapsuleComponent->GetScaledCapsuleHalfHeight());
+	//FCollisionShape MyBox = FCollisionShape::MakeBox(BoxHalfSize);
+	
+	GetWorld()->LineTraceSingleByChannel(HitResult, CameraLocation, EndLocation, ECC_Visibility, Params);
+
+	DrawDebugLine(
+		GetWorld(),
+		CameraLocation,
+		EndLocation,
+		FColor::Green,
+		false,
+		10.0f
+	);
+	
+	if (HitResult.bBlockingHit)
+	{
+		DrawDebugBox(GetWorld(), HitResult.ImpactPoint, FVector(10), FColor::Red, false, 10.0f);
+	}
+	
+	FVector AimPoint = HitResult.bBlockingHit ? HitResult.ImpactPoint : EndLocation;
+	
+	return AimPoint;
 }
 

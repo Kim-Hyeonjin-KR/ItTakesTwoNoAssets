@@ -14,8 +14,6 @@
 #include "Animation/AnimMontage.h"
 #include "Animation/AnimInstance.h"
 #include "Component/GrabInterActionComponent.h"
-#include "Component/HammerWeaponComponent.h"
-#include "Component/NailWeaponComponent.h"
 #include "ItTakesTwo/Public/Character/CustomCharacterMovementComponent.h"
 #include "Kismet/KismetSystemLibrary.h"
 
@@ -148,8 +146,6 @@ AItTakesTwoCharacter::AItTakesTwoCharacter(const FObjectInitializer& ObjectIniti
 
 	// 커스텀 컴포넌트 부착
 	GrabInterActionComponent = CreateDefaultSubobject<UGrabInterActionComponent>(TEXT("GrabInterAction"));
-	HammerWeaponComponent = CreateDefaultSubobject<UHammerWeaponComponent>(TEXT("HammerWeapon"));
-	NailWeaponComponent = CreateDefaultSubobject<UNailWeaponComponent>(TEXT("NailWeapon"));
 	
 	// 커스텀 무브먼트 컴포넌트 캐스팅해서 들고있기
 	CustomCharacterMovementComp = Cast<UCustomCharacterMovementComponent>(GetCharacterMovement());
@@ -179,26 +175,17 @@ void AItTakesTwoCharacter::BeginPlay()
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("AnimInst is NULL! Check Output Log."));
 		}
+	
+		// 1. 에디터 로그 창과 화면에 빨간색 경고 메시지 출력
+		UE_LOG(LogTemp, Error, TEXT("CRITICAL ERROR: AnimInst 할당 실패! 게임을 종료합니다."));
 
-		// 2. 현재 실행 중인 게임(PIE) 세션만 종료 (에디터는 유지)if (AnimInst == nullptr)
+		if (GEngine)
 		{
-			// 1. 에디터 로그 창과 화면에 빨간색 경고 메시지 출력
-			UE_LOG(LogTemp, Error, TEXT("CRITICAL ERROR: AnimInst 할당 실패! 게임을 종료합니다."));
-        
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("AnimInst is NULL! Check Output Log."));
-			}
-
-			// 2. 현재 실행 중인 게임(PIE) 세션만 종료 (에디터는 유지)
-			UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
-
-			// 3. 이후 로직이 실행되지 않도록 즉시 리턴
-			return; 
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("AnimInst is NULL! Check Output Log."));
 		}
+		
+		// 2. 현재 실행 중인 게임(PIE) 세션만 종료 (에디터는 유지)if (AnimInst == nullptr)
 		UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
-
-		// 3. 이후 로직이 실행되지 않도록 즉시 리턴
 		return; 
 	}
 	if (AnimInst != nullptr)

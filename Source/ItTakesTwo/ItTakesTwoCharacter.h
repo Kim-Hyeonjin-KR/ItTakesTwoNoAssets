@@ -16,8 +16,6 @@ class UInputAction;
 struct FInputActionValue;
 class UEnhancedInputLocalPlayerSubsystem;
 class UGrabInterActionComponent;
-class UHammerWeaponComponent;
-class UNailWeaponComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -186,12 +184,6 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
 	UGrabInterActionComponent* GrabInterActionComponent;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
-	UHammerWeaponComponent* HammerWeaponComponent;
-	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
-	UNailWeaponComponent* NailWeaponComponent;
-	
 	UFUNCTION(BlueprintCallable)
 	void SetInteractionInputLock(bool bInputLock);
 	
@@ -230,11 +222,11 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	
-private:
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+protected:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UCustomCharacterMovementComponent* CustomCharacterMovementComp;
 	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "GroundPounnd" , meta=(AllowPrivateAccess=true))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "GroundPounnd")
 	int MaxGroundPoundCount = 1;
 	int CurrentGroundPoundCount = 0;
 	

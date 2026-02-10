@@ -77,6 +77,11 @@ public:
 	
 	void SetNailOwnerCharacter(AActor* OwnerCharacter);
 	
+protected:
+	FTimerHandle RecallTimerHandle;
+	
+	void OnTimeOutRecall();
+	
 private:
 	UPROPERTY()
 	TWeakObjectPtr<ACharacter> NailOwner;
@@ -89,5 +94,5 @@ private:
 	ENailState NailState;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Speed", meta = (AllowPrivateAccess))
-	float RecallSpeed = 5.f;
+	float RecallSpeed = 12000.f;
 };
