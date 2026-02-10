@@ -27,10 +27,22 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 	UFUNCTION(BlueprintCallable, Category= "Nail")
-	void AddNail(ANail* NailActor);
+	void AddNail();
+	
+	UFUNCTION(BlueprintCallable, Category= "Nail")
+	bool ShotingNail();
 	
 	UFUNCTION(BlueprintCallable, Category = "Nail")
-	void RecallNail();
+	void RecallNail(AActor* Target);
+
+	UFUNCTION(BlueprintCallable, Category = "Nail")
+	void TryRecallAllNail();
+	
+	UPROPERTY(BlueprintReadOnly, Category= "Nail")
+	int MaxNailCount = 3;
+	
+	UPROPERTY(EditAnywhere, Category= "Nail")
+	TSubclassOf<ANail> NailClass;
 	
 	UPROPERTY(EditAnywhere, Category = "Nail")
 	TArray<ANail*> Nails;

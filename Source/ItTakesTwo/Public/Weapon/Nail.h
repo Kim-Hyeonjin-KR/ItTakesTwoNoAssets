@@ -74,7 +74,9 @@ public:
 	bool IsGrabable() const;
 	
 	ENailState GetState() const;
-
+	
+	void SetNailOwnerCharacter(AActor* OwnerCharacter);
+	
 private:
 	UPROPERTY()
 	TWeakObjectPtr<ACharacter> NailOwner;

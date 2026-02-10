@@ -7,6 +7,7 @@
 #include "Components/BoxComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "Rendering/RenderCommandPipes.h"
 
 ANail::ANail()
@@ -28,14 +29,19 @@ void ANail::BeginPlay()
 	Super::BeginPlay();
 	
 	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &ANail::ANail::HandleOverlap);
-	NailOwner = GetWorld()->GetFirstPlayerController()->GetCharacter();
+	//NailOwner = GetWorld()->GetFirstPlayerController()->GetCharacter();
 }
 
 void ANail::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	
-	if (NailState == ENailState::Recalling && NailOwner.IsValid())
+	if (GetOwner() == nullptr) { UE_LOG(LogTemp,Warning,TEXT("Nail의 Owner이 존재하지 않습니다.")); return; }
+	if (GetOwner()->FindComponentByClass<UNailWeaponComponent>() == nullptr){return;}
+	
+	
+	
+	if (NailState == ENailState::Recalling)
 	{
 		FVector TargetLocation = NailOwner->GetMesh()->GetBoneLocation("NailCatchSocket");
 		
@@ -51,7 +57,6 @@ void ANail::Tick(float DeltaSeconds)
 			SetActorLocation(NewLocation, false);
 		}
 	}
-	
 }
 
 
@@ -111,7 +116,7 @@ void ANail::Recalling()
 	//뽑히기
 	this->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	
-	//날아오기
+	//날아오기 (이동은 Tick에서 실행)
 	CollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	ProjectileMovement->Activate(true);
 }
@@ -143,6 +148,21 @@ bool ANail::IsGrabable() const
 ENailState ANail::GetState() const
 {
 	return NailState;
+}
+
+void ANail::SetNailOwnerCharacter(AActor* OwnerCharacter)
+{
+	ACharacter* CastedOwnerChar =  Cast<ACharacter>(OwnerCharacter);
+	
+	if (CastedOwnerChar)
+	{
+		NailOwner = CastedOwnerChar;
+	} 
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Nail.cpp의 SetNailOwnerCharacter함수 CastedOwnerChar가 캐스팅에 실패하여 nullptr입니다."));
+		UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
+	}
 }
 
 
