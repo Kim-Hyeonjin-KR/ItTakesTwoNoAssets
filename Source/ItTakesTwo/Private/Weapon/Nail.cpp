@@ -52,6 +52,8 @@ void ANail::Tick(float DeltaSeconds)
 			SetActorLocation(TargetLocation, false);
 			this->AttachToComponent(NailOwner->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName("NailCatchSocket"));
 			ProjectileMovement->Activate(false);
+			
+			//저장 몽타주 끝나면 삭제해줄것
 			NailState = ENailState::Stored;
 		}
 		else
@@ -154,11 +156,22 @@ void ANail::Recalling()
 	ProjectileMovement->Activate(true);
 }
 
-void ANail::StoreToNailSocket(USkeletalMeshComponent* NailOwnerMesh)
+void ANail::Store()
 {
-	if (NailOwnerMesh == nullptr) { UE_LOG(LogTemp, Warning, TEXT("StoreToNailSocket 함수의 NailOwnerMesh is nullptr")); return; }
+	if (NailOwner == nullptr) { UE_LOG(LogTemp, Warning, TEXT("StoreToNailSocket 함수의 NailOwner is nullptr")); return; }
+	if (NailOwner->GetMesh() == nullptr) { UE_LOG(LogTemp, Warning, TEXT("StoreToNailSocket 함수의 NailOwner->GetMesh() is nullptr")); return; }
 	
-	AttachToComponent(NailOwnerMesh, FAttachmentTransformRules::KeepRelativeTransform, FName("NailSocket"));
+	AttachToComponent(NailOwner->GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("NailSocket"));
+	NailState = ENailState::Stored;
+}
+
+void ANail::Ready()
+{
+	if (NailOwner == nullptr) { UE_LOG(LogTemp, Warning, TEXT("Ready 함수의 NailOwner is nullptr")); return; }
+	if (NailOwner->GetMesh() == nullptr) { UE_LOG(LogTemp, Warning, TEXT("Ready 함수의 NailOwner->GetMesh() is nullptr")); return; }
+	
+	AttachToComponent(NailOwner->GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("TEMP_RightHandWeaponSocket"));
+	NailState = ENailState::Ready;
 }
 
 void ANail::PlayPullOutAnimation(UAnimMontage* MontageToPlay)

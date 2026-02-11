@@ -8,7 +8,6 @@
 
 class UBoxComponent;
 class UProjectileMovementComponent;
-class USkeletalMeshComponent;
 class UAnimMontage;
 class ACharacter;
 
@@ -20,6 +19,7 @@ UENUM(BlueprintType)
 enum class ENailState : uint8 
 {
 	Stored UMETA(DisplayName = "Stored"),
+	Ready UMETA(DisplayName = "Ready"),
 	Flying UMETA(DisplayName = "Flying"),
 	Pinned UMETA(DisplayName = "Pinned"),
 	Recalling UMETA(DisplayName = "Recalling"),
@@ -63,7 +63,10 @@ public:
 	void Recalling();
 	
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
-	void StoreToNailSocket(USkeletalMeshComponent* NailOwnerMesh);
+	void Store();
+	
+	UFUNCTION(BlueprintCallable, Category = "Projectile")
+	void Ready();
 	
 	// 몽타주 모음
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Montage")

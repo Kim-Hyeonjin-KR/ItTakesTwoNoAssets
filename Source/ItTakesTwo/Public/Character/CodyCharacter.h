@@ -23,17 +23,7 @@ public:
 protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
-	void ShotingNail(const FInputActionValue& Value);
-	
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
 	UNailWeaponComponent* NailWeaponComponent;
-	
-private:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
-	UInputAction* AttackAction;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
-	UInputAction* AimAction;
-
 };

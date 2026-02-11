@@ -30,32 +30,9 @@ void ACodyCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInpu
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	
-	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
-		{
-			// SpecialAbility 못 공격, 조준
-			EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &ACodyCharacter::ShotingNail);
-			//EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &ACodyCharacter::AimmingNail);
-		}
-	//스폰한 못을 관리
-	
-	
-	
-	
-}
-
-void ACodyCharacter::ShotingNail(const FInputActionValue& Value)
-{
-	if (bIgnoreInteractionInput || bIgnoreMoveInput)
-	{
-		return;
-	}
-	
 	if (NailWeaponComponent != nullptr)
 	{
-		NailWeaponComponent->ShotingNail();
+		//입력 바인딩 연결
+		NailWeaponComponent->SetupNailActionInput(PlayerInputComponent);
 	}
-	
-	//if (NailShotMontage == nullptr) { UE_LOG(LogTemp, Warning, TEXT("NailShotMontage == nullptr")); return; }
-	
-	UE_LOG(LogTemp, Warning, TEXT("NailShot!!"));
 }

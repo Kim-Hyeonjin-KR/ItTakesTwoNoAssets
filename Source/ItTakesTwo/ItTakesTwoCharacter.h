@@ -110,6 +110,7 @@ class AItTakesTwoCharacter : public ACharacter
 								UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	
 public:
+	void SetAnimLayer(EHandItemType Type) const;
 	
 	//몽타주
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Animation)
@@ -131,6 +132,9 @@ public:
 	
 	UFUNCTION(BlueprintCallable, Category = "MovementState")
 	int32 GetCurrentMovementStateFlag();
+	
+	UFUNCTION(BlueprintPure)
+	FVector GetLocalVelocity() const;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = MovementState)
 	EMovementState CurrentMovementModeState;
@@ -221,7 +225,10 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
-	
+
+	bool GetIgnoreMoveInput() const { return bIgnoreMoveInput; }
+	bool GetIgnoreInteractionInput() const { return bIgnoreInteractionInput; }
+
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UCustomCharacterMovementComponent* CustomCharacterMovementComp;

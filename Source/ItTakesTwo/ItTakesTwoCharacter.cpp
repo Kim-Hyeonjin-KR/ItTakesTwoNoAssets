@@ -50,14 +50,12 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 		FCollisionQueryParams Params;
 		Params.AddIgnoredActor(this);
 		
-		
 		if (GetWorld()->LineTraceSingleByChannel(Hit, GetActorLocation(), OtherActor->GetActorLocation(), ECC_Visibility, Params))
 		{
 			WallNormal = Hit.ImpactNormal;
 			FVector LookDir = -WallNormal;
 			SetActorRotation(LookDir.Rotation());
 		}
-		
 		
 		// FVector OppositeVector = OtherActor->GetActorForwardVector() * -1;
 		// SetActorRotation(OppositeVector.Rotation());
@@ -66,7 +64,6 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionOverlap(UPrimitiveComponent* 
 		CurrentMovementModeState |= EMovementState::Climbing;
 		SetMappingContext();
 	}
-	
 }
 
 void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
@@ -84,6 +81,14 @@ void AItTakesTwoCharacter::OnClimbableWallDetectionEnd(UPrimitiveComponent* Over
 	
 	CurrentMovementModeState &= ~EMovementState::Climbing;
 	SetMappingContext();
+}
+
+void AItTakesTwoCharacter::SetAnimLayer(EHandItemType Type) const
+{
+	if (AnimInst != nullptr)
+	{ 
+		AnimInst->OnLinkAnimClassLayers(Type);
+	}
 }
 
 void AItTakesTwoCharacter::ClimbUpEnded()
@@ -159,6 +164,14 @@ int32 AItTakesTwoCharacter::GetCurrentMovementStateFlag()
 	return static_cast<int32>(CurrentMovementModeState);
 }
 
+FVector AItTakesTwoCharacter::GetLocalVelocity() const
+{
+	FRotator YawRotator = FRotator(0,GetActorRotation().Yaw,0);
+	
+	FVector LocalVelocity = YawRotator.UnrotateVector(GetVelocity());
+	return  LocalVelocity;
+}
+
 void AItTakesTwoCharacter::BeginPlay()
 {
 	// Call the base class
@@ -188,10 +201,9 @@ void AItTakesTwoCharacter::BeginPlay()
 		UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
 		return; 
 	}
-	if (AnimInst != nullptr)
-	{ 
-		AnimInst->OnLinkAnimClassLayers(EHandItemType::None);
-	}
+	
+	SetAnimLayer(EHandItemType::None);
+	
 	
 	if (GetCapsuleComponent() != nullptr)
 	{
@@ -360,8 +372,8 @@ void AItTakesTwoCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 	}
 	
 	// Set up action bindings
-	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
-		
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent)) 
+	{
 		// Jumping
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AItTakesTwoCharacter::CustomJump);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AItTakesTwoCharacter::CustomStopJumping);
@@ -437,11 +449,7 @@ void AItTakesTwoCharacter::SetPickUpItemType(EHandItemType Type, UAnimMontage* P
 	AnimInst->Montage_Play(PickUpMontage);
 	AnimInst->Montage_JumpToSection(SectionName, PickUpMontage);
 	SetIgnoreInputPlayingMontage(PickUpMontage);
-	
-	if (AnimInst != nullptr)
-	{
-		AnimInst->OnLinkAnimClassLayers(Type);
-	}
+	SetAnimLayer(Type);
 }
 
 void AItTakesTwoCharacter::SetPutDownItemType(EHandItemType Type, UAnimMontage* PutDownMontage)
@@ -505,10 +513,7 @@ void AItTakesTwoCharacter::SetPutDownItemType(EHandItemType Type, UAnimMontage* 
 	
 	
 	PickUpItem = EHandItemType::None;
-	if (AnimInst != nullptr)
-	{
-		AnimInst->OnLinkAnimClassLayers(EHandItemType::None);
-	}
+	SetAnimLayer(PickUpItem);
 }
 
 void AItTakesTwoCharacter::ToggleSwitched(UAnimMontage* HitButtonMontage)

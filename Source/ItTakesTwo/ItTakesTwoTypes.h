@@ -17,7 +17,9 @@ enum class EHandItemType : uint8
 	ToggleButton UMETA(DisplayName = "ToggleButton"),
 	HoldButton UMETA(DisplayName = "HoldButton"),
 	ToggleLever UMETA(DisplayName = "ToggleLever"),
-	PullableObject UMETA(DisplayName = "PullableObject")
+	PullableObject UMETA(DisplayName = "PullableObject"),
+	Nail UMETA(DisplayName = "Nail"),
+	Hammer UMETA(DisplayName = "Hammer"),
 };
 
 UENUM(BlueprintType)
