@@ -6,12 +6,15 @@
 #include "Components/ActorComponent.h"
 #include "NailWeaponComponent.generated.h"
 
+class UInputMappingContext;
+class UEnhancedInputLocalPlayerSubsystem;
 class USpringArmComponent;
 class UInputAction;
 class AItTakesTwoCharacter;
 struct FInputActionValue;
 class ANail;
 class UUserWidget;
+class UAnimMontage;
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -30,7 +33,11 @@ public:
 	
 	void ShotingNail(const FInputActionValue& Value);
 	void Aiming(const FInputActionValue& Value);
-
+	void Recall(const FInputActionValue& Value);
+	
+	void CatchNail(ANail* RecalledNail);
+	
+	
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -39,27 +46,47 @@ public:
 	void AddNail();
 	
 	UFUNCTION(BlueprintCallable, Category = "Nail")
-	void RecallNail(AActor* Target);
+	void RecallTargetNail(AActor* Target);
 
 	UFUNCTION(BlueprintCallable, Category = "Nail")
-	void TryRecallAllNail();
+	void RecallAllNail();
 	
 	UFUNCTION(BlueprintCallable, Category= "Nail")
 	FVector GetAimLocation();
 	
+	UFUNCTION(BlueprintCallable, Category= "Nail")
+	ANail* FindPinedNail();
+	
 	UPROPERTY(EditAnywhere, Category= "Nail")
 	UUserWidget* CrosshairWidget;
 	
+	UPROPERTY(EditAnywhere, Category= "Nail")
+	UAnimMontage* NailMontage;
+	
 	void SetInitTargetArmLength(const float _InitTargetArmLength) { InitTargetArmLength = _InitTargetArmLength; }
-	void SetInitTargetOffset(const FVector& _InitTargetOffset) { InitTargetOffset = _InitTargetOffset; }
+	void SetInitSocketOffset(const FVector& _InitSocketOffset) { InitSocketOffset = _InitSocketOffset; }
+	
+protected:
+	UPROPERTY()
+	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
+	
+	
 	
 private:
 	TWeakObjectPtr<AItTakesTwoCharacter> OwnerCharacter;
 	TWeakObjectPtr<USpringArmComponent> OwnerSpringArm;
 	
 	float InitTargetArmLength;
-	FVector InitTargetOffset;
+	FVector InitSocketOffset;
 	
+	UPROPERTY(EditAnywhere, Category= "Nail", meta=(AllowPrivateAccess=true))
+	float AimingArmLength = 300.f;
+	
+	UPROPERTY(EditAnywhere, Category= "Nail", meta=(AllowPrivateAccess=true))
+	FVector AimingSocketOffset = FVector(0,150,0);
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Nail", meta = (AllowPrivateAccess = "true"))
+	float CurrentAimBlendValue;
 	
 	UPROPERTY(BlueprintReadOnly, Category= "Nail", meta=(AllowPrivateAccess=true))
 	int MaxNailCount = 3;
@@ -73,11 +100,18 @@ private:
 	UPROPERTY()
 	TArray<ANail*> Nails;
 	
+	/** MappingContext */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputMappingContext* NailMappingContext;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
 	UInputAction* AttackAction;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
 	UInputAction* AimAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = ClimbingInput, meta = (AllowPrivateAccess = "true"))
+	UInputAction* RecallAction;
 	
 	bool bHoldingAimButton;
 };

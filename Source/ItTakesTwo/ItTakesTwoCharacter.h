@@ -178,7 +178,7 @@ public:
 	
 	//이동 상태에 따른 매핑 컨텍스트 변경
 	UFUNCTION(BlueprintCallable)
-	void SetMappingContext();
+	void SetBaseMovementMappingContext();
 	
 	//플레이어 방향키 입력
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
@@ -252,6 +252,7 @@ protected:
 	
 	UPROPERTY()
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
+	
 	FVector WallNormal;
 	
 	UPROPERTY()

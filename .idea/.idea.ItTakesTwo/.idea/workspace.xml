@@ -18,19 +18,17 @@
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_Cody.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ALI_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ALI_Cody.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/AN_DetachItem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/AN_DetachItem.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_ItTakesTwoPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_ItTakesTwoPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwo.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwo.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/NewAnimMontage.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CodyCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CodyCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Character/CodyCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Character/CodyCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Nail.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Nail.h" afterDir="false" />
     </list>
@@ -46,7 +44,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://25" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/Media/PixelStreaming/Source/PixelStreaming/Private/ToStringExtensions.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/ShaderCompilerCommon/Private/ISAParser/QuadModeDetect.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Developer/TraceServices/Private/Analyzers/LoadTimeTraceAnalysis.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +58,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/SpringArmComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/Developer/RiderLink/Source/RD/thirdparty/variant/include/mpark/lib.hpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -316,6 +314,7 @@
       <workItem from="1770683444634" duration="7664000" />
       <workItem from="1770691331267" duration="21984000" />
       <workItem from="1770768850191" duration="29707000" />
+      <workItem from="1770855758282" duration="34863000" />
     </task>
     <servers />
   </component>

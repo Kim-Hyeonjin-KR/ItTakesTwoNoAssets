@@ -6,10 +6,15 @@
 #include "Weapon/WeaponBase.h"
 #include "Nail.generated.h"
 
+class ANail;
+DECLARE_DELEGATE_OneParam(FOnRecallEnd, ANail*);
+
 class UBoxComponent;
 class UProjectileMovementComponent;
 class UAnimMontage;
-class ACharacter;
+class AItTakesTwoCharacter;
+
+
 
 /**
  * 
@@ -38,7 +43,7 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Skeletal Mesh")
-	USkeletalMeshComponent* SkeletalMesh;
+	USkeletalMeshComponent* NailSkeletalMesh;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Projectile")
 	UProjectileMovementComponent* ProjectileMovement;
@@ -51,6 +56,7 @@ public:
 							  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, 
 							  bool bFromSweep, const FHitResult& SweepResult);
 	
+	FOnRecallEnd OnRecallEnd;
 	
 public:
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
@@ -68,11 +74,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
 	void Ready();
 	
+	UFUNCTION(BlueprintPure)
+	bool IsMoving() const;
+	
+	UFUNCTION(BlueprintPure)
+	bool HasNailOwner() const;
+	
 	// 몽타주 모음
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Montage")
-	UAnimMontage* PullOutMontage;
-
-	void PlayPullOutAnimation(UAnimMontage* MontageToPlay);
+	UAnimMontage* EquipMontage;
+	
+	void PlayMontage(UAnimMontage* MontageToPlay, FName SectionName = FName()) const;
 
 	bool IsGrabable() const;
 	
@@ -80,21 +92,22 @@ public:
 	
 	void SetNailOwnerCharacter(AActor* OwnerCharacter);
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
+	ENailState NailState;
+	
+	FVector StoreSocketOffset;
+	
 protected:
 	FTimerHandle RecallTimerHandle;
-	
 	void OnTimeOutRecall();
 	
 private:
 	UPROPERTY()
-	TWeakObjectPtr<ACharacter> NailOwner;
+	TWeakObjectPtr<AItTakesTwoCharacter> NailOwner;
 	
 	//자기 자신에서 사용하니까 강한 참조
 	UPROPERTY()
 	TObjectPtr<UAnimInstance> AnimInstance;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State", meta = (AllowPrivateAccess))
-	ENailState NailState;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Speed", meta = (AllowPrivateAccess))
 	float RecallSpeed = 12000.f;

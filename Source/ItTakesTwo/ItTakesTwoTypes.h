@@ -6,7 +6,8 @@
 #include "UObject/Object.h"
 #include "ItTakesTwoTypes.generated.h"
 
-
+static constexpr int8 MoveMappingPriority = 5;
+static constexpr int8 WeaponPriority = 3;
 
 UENUM(BlueprintType)
 enum class EHandItemType : uint8
