@@ -18,7 +18,6 @@ UGrabInterActionComponent::UGrabInterActionComponent()
 	// ...
 }
 
-
 // Called when the game starts
 void UGrabInterActionComponent::BeginPlay()
 {
@@ -62,11 +61,7 @@ void UGrabInterActionComponent::BeginPlay()
 	{
 		UE_LOG(LogTemp,Error, TEXT("PutDownMontage 비었음"));
 	}
-	
-	
-	
 	// ...
-	
 }
 
 

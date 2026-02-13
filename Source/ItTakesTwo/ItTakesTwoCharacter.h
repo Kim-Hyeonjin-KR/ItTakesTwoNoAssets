@@ -142,6 +142,9 @@ public:
 	bool bCanDash = true;
 	bool bCanJump = true;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = MovementState)
+	int CurrentJumpCount;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = LockOn)
 	bool bIsLockOnMode = false;
 

@@ -787,6 +787,7 @@ void AItTakesTwoCharacter::CustomJump(const FInputActionValue& Value)
 
 	if (bCanJump)
 	{
+		CurrentJumpCount++;
 		Super::Jump();
 	}
 }

@@ -24,7 +24,7 @@ void UANSInvincibility::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSeque
 		{
 			DashDirection = Player->GetActorForwardVector();
 		}
-		DashDirection.GetSafeNormal();
+		DashDirection = DashDirection.GetSafeNormal();
 		DashDirection.Z = 0.0f;
 		
 		

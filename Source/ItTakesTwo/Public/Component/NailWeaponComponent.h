@@ -58,6 +58,9 @@ public:
 	ANail* FindPinedNail();
 	
 	UPROPERTY(EditAnywhere, Category= "Nail")
+	TSubclassOf<UUserWidget> CrosshairWidgetClass;
+	
+	UPROPERTY(EditAnywhere, Category= "Nail")
 	UUserWidget* CrosshairWidget;
 	
 	UPROPERTY(EditAnywhere, Category= "Nail")
@@ -80,7 +83,7 @@ private:
 	FVector InitSocketOffset;
 	
 	UPROPERTY(EditAnywhere, Category= "Nail", meta=(AllowPrivateAccess=true))
-	float AimingArmLength = 300.f;
+	float AimingArmLength = 400.f;
 	
 	UPROPERTY(EditAnywhere, Category= "Nail", meta=(AllowPrivateAccess=true))
 	FVector AimingSocketOffset = FVector(0,150,0);

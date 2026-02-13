@@ -19,8 +19,8 @@ UNailWeaponComponent::UNailWeaponComponent()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	
-	PrimaryComponentTick.bCanEverTick = true; 
-	PrimaryComponentTick.bStartWithTickEnabled = false;;
+	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bStartWithTickEnabled = false;
 	
 	// ...
 }
@@ -43,16 +43,23 @@ void UNailWeaponComponent::BeginPlay()
 		InitSocketOffset = OwnerSpringArm->SocketOffset;
 	}
 	
-	if (CrosshairWidget == nullptr)
+	if (CrosshairWidgetClass == nullptr)
 	{
-		UE_LOG(LogTemp,Warning,TEXT("NailWeaponComponent의 CrosshairWidget이 없습니다."));
+		UE_LOG(LogTemp,Warning,TEXT("NailWeaponComponent의 CrosshairWidgetClass가 없습니다."));
 		UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, false);
 	}
 	
 	// 조준 UI
-	CrosshairWidget->AddToViewport();
+	
+	APlayerController* PC = Cast<APlayerController>(OwnerCharacter->GetController());
+	if (PC == nullptr) { UE_LOG(LogTemp,Warning,TEXT("NailWeaponComponent의 PC가 없습니다.")); return; }
+	
+	CrosshairWidget = CreateWidget<UUserWidget>(PC , CrosshairWidgetClass);
+	CrosshairWidget->AddToPlayerScreen();
+	//CrosshairWidget->AddToViewport();
 	CrosshairWidget->SetVisibility(ESlateVisibility::Hidden);
 	OwnerCharacter->SetAnimLayer(EHandItemType::Nail);
+	
 	
 	// ...
 }
@@ -71,11 +78,11 @@ void UNailWeaponComponent::SetupNailActionInput(class UInputComponent* PlayerInp
 		EnhancedInputSubsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer());
 		if (EnhancedInputSubsystem != nullptr)
 		{
-			EnhancedInputSubsystem->AddMappingContext(NailMappingContext, 8);
+			EnhancedInputSubsystem->AddMappingContext(NailMappingContext, WeaponPriority);
 			//EnhancedInputSubsystem->AddMappingContext(NailMappingContext, WeaponPriority);
 		}
 	}
-		
+	
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		// SpecialAbility 못 공격, 조준
@@ -83,7 +90,6 @@ void UNailWeaponComponent::SetupNailActionInput(class UInputComponent* PlayerInp
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Started, this, &UNailWeaponComponent::Aiming);
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Completed, this, &UNailWeaponComponent::Aiming);
 		EnhancedInputComponent->BindAction(RecallAction, ETriggerEvent::Triggered, this, &UNailWeaponComponent::Recall);
-		
 	}
 	//스폰한 못을 관리
 }
@@ -194,11 +200,24 @@ void UNailWeaponComponent::Aiming(const FInputActionValue& Value)
 
 void UNailWeaponComponent::Recall(const FInputActionValue& Value)
 {
-	if (bHoldingAimButton == false)
-	{
-		RecallAllNail();
+
+	UE_LOG(LogTemp, Warning, TEXT("동시 입력 Recall!!"));
+	
+	
+		ANail* TargetNail = FindPinedNail();
+		
+		if (TargetNail == nullptr)
+		{
+			RecallAllNail();
+		}
+		else
+		{
+			RecallTargetNail(TargetNail);
+		}
+		
+		//입력 된 값 소모
 		return;
-	}
+	//입력 된 값 소모하지 않고 끝
 }
 
 void UNailWeaponComponent::CatchNail(ANail* RecalledNail)
@@ -215,8 +234,6 @@ void UNailWeaponComponent::CatchNail(ANail* RecalledNail)
 void UNailWeaponComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	
-	UE_LOG(LogTemp,Warning,TEXT("네일 틱 활성화"));
 	
 	float FinalArmLength;
 	FVector FinalSocketOffset;
@@ -365,10 +382,16 @@ ANail* UNailWeaponComponent::FindPinedNail()
 	Params.bTraceComplex = true;
 	
 	//채널 추가해줄것
-	GetWorld()->SweepSingleByChannel(HitResult, CameraLocation, EndLocation, FQuat::Identity, ECC_Visibility, SphereShape, Params);
-
+	GetWorld()->SweepSingleByChannel(HitResult, CameraLocation, EndLocation, FQuat::Identity,  ECC_GameTraceChannel1, SphereShape, Params);
 	
-	return nullptr;
+	if (HitResult.bBlockingHit)
+	{
+		return Cast<ANail>(HitResult.GetActor());
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 
