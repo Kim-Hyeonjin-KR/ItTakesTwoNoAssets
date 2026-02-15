@@ -14,29 +14,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ALI_Cody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ALI_Cody.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFall.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/ANS_GroundPoundEnter.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/AN_ClimbUpEnd.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/AN_DetachItem.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AnimNotify/AN_ReleasInteractionLock.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/ClimbUp/AM_CodyClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/ClimbUp/AM_CodyClimbUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyHoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyHoldButton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPutDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPutDown.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/ClimbUp/AM_MayClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/ClimbUp/AM_MayClimbUp.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayHoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayHoldButton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPutDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPutDown.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerCody.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerMay.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Character/BP_PlayerMay.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IA_WeaponCancle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IA_WeaponCancle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_Weapon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/Input/IMC_Weapon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/TESTAN.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/K5/6DQTO7H7NF6QPPMAZQIRRC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/K5/6DQTO7H7NF6QPPMAZQIRRC.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/GN/FGZ4ZJX4I4RKSWGZGD83OG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/GN/FGZ4ZJX4I4RKSWGZGD83OG.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/NailWeaponComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CodyCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/CodyCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/MayCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Character/MayCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Hammer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Hammer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Weapon/Nail.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Character/MayCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Character/MayCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/HammerWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/HammerWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Hammer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Hammer.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +62,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://23" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/Experimental/WidgetEditorToolPalette/Source/WidgetEditorToolPalette/Private/DefaultTools/CreateWidgetTool.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Programs/UnrealBuildTool/System/Action.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://30" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/Developer/RiderLink/Source/RD/thirdparty/variant/include/mpark/lib.hpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -312,6 +326,9 @@
       <workItem from="1770855758282" duration="34863000" />
       <workItem from="1770906580066" duration="2451000" />
       <workItem from="1770942382109" duration="19521000" />
+      <workItem from="1770993506756" duration="1917000" />
+      <workItem from="1771035822369" duration="12963000" />
+      <workItem from="1771132593658" duration="25922000" />
     </task>
     <servers />
   </component>

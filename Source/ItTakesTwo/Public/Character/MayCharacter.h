@@ -20,6 +20,9 @@ public:
 	AMayCharacter(const FObjectInitializer& ObjectInitializer);
 	virtual void BeginPlay() override;
 	
+protected:
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = CustomComponent)
 	UHammerWeaponComponent* HammerWeaponComponent;

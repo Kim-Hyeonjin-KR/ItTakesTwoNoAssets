@@ -16,14 +16,6 @@ ACodyCharacter::ACodyCharacter(const FObjectInitializer& ObjectInitializer) : Su
 void ACodyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	if (NailWeaponComponent != nullptr)
-	{
-		//몽타주 재생 등 캐릭터가 해야 하는 반응 추가
-		//NailWeaponComponent->OnItemPickUp.BindUObject(this, &AItTakesTwoCharacter::SetPickUpItemType);
-		
-		//NailWeaponComponent
-	}
 }
 
 void ACodyCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)

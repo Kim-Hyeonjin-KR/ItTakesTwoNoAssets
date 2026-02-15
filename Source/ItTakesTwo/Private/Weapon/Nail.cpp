@@ -172,6 +172,9 @@ void ANail::Store()
 	if (NailOwner->GetMesh() == nullptr) { UE_LOG(LogTemp, Warning, TEXT("StoreToNailSocket 함수의 NailOwner->GetMesh() is nullptr")); return; }
 	
 	ProjectileMovement->SetUpdatedComponent(nullptr);
+	
+	CollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	
 	this->AttachToComponent(NailOwner->GetMesh(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("NailSocket"));
 	this->AddActorLocalRotation(FRotator(-90,0,0));
 	this->AddActorLocalOffset(StoreSocketOffset);

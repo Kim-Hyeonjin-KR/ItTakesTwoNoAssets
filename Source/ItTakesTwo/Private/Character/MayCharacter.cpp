@@ -14,3 +14,13 @@ void AMayCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 }
+
+void AMayCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	
+	if (HammerWeaponComponent != nullptr)
+	{
+		HammerWeaponComponent->SetupHammerActionInput(PlayerInputComponent);
+	}
+}

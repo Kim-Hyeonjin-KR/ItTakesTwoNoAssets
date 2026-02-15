@@ -696,6 +696,8 @@ void AItTakesTwoCharacter::SetInteractionInputLock(bool bInputLock)
 
 void AItTakesTwoCharacter::Move(const FInputActionValue& Value)
 {
+	if (bIgnoreMoveInput == true) { return; }
+	
 	// input is a Vector2D
 	InputMovementVector = Value.Get<FVector2D>();
 

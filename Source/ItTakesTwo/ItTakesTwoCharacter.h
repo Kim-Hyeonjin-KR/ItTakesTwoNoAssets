@@ -248,7 +248,9 @@ protected:
 	
 	bool CheckLineTrace(FVector StartVec, FVector EndVec);
 	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool bIgnoreMoveInput;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool bIgnoreInteractionInput;
 	
 	float DefaultCapsuleHalfHeight;
