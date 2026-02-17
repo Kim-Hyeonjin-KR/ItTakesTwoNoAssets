@@ -38,6 +38,16 @@ void AGrabableActor::DeactiveItemInteract_Implementation(AActor* Interactor)
 	DetachItem(Interactor);
 }
 
+void AGrabableActor::ActiveItem_Implementation()
+{
+	
+}
+
+void AGrabableActor::DeActiveItem_Implementation()
+{
+	
+}
+
 void AGrabableActor::AttachItem(AActor* Target)
 {
 	USkeletalMeshComponent* Mesh = GetTargetMesh(Target);
@@ -61,6 +71,7 @@ void AGrabableActor::AttachItem(AActor* Target)
 	{
 		PrimitiveRoot->SetSimulatePhysics(false);
 		PrimitiveRoot->SetCollisionEnabled(ECollisionEnabled::Type::NoCollision);
+		this->ActiveItem();
 	}
 	else
 	{
@@ -92,6 +103,7 @@ void AGrabableActor::DetachItem(AActor* Target)
 		PrimitiveRoot->SetWorldRotation(FRotator(0.0f, 0.0f, 0.0f));
 		PrimitiveRoot->SetSimulatePhysics(true);
 		PrimitiveRoot->SetCollisionEnabled(ECollisionEnabled::Type::QueryAndPhysics);
+		this->DeActiveItem();
 	}
 	else
 	{

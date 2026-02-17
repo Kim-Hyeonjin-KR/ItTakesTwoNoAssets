@@ -34,6 +34,13 @@ public:
 	virtual EHandItemType ActiveItemInteract_Implementation(AActor* Interactor) override;
 	virtual void DeactiveItemInteract_Implementation(AActor* Interactor) override;
 	
+	UFUNCTION(BlueprintNativeEvent)
+	void ActiveItem();
+	
+	UFUNCTION(BlueprintNativeEvent)
+	void DeActiveItem();
+	
+	
 private:
 	void AttachItem(AActor* Target);
 	void DetachItem(AActor* Target);

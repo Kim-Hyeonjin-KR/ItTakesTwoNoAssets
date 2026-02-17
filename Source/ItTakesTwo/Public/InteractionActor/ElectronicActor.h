@@ -42,4 +42,7 @@ private:
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (AllowPrivateAccess = true))
 	FRotator InitialRotation;
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (AllowPrivateAccess = true))
+	bool bAnySwitchsCanActive;
 };

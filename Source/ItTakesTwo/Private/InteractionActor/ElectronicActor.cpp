@@ -31,6 +31,33 @@ void AElectronicActor::OnSignal_Implementation(AActor* Interactor, bool bSignal)
 	//버튼 상태 재정의
 	LinkedSwitchs.Add(Interactor, bSignal);
 	
+	//하나라도 켜지면 실행
+	if (bSignal && bAnySwitchsCanActive)
+	{
+		OnActivate(this);
+		return;
+	}
+	
+	if (bAnySwitchsCanActive)
+	{
+		for (auto& Switchs : LinkedSwitchs)
+		{
+			if (Switchs.Key == nullptr)
+			{
+				UE_LOG(LogTemp, Warning, TEXT("ElectronicActor : No Linked Switch Found"));
+				return;
+			}
+		
+			if (Switchs.Value == true)
+			{
+				return;
+			}
+		}
+		bAllSwitchsActive = false;
+		OnDeActivate(this);
+		return;
+	}
+	
 	for (auto& Switchs : LinkedSwitchs)
 	{
 		if (Switchs.Key == nullptr)
