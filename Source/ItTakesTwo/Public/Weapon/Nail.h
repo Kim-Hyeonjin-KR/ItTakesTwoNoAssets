@@ -8,6 +8,7 @@
 
 class ANail;
 DECLARE_DELEGATE_OneParam(FOnRecallEnd, ANail*);
+DECLARE_DELEGATE(FOnRecall);
 
 class UBoxComponent;
 class UProjectileMovementComponent;
@@ -57,6 +58,10 @@ public:
 							  bool bFromSweep, const FHitResult& SweepResult);
 	
 	FOnRecallEnd OnRecallEnd;
+	FOnRecall OnRecall;
+	
+	UFUNCTION(BlueprintCallable, Category = "Nail")
+	bool IsRightSide(ACharacter* target);
 	
 public:
 	UFUNCTION(BlueprintCallable, Category = "Projectile")
@@ -96,6 +101,8 @@ public:
 	ENailState NailState;
 	
 	FVector StoreSocketOffset;
+	
+	FRotator PinnedInitRotation;
 	
 protected:
 	FTimerHandle RecallTimerHandle;

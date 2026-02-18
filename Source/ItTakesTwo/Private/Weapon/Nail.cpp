@@ -104,6 +104,16 @@ void ANail::HandleOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActo
 	
 }
 
+bool ANail::IsRightSide(ACharacter* target)
+{
+	FVector NailToTargetVec = target->GetActorLocation() - this->GetActorLocation();
+	FVector NailToTargetNomalVec = NailToTargetVec.GetSafeNormal2D();
+	
+	float SlidDot = FVector::DotProduct(GetActorRightVector(), NailToTargetNomalVec);
+	
+	return SlidDot > 0 ? true : false;  
+}
+
 void ANail::Shoting(FVector TargetLocation)
 {
 	GetWorldTimerManager().ClearTimer(RecallTimerHandle);
@@ -131,7 +141,7 @@ void ANail::Shoting(FVector TargetLocation)
 	}
 	
 	//일정 시간동안 박히지 않으면 자동 회수
-	GetWorldTimerManager().SetTimer(RecallTimerHandle, this, &ANail::OnTimeOutRecall, 5.0f, false);
+	GetWorldTimerManager().SetTimer(RecallTimerHandle, this, &ANail::OnTimeOutRecall, 4.0f, false);
 }
 
 
@@ -144,8 +154,12 @@ void ANail::Pinned(UPrimitiveComponent* OtherComp, const FHitResult& SweepResult
 	SetActorRotation(FRotationMatrix::MakeFromX(SweepResult.ImpactNormal * -1).Rotator());
 	this->AttachToComponent(OtherComp, FAttachmentTransformRules::KeepWorldTransform);
 	
+	//부착 시점의 회전 값 저장
+	PinnedInitRotation = GetActorRotation();
+	
 	//잡을 수 있는 상태로 변경
 	NailState = ENailState::Pinned;
+	CollisionBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
 }
 
 void ANail::Recalling()
@@ -153,6 +167,8 @@ void ANail::Recalling()
 	//뽑히기
 	if (NailState == ENailState::Pinned)
 	{
+		OnRecall.ExecuteIfBound();
+		
 		ProjectileMovement->SetUpdatedComponent(RootComponent);
 		this->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	}
@@ -160,7 +176,7 @@ void ANail::Recalling()
 	
 	//if (AnimInstance == nullptr) { UE_LOG(LogTemp, Warning, TEXT("Recalling 함수의 AnimInstance is nullptr")); return; }
 	NailState = ENailState::Recalling;
-
+	CollisionBox->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
 	//날아오기 (이동은 Tick에서 실행)
 	CollisionBox->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	ProjectileMovement->Activate(true);
