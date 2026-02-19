@@ -140,16 +140,17 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 	FVector BoxHalfSize = FVector(5.0f, CapsuleComponent->GetScaledCapsuleRadius() , CapsuleComponent->GetScaledCapsuleHalfHeight());
 	FCollisionShape MyBox = FCollisionShape::MakeBox(BoxHalfSize);
 	
-	FHitResult HitResult;
+	TArray<FHitResult> HitResults;
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(OwnerActor.Get());
+	Params.bTraceComplex = false;
 	
-	bool bHit = GetWorld()->SweepSingleByChannel(
-		HitResult,
+	bool bHit = GetWorld()->SweepMultiByChannel(
+		HitResults,
 		StartForwardLocation,
 		EndForwardLocation,
 		OwnerActor->GetActorRotation().Quaternion(),
-		ECC_Visibility,
+		ECC_GameTraceChannel2,
 		MyBox,
 		Params
 	);
@@ -163,15 +164,40 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 	DrawDebugBox(GetWorld(), EndForwardLocation, BoxExtent, Rotation, DebugColor, false, 2.0f);
 	DrawDebugLine(GetWorld(), StartForwardLocation, EndForwardLocation, DebugColor, false, 2.0f);
 
+	for (const FHitResult& Hit : HitResults)
+	{
+		AActor* HitActor = Hit.GetActor();
+		if (!HitActor) continue;
+
+		UE_LOG(LogTemp, Log, TEXT("검출된 액터: %s"), *HitActor->GetName());
+
+		// 6. 인터페이스 체크 및 실행
+		if (HitActor->Implements<UGrabInterableInterface>())
+		{
+			EHandItemType ItemType = IGrabInterableInterface::Execute_ActiveItemInteract(HitActor,  OwnerActor.Get());
+			HandleInteraction(ItemType, HitActor);
+             
+			// 아이템 하나를 잡았다면 루프 종료
+			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 15.f, 12, FColor::Cyan, false, 1.0f);
+			break; 
+		}
+	}
+	
+	
+	
+	
+	/*
 	if (bHit)
 	{
 		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.f, 12, FColor::Yellow, false, 2.0f);
 	}
 	
-	if (HitResult.GetActor() != nullptr)
+	
+	if (HitResults.GetActor() != nullptr)
 	{
-		UE_LOG(LogTemp, Log, TEXT("HitResult %s"), *HitResult.GetActor()->GetName());
+		UE_LOG(LogTemp, Log, TEXT("HitResult %s"), *HitResults.GetActor()->GetName());
 	}
+	
 	
 	AActor* HitActor = HitResult.GetActor();
 	
@@ -184,6 +210,7 @@ void UGrabInterActionComponent::TryActivateInteractionItem()
 			HandleInteraction(ItemType, HitActor);
 		}
 	}
+	*/
 }
 
 void UGrabInterActionComponent::HandleInteraction(EHandItemType TargetType, AActor* HitActor)

@@ -73,8 +73,6 @@ protected:
 	UPROPERTY()
 	UEnhancedInputLocalPlayerSubsystem* EnhancedInputSubsystem;
 	
-	
-	
 private:
 	TWeakObjectPtr<AItTakesTwoCharacter> OwnerCharacter;
 	TWeakObjectPtr<USpringArmComponent> OwnerSpringArm;

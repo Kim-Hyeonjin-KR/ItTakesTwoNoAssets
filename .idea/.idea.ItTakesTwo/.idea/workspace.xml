@@ -18,502 +18,27 @@
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHandsFree.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyHeavyPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodyNail.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodySmallPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/ABP_CodySmallPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyClimbMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyClimbMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyCrouch.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyCrouch.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFallBosted.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyFallBosted.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyJogMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyJogMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyPullPush.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyPullPush.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyStrafeMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/BS_CodyStrafeMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeAimMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeAimMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeRecallMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/Nail/BS_CodyNailStrafeRecallMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpHeavy/BS_CodyPickUpHeavyJogMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpHeavy/BS_CodyPickUpHeavyJogMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpSmall/BS_CodyPickUpSmallJogMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpSmall/BS_CodyPickUpSmallJogMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpSmall/BS_CodyPickUpSmallStrafeMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/BlendSpace/PickUpSmall/BS_CodyPickUpSmallStrafeMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/ClimbUp/AM_CodyClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/ClimbUp/AM_CodyClimbUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Dash/AM_CodyDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Dash/AM_CodyDash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Dash/AM_CodySmallPickUpDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Dash/AM_CodySmallPickUpDash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/AM_CodyPullPush.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/AM_CodyPullPush.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyHoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyHoldButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyToggleButtonHit.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Button/AM_CodyToggleButtonHit.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Lever/AM_CodyToggleLever.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/Lever/AM_CodyToggleLever.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPutDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/InterAction/PickUp/AM_CodyPutDown.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Nail/AM_CodyNail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/Nail/AM_CodyNail.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MayHandsFree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MayHandsFree.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MayHeavyPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MayHeavyPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MaySmallPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/ABP_MaySmallPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_HammerSwing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_HammerSwing.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayClimbMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayClimbMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayCrouch.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayCrouch.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayFall.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayFall.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayJogMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayJogMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayStrafeMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/BS_MayStrafeMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/PickUpHeavy/BS_MayPickUpHeavyJog.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/PickUpHeavy/BS_MayPickUpHeavyJog.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/PickUpSmall/BS_MayPickUpSmallJogMove.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/BlendSpace/PickUpSmall/BS_MayPickUpSmallJogMove.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/ClimbUp/AM_MayClimbUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/ClimbUp/AM_MayClimbUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Dash/AM_MayDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Dash/AM_MayDash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Dash/AM_MaySmallPickUpDash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Dash/AM_MaySmallPickUpDash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Hammer/AM_HammerAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Hammer/AM_HammerAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Hammer/AM_HammerSwing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/Hammer/AM_HammerSwing.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/AM_MayPullPush.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/AM_MayPullPush.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayHoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayHoldButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayToggleButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Button/AM_MayToggleButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Lever/AM_MayToggleLever.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/Lever/AM_MayToggleLever.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPickUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPickUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPutDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/InterAction/PickUp/AM_MayPutDown.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Blueprint/BP_Actor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Blueprint/BP_Candle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Blueprint/BP_Candle1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Blueprint/BP_Fire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Levels/Overview.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Levels/Room.umap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Avize_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Bookshelf_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Bookshelf_1_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Bookshelf_2_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Bookshelf_2_Seamless_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Box_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Box_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Candles_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Chair_D1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Classic_Wall_Sconce.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Classic_Wall_Sconce_candle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Coffe_Table.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Dining_Table_D1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Electric_Socket_Light_Switch.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Fire1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Fire_wood.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Fireplace.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Fireplace_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Lambader.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Led_Line_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Normal_Curtain.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Pine_Bark_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Plant_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Plant_3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Plant_4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Retro_Upholstered_Armchair.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Retro_Upholstered_Sofa1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Retro_Upholstered_Sofa2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_SW_1_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_SW_2_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Sehpa.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Socks_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Sofa_4_2_Pillow.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Vintage_Grandfather_Clock.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Vintage_Grandfather_Clock_decor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Vintage_Grandfather_Clock_glass.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_Vintage_Grandfather_Clock_mech.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_book1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_book2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_book3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_book4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_candle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_candleps.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_candlestick1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_conc.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_cookies_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_cupcake_set_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_cupcake_set_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_cupcake_set_004.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_cupcake_set_005.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_decor_foods_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_donut_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_fire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_fork1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_fritter_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_knife1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_ledline.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_muffin_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_notebook.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_notebook_papers.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_parquet.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_persian_rug5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_persian_rug7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_pine_leaf_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_plate1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_plate2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_rug2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_seamless_conc_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_seamless_parquet_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_seamless_stone_wall_Mat.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_stone_wall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tablo5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tablo_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tablo_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tablo_3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tablo_5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_tree_star_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_wall_decor1_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_wall_decor2_006.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_wall_panel.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_wood_wall.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Material/M_write.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Avize_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Books_book1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Books_book2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Books_book3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Books_book4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Chair_D1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Classic_Wall_Sconce1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Coffee_Table.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Cookie_man.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Dining_Table_D1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Door.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Electric_Socket_Light_Switch_Circle_017.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Fire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_004.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_005.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_006.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_007.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_008.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Gift_Box_009.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Lambader.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Normal_Curtain_Plane_030.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Normal_Curtain_Plane_033.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Normal_Curtain_Plane_037.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Note_book.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Plant_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Plant_3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Plant_4.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Retro_Upholstered_Armchair1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Retro_Upholstered_Sofa.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Sehpa.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Shell.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Socks.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Socks2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Tablo_Plane_005.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Tablo_Plane_006.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Tree.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_Vintage_Grandfather_Clock1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_bread_002_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_bread_006_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candle1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candle_Circle_014.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candle_cupcake_icing_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candlestick.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candy1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_candy2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_cherry_cupcake_liner_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_cookie_chocolate_011_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_donut_complete_mesh_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_donut_complete_mesh_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_fork.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_fritter_complete_mesh_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_fritter_complete_mesh_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors_004.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_hn_wall_decors_005.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_knife.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_led_tree.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_muffin_complete_mesh_002.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_muffin_complete_mesh_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_persian_rug5_32_cut_out_persian_rug_texture.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_persian_rug5_4_cut_out_persian_rug_texture.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_pillow.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_pillow2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_pillow3.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_plates_Circle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_plates_Circle_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_raspberry_cupcake_icing_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_rug1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_sprinkles_cupcake_icing_mesh_001.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_tablo5.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_tablo_1_Plane_003.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_tablo_5_Plane_004.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_wall_decor_line.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Meshes/SM_write1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Particles/PS_Candle.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Particles/PS_Fire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Avize_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Avize_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Avize_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_Seamless_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_Seamless_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Bookshelf_2_Seamless_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Armchair_Roughness.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Armchair_low_Break_Room_Armchair_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Armchair_low_Break_Room_Armchair_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Armchair_low_Break_Room_Armchair_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Break_Room_Sofa_low_Break_Room_Sofa_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Candles_M_Candles_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Candles_M_Candles_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Candles_M_Candles_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Candles_M_Candles_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Carpet_3_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Carpet_3_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Carpet_3_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Chair_D1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Chair_D1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Chair_D1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Coffe_Table_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Coffe_Table_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Coffe_Table_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_Socks_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_Socks_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_Socks_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_decor_foods_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_decor_foods_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Decor_Objects_M_decor_foods_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Dining_Table_D1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Dining_Table_D1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Dining_Table_D1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Electric_Socket_Brown_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Electric_Socket_Brown_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Electric_Socket_Brown_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fire_Fire_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fire_Fire_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fire_Fire_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fireplace_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fireplace_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Fireplace_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_fork_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_fork_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_fork_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_knife__BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_knife__Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Kitchen_tools_knife__OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Lambader_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Lambader_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Lambader_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Normal_Curtain_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Normal_Curtain_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Normal_Curtain_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_papers_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_papers_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Note_book_notebook_papers_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_3_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_3_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_3_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_4_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_4_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Plant_4_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sehpa_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sehpa_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sehpa_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sofa_4_Sofa_4_2_Pillow_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sofa_4_Sofa_4_2_Pillow_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Sofa_4_Sofa_4_2_Pillow_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_Panel_Basecolor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_Panel_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_Panel_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor1_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor2_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_Wall_decors_wall_decor2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book3_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book3_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book3_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book4_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book4_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_books_book4_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_candle_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_candle_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_candle_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_stick_candlestick_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_stick_candlestick_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candle_stick_candlestick_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_candlefire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_decor_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_decor_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_decor_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_decor_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_glass_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_glass_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_glass_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_glass_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_mech_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_mech_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_mech_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_mech_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_tower_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_tower_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_tower_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_clock_tower_clock_tower_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_cloth_cloth_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_cloth_cloth_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_cloth_cloth_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_cloth_cloth_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_fire.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_SW_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cookies_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cookies_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cookies_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cookies_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0012_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0012_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0012_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0012_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0013_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0013_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0013_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_0013_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_001_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_001_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_001_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_001_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_cupcake_set_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_donut_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_donut_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_donut_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_donut_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_fritter_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_fritter_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_fritter_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_fritter_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_muffin_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_muffin_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_muffin_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_foods_muffin_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_2_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_led_line_led_line_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug5_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug5_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug5_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug7_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug7_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_persian_rug5_persian_rug7_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_plates_plate2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_Gift_Texture_1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_Gift_Texture_1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_Gift_Texture_1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_Gift_Texture_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_conc_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_conc_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_conc_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_conc_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_parquet_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_parquet_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_parquet_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_bark_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_bark_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_bark_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_leaf_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_leaf_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_pine_leaf_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_stone_wall_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_stone_wall_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_stone_wall_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_stone_wall_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_wood_wall_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_wood_wall_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_wood_wall_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_wood_wall_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_write_seamless_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_write_seamless_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_write_seamless_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_seamless_write_seamless_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_1_tablo_1_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_1_tablo_1_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_1_tablo_1_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo5_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo5_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo5_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo5_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_2_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_2_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_2_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_3_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_3_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_3_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_5_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_5_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tablo_tablo_5_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tree_star_tree_star_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tree_star_tree_star_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tree_star_tree_star_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_tree_star_tree_star_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_Wall_lamp_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_Wall_lamp_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_Wall_lamp_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_wall_lamp_candle_BaseColor.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_wall_lamp_candle_Emissive.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_wall_lamp_candle_Normal.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Christmas_Room/Texture/T_wall_lamp_2_wall_lamp_candle_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/BP_Sky_Sphere.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/C_Sky_Cloud_Color.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/C_Sky_Horizon_Color.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/C_Sky_Zenith_Color.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/SM_SkySphere.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/T_Sky_Blue.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/T_Sky_Clouds_M.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/EngineSky/T_Sky_Stars.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Fantastic_Village_Pack/maps/map_village_day.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Fantastic_Village_Pack/maps/map_village_day.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/StarterContent/Props/Materials/M_TableRound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/StarterContent/Props/Materials/M_TableRound.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HeavyGrabableActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HeavyGrabableActor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_HoldButton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_LinkHoldButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_LinkHoldButton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_SmallGrabableActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_SmallGrabableActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_nHoldButton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Weapon/Nail/BP_Nail.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/AV/8NK1TJ1Y626F81Z3R7WZRR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/WP/MWEWKYV0WMYRHTJ5JBCA0C.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/NY/MR7ZRQDBCG436DMUJ7BEM7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/NX/ZW67W80YQ34CRTVP0WPGWG.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/0B/WUFIL0SR9IG16D8OY4Q5RR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/SY/7LH35BK9ESDT4AHZK9OMFZ.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/2N/ZGYQGTRGDX5VF603WA9V4H.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/5L/QNZ1YY26VHPVY4A0FVYC0U.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/PullableActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/PullableActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/PullableActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/InteractionActor/PullableActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_ToggleButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_ToggleButton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_ToggleLever.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/BP_ToggleLever.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_WoodGate.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_WoodGate.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/Cable/BP_Cable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/Cable/BP_Cable.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/GN/FGZ4ZJX4I4RKSWGZGD83OG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/GN/FGZ4ZJX4I4RKSWGZGD83OG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/S6/7KQSQJRBBDO5N4STLCNTN2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/S6/7KQSQJRBBDO5N4STLCNTN2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/27/3J4WMW2HALGTGUL6EVFJF5.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/27/3J4WMW2HALGTGUL6EVFJF5.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/FP/O9LJ80V4YF3J95TG3C3380.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/FP/O9LJ80V4YF3J95TG3C3380.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/AL/SDT9PK1S748894S9F8MR10.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/AL/SDT9PK1S748894S9F8MR10.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/NP/14BCBI7PA64M67XBQHH575.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/NP/14BCBI7PA64M67XBQHH575.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/GrabInterActionComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/Component/HammerWeaponComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ButtonActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Private/InteractionActor/ButtonActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Component/NailWeaponComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Nail.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ItTakesTwo/Public/Weapon/Nail.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -527,7 +52,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://5" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Redis/RedisSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/Developer/RiderLink/Source/RD/thirdparty/variant/include/mpark/lib.hpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoCharacter.h" root0="FORCE_HIGHLIGHTING" />
@@ -585,27 +111,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ 프로젝트.ItTakesTwo.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-OutOfSyncConnection&quot;: &quot;Unreal 에디터 연결이 동기화 해제됨&quot;,
-    &quot;Notification.DoNotAsk-OutOfSyncConnection&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ 프로젝트.ItTakesTwo.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-OutOfSyncConnection": "Unreal 에디터 연결이 동기화 해제됨",
+    "Notification.DoNotAsk-OutOfSyncConnection": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ 프로젝트.ItTakesTwo">
     <configuration name="ItTakesTwo" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -830,6 +356,7 @@
       <workItem from="1771474525771" duration="45000" />
       <workItem from="1771474622968" duration="1152000" />
       <workItem from="1771475815650" duration="1026000" />
+      <workItem from="1771505799079" duration="13731000" />
     </task>
     <servers />
   </component>
@@ -858,5 +385,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CppProject">
+        <watch canBePaused="false" expression="" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

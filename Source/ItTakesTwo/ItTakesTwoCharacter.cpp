@@ -846,7 +846,8 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 	if (EnumHasAnyFlags(CurrentMovementModeState, EMovementState::Crouch))
 	{
 		//웅크리기 해제
-
+		GetCharacterMovement()->MaxWalkSpeed = 600.0f;
+		
 		//머리 위에 공간이 있는지 확인
 		float PreCapsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
 		float RayLenght = DefaultCapsuleHalfHeight - PreCapsuleHalfHeight;
@@ -875,6 +876,8 @@ void AItTakesTwoCharacter::CustomCrouch(const FInputActionValue& Value)
 	else
 	{
 		//웅크리기
+		GetCharacterMovement()->MaxWalkSpeed = 300.0f;
+		
 		CurrentMovementModeState |= EMovementState::Crouch;
 
 		DefaultCapsuleHalfHeight = GetCapsuleComponent()->GetScaledCapsuleHalfHeight();

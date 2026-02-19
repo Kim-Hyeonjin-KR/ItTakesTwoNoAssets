@@ -190,7 +190,6 @@ void UHammerWeaponComponent::SwingJump(const FInputActionValue& Value)
 	{
 		OwnerCharacter->PlayAnimMontage(HammerSwingMontage,1,"Exit");
 	}
-	
 }
 
 void UHammerWeaponComponent::AddHammer()
