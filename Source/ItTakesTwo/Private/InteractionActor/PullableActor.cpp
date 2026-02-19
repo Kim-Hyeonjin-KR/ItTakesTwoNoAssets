@@ -10,7 +10,7 @@ APullableActor::APullableActor()
 	PrimaryActorTick.bCanEverTick = false;
 
 }
-
+/*
 void APullableActor::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
 {
 	Super::PostEditChangeProperty(PropertyChangedEvent);
@@ -25,6 +25,7 @@ void APullableActor::PostEditChangeProperty(struct FPropertyChangedEvent& Proper
 		ItemType = EHandItemType::PullableObject;
 	}
 }
+*/
 
 // Called when the game starts or when spawned
 void APullableActor::BeginPlay()

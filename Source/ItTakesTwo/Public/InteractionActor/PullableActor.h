@@ -15,7 +15,7 @@ class ITTAKESTWO_API APullableActor : public AActor, public IGrabInterableInterf
 public:	
 	// Sets default values for this actor's properties
 	APullableActor();
-	virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
+	//virtual void PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent) override;
 	
 protected:
 	// Called when the game starts or when spawned
