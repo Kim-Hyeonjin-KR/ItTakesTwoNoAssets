@@ -14,8 +14,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3edcac3a-0041-4177-bcaf-94953daec51d" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/BP_PlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/BP_PlayerController.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ItTakesTwo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Cody/Anim/Montage/AM_CodyGroundPound.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/May/Anim/Montage/AM_MayGroundPound.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Fantastic_Village_Pack/maps/map_village_day.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Fantastic_Village_Pack/maps/map_village_day.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_Lava.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_Lava.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_SpikeFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_SpikeFloor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_SpikeFloorMoveDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/BP_SpikeFloorMoveDown.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/Cable/BP_Cable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/Environmental_Interactions/LevelActor/Cable/BP_Cable.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/_BP/GameFrameworks/GF_ItTakesTwoGameMode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ItTakesTwo.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +38,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://24" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Programs/Shared/EpicGames.Redis/RedisSerializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Core/Public/UObject/WeakObjectPtrTemplates.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../UnrealEngine/UE_5.4/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/UMG/Public/Blueprint/UserWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/Developer/RiderLink/Source/RD/thirdparty/variant/include/mpark/lib.hpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/ItTakesTwoTypes.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ItTakesTwo/Private/Anim/ANSInvincibility.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -305,6 +309,7 @@
       <workItem from="1771341313910" duration="1917000" />
       <workItem from="1771382256387" duration="26045000" />
       <workItem from="1771419958265" duration="19663000" />
+      <workItem from="1771459907721" duration="681000" />
     </task>
     <servers />
   </component>
